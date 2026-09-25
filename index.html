@@ -3,23 +3,401 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Bella Germaniae – Traduzioni  di letteratura tedesca</title>
+<title>Bella Germaniae – Traduzioni di letteratura tedesca</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Bella Germaniae è una tribù di autori e traduttori che autarchicamente si pubblicano marchiati a ferro e fuoco, mezzi con cui non devastano ma all'opposto completano il panorama offerto dal sistema editoriale.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Bella Germaniae">
-<link href="https://fonts.googleapis.com/css2?family=Spectral&display=swap" rel="stylesheet">
 <style>
 
-                body,
-                h1, h2, h3, h4, h5, h6,
-                .live-heading,
-                .live-subtitle,
-                .live-paragraph,
-                a.uk-button {
-                    font-family: 'Spectral', sans-serif !important;
+                .core-editor #page,
+                .core-editor #page h1, .core-editor #page h2, .core-editor #page h3,
+                .core-editor #page h4, .core-editor #page h5, .core-editor #page h6,
+                .core-editor #page .live-heading,
+                .core-editor #page .live-subtitle,
+                .core-editor #page .live-paragraph,
+                .core-editor #page a.uk-button,
+                .core-editor #editor-footer,
+                .core-editor #editor-footer h1, .core-editor #editor-footer h2, .core-editor #editor-footer h3,
+                .core-editor #editor-footer h4, .core-editor #editor-footer h5, .core-editor #editor-footer h6,
+                .core-editor #editor-footer .live-heading,
+                .core-editor #editor-footer .live-subtitle,
+                .core-editor #editor-footer .live-paragraph,
+                .core-editor #editor-footer a.uk-button,
+                body:not(.core-editor),
+                body:not(.core-editor) h1, body:not(.core-editor) h2, body:not(.core-editor) h3,
+                body:not(.core-editor) h4, body:not(.core-editor) h5, body:not(.core-editor) h6,
+                body:not(.core-editor) .live-heading,
+                body:not(.core-editor) .live-subtitle,
+                body:not(.core-editor) .live-paragraph,
+                body:not(.core-editor) a.uk-button {
+                    font-family: 'Poppins', sans-serif !important;
                 }
             
+/* Sacrisoft CORE CTA — single global button system */
+.sc-core-cta{
+  --sc-btn-bg:transparent;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#ffffff;
+
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+
+  min-height:52px;
+  padding:0 30px;
+  margin-top:18px;
+
+  border:1px solid var(--sc-btn-border);
+  border-radius:25px;
+
+  background:var(--sc-btn-bg);
+  color:var(--sc-btn-text) !important;
+
+  font:inherit;
+  font-size:16px;
+  font-weight:500;
+  line-height:1.2;
+  text-align:center;
+  text-decoration:none !important;
+  text-transform:none;
+  letter-spacing:normal;
+
+  cursor:pointer;
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    opacity .18s ease,
+    filter .18s ease,
+    transform .18s ease;
+}
+
+/* Default: white outline */
+.sc-core-cta-default{
+  --sc-btn-bg:transparent;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#ffffff;
+}
+.sc-core-cta-default:hover{
+  --sc-btn-bg:#ffffff;
+  --sc-btn-text:#000000;
+}
+
+/* Light: white background / black text */
+.sc-core-cta-light{
+  --sc-btn-bg:#ffffff;
+  --sc-btn-text:#000000;
+  --sc-btn-border:#ffffff;
+}
+.sc-core-cta-light:hover{
+  --sc-btn-bg:#f2f2f2;
+  --sc-btn-border:#f2f2f2;
+}
+
+/* Dark: black background / white text */
+.sc-core-cta-dark{
+  --sc-btn-bg:#000000;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#000000;
+}
+.sc-core-cta-dark:hover{
+  --sc-btn-bg:#222222;
+  --sc-btn-border:#222222;
+}
+
+/* Text: intentionally larger and readable */
+.sc-core-cta-text{
+  min-height:auto;
+  padding:4px 0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#ffffff !important;
+  font-size:1.35rem;
+  line-height:1.35;
+  text-decoration:underline !important;
+  text-underline-offset:.18em;
+}
+.sc-core-cta-text:hover{
+  opacity:.75;
+}
+
+/* Custom: CSS variables are written inline by makeButtonHtml() */
+.sc-core-cta-custom{
+  --sc-btn-bg:#FFA500;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#FFA500;
+}
+.sc-core-cta-custom:hover{
+  filter:brightness(.92);
+}
+
+/* Content button groups */
+.sc-content-button-pair,
+.faq-answer-buttons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.faq-answer-buttons{
+  justify-content:flex-start;
+}
+
+.sc-content-button-pair .sc-core-cta,
+.faq-answer-buttons .sc-core-cta{
+  margin-top:0;
+}
+
+/* Lightbox wrappers should behave like the button itself. */
+.sc-content-button-pair > .sc-lightbox-link,
+.faq-answer-buttons > .sc-lightbox-link{
+  display:inline-flex;
+}
+
+/* Mobile: stack only when needed, with space before button 2. */
+@media(max-width:640px){
+  .sc-content-button-pair,
+  .faq-answer-buttons{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .sc-content-button-pair > *,
+  .faq-answer-buttons > *{
+    width:100%;
+  }
+
+  .sc-content-button-pair > *:nth-child(2),
+  .faq-answer-buttons > *:nth-child(2){
+    margin-top:12px;
+  }
+
+  .sc-content-button-pair .sc-core-cta,
+  .faq-answer-buttons .sc-core-cta{
+    width:100%;
+  }
+}
+
+/* Default: UIkit-like white outline */
+.sc-core-cta.sc-core-cta-default{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:1px solid #ffffff !important;
+}
+.sc-core-cta.sc-core-cta-default:hover{
+  background:#ffffff !important;
+  color:#000000 !important;
+}
+
+/* Light: white background / black text */
+.sc-core-cta.sc-core-cta-light{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:1px solid #ffffff !important;
+}
+.sc-core-cta.sc-core-cta-light:hover{
+  background:#f2f2f2 !important;
+  color:#000000 !important;
+}
+
+/* Dark: black background / white text */
+.sc-core-cta.sc-core-cta-dark{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border:1px solid #000000 !important;
+}
+.sc-core-cta.sc-core-cta-dark:hover{
+  background:#222222 !important;
+  color:#ffffff !important;
+}
+
+/* Text: larger white text, no box */
+.sc-core-cta.sc-core-cta-text{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  font-size:1.35rem !important;
+  line-height:1.35 !important;
+  text-decoration:underline;
+  text-underline-offset:.18em;
+}
+.sc-core-cta.sc-core-cta-text:hover{
+  color:#ffffff !important;
+  opacity:.78;
+}
+
+/* Custom: orange / white by default */
+.sc-core-cta.sc-core-cta-custom{
+  background:#FFA500 !important;
+  color:#ffffff !important;
+  border:1px solid #FFA500 !important;
+}
+.sc-core-cta.sc-core-cta-custom:hover{
+  filter:brightness(.92);
+}
+
+/* Paired CTA responsive behavior */
+.sc-content-button-pair,
+.faq-answer-buttons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.faq-answer-buttons{
+  justify-content:flex-start;
+}
+.sc-content-button-pair .sc-core-cta,
+.faq-answer-buttons .sc-core-cta{
+  margin-top:0 !important;
+}
+
+@media(max-width:640px){
+  .sc-content-button-pair,
+  .faq-answer-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .sc-content-button-pair > * ,
+  .faq-answer-buttons > *{
+    width:100%;
+  }
+  .sc-content-button-pair > *:nth-child(2),
+  .faq-answer-buttons > *:nth-child(2){
+    margin-top:12px !important;
+  }
+  .sc-content-button-pair .sc-core-cta,
+  .faq-answer-buttons .sc-core-cta{
+    width:100%;
+    text-align:center;
+  }
+}
+
+
+/* ============================================================
+   Sacrisoft CORE CTA — final override
+   One button system; no outlines.
+   ============================================================ */
+.sc-core-cta{
+  border:0 !important;
+  padding-left:46px !important;
+  padding-right:46px !important;
+}
+
+/* Default: white outline / white text -> solid white / black text */
+.sc-core-cta.sc-core-cta-default,
+.sc-core-cta-default{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:1px solid #ffffff !important;
+}
+.sc-core-cta.sc-core-cta-default:hover,
+.sc-core-cta-default:hover{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+}
+
+/* Light: white / black -> black / white */
+.sc-core-cta.sc-core-cta-light,
+.sc-core-cta-light{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:0 !important;
+}
+.sc-core-cta.sc-core-cta-light:hover,
+.sc-core-cta-light:hover{
+  background:#000000 !important;
+  color:#ffffff !important;
+}
+
+/* Dark: black / white -> white / black */
+.sc-core-cta.sc-core-cta-dark,
+.sc-core-cta-dark{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border:0 !important;
+}
+.sc-core-cta.sc-core-cta-dark:hover,
+.sc-core-cta-dark:hover{
+  background:#ffffff !important;
+  color:#000000 !important;
+}
+
+/* Custom: chosen BG/Text; hover swaps them */
+.sc-core-cta.sc-core-cta-custom,
+.sc-core-cta-custom{
+  background:var(--sc-btn-bg,#FFA500) !important;
+  color:var(--sc-btn-text,#ffffff) !important;
+  border:0 !important;
+}
+.sc-core-cta.sc-core-cta-custom:hover,
+.sc-core-cta-custom:hover{
+  background:var(--sc-btn-text,#ffffff) !important;
+  color:var(--sc-btn-bg,#FFA500) !important;
+  border:0 !important;
+  filter:none !important;
+}
+
+/* Text CTA: large white label with UIkit-like animated underline */
+.sc-core-cta.sc-core-cta-text,
+.sc-core-cta-text{
+  position:relative !important;
+  display:inline-flex !important;
+  min-height:auto !important;
+  padding:5px 1px !important;
+  background:transparent !important;
+  color:#ffffff !important;
+  border:0 !important;
+  border-radius:0 !important;
+  font-size:1.35rem !important;
+  line-height:1.35 !important;
+  text-decoration:none !important;
+}
+.sc-core-cta.sc-core-cta-text::after,
+.sc-core-cta-text::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:0;
+  height:1px;
+  background:currentColor;
+  transition:right .25s ease-out;
+}
+.sc-core-cta.sc-core-cta-text:hover::after,
+.sc-core-cta-text:hover::after{
+  right:0;
+}
+.sc-core-cta.sc-core-cta-text:hover,
+.sc-core-cta-text:hover{
+  color:#ffffff !important;
+  opacity:1 !important;
+}
+
+@media(max-width:640px){
+  .sc-core-cta{
+    padding-left:32px !important;
+    padding-right:32px !important;
+  }
+  .sc-content-button-pair > *:nth-child(2),
+  .faq-answer-buttons > *:nth-child(2){
+    margin-top:12px !important;
+  }
+}
+
 </style>
 
 <link rel="icon" href="media/favicon.png">
@@ -64,557 +442,19 @@
   "description": "\"La Pagana\", il secondo romanzo di Max Mohr tradotto da Sara Ferro W. - già traduttrice di \"Venere in Pesci\".\n\n(...) Una volta l’inseguimento pagano si inoltrava ansimante nella foresta, con le suole nude sulle foglie vecchie, con le cosce larghe sulle sterpaglie del frangivento, sempre più in profondità nel sottobosco, via via più lontano dal sole, quindi l'uomo veniva più vicino, senza parole, senza un richiamo, allora l'odore muschioso si levava intorno alla donna, allora il suo cammino si faceva debole, deboli il suo cuore e le sue viscere, quindi lei giungeva alla macchia di muschio tra i pini impigliati, lì cadeva con le ginocchia allentate, lì anche lui cadeva sulla terra umida della sua terra, il signore della terra, l'uomo. Poi erano arrivati i sacerdoti e si erano eretti sopra la coppia umana e avevano sistemato i loro sgabelli nelle stanze dei loro dèi invisibili, per poter stare più in alto della coppia umana, e il loro discorso era stato: \"Tu devi e tu non devi!\". Dovrai strisciare sul tuo ventre e mangerai polvere, dovrai avere sudore sulla tua fronte, dovrai porgere la guancia sinistra, dovrai essere povero o vedere di passare attraverso la cruna di un ago, e dovrai pagare bene i tuoi sacerdoti, affinché ti dicano ciò che devi. Poi si era avventato lo Stato sulla coppia intimidita e il suo discorso era stato: \"Tu puoi e tu non puoi!\". Puoi morire per lo Stato e generare figli, puoi essere schiavo dello Stato e pagare le tasse, ma non puoi calpestare il prato verde e non puoi essere povero o sarai arrestato, non puoi fare niente in nero e pensare. E parlate con la mamma? Per un anno nella terra pietrosa della Glonn! E parlate con papà? Divorato pelle e capelli dalla città urbana... Finché la libertà non giunse finalmente alla coppia umana disperata e sui giornali si lesse: \"La coppia umana è libera, alleluia!\". Allora la coppia liberata si gettò sul nuovo letto nuziale in libertà e da lì nel vuoto, proprio come era stato prescritto dal loro giornale. Ma il giorno dopo era finita la ragionevolezza e sputavano sui reciproci desideri fantasma e maledicevano i loro nati morti e rompevano la libertà di carta, perché era stata solo la libertà degli schiavi liberati e non la libertà delle persone cresciute libere... Quindi cosa faceva una donna quando, dopo il fallimento dello Stato e della Chiesa e della casa dei genitori e della libertà di stampa, un uomo maschio le piaceva? (...)"
 }
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css" />
-<style>
-.live-paragraph { font-size: 1.13rem; max-width: 40em; margin-left:auto; margin-right:auto;}
+<link rel="stylesheet" href="assets/css/uikit.min.css" />
+<link rel="stylesheet" href="assets/css/custom.css" />
 
-/* Simple 3-size system for text blocks */
-.live-heading.h-sm { font-size: 2.2rem; line-height: 1.15; }
-.live-heading.h-md { font-size: 3.2rem; line-height: 1.12; }
-.live-heading.h-lg { font-size: 4.2rem; line-height: 1.08; }
 
-.live-subtitle.sub-sm { font-size: 1.1rem; font-weight: 500; }
-.live-subtitle.sub-md { font-size: 1.35rem; font-weight: 500; }
-.live-subtitle.sub-lg { font-size: 1.7rem; font-weight: 500; }
 
-.live-paragraph.p-sm { font-size: 1.0rem; }
-.live-paragraph.p-md { font-size: 1.13rem; }
-.live-paragraph.p-lg { font-size: 1.30rem; }
+<link id="custom-font-link" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap">
 
-@media (max-width: 640px) {
-.live-heading.h-lg { font-size: 2.6rem; }
-.live-heading.h-md { font-size: 2.0rem; }
-.live-heading.h-sm { font-size: 1.6rem; }
 
-.live-subtitle.sub-lg { font-size: 1.2rem; }
-.live-subtitle.sub-md { font-size: 1.05rem; }
-.live-subtitle.sub-sm { font-size: 0.95rem; }
-
-.live-paragraph.p-lg { font-size: 1.05rem; }
-.live-paragraph.p-md { font-size: 0.98rem; }
-.live-paragraph.p-sm { font-size: 0.92rem; }
-}
-
-.live-paragraph.uk-text-large { font-size: 1.45rem; }
-@media (max-width: 640px) {
-.live-paragraph { font-size: 1rem;}
-.live-paragraph.uk-text-large { font-size: 1.1rem;}
-}
-/* Make exported images/videos responsive */
-img, video {
-max-width: 100%;
-height: auto;
-display: block;
-}
-
-@media (max-width: 640px) {
-.live-heading, .live-subtitle, .live-paragraph {
-word-break: break-word;
-white-space: normal;
-}
-}
-.navbar-scroll { display:flex; flex-wrap:nowrap; gap:1rem; overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch; padding:0.5rem 1rem; align-items:center; list-style:none; margin:0; }
-.navbar-scroll a { flex:0 0 auto; text-decoration:none; color:inherit; }
-.navbar-scroll a.uk-active { font-weight:bold; border-bottom:2px solid currentColor; }
-  
-.navbar-logo {
-height: 40px !important;
-width: auto !important;
-max-height: 40px !important;
-object-fit: contain;
-flex-shrink: 0 !important;
-flex-grow: 0 !important;
-}
-
-.navbar-scroll {
-display: flex;
-flex-wrap: nowrap;
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-white-space: nowrap;
-gap: 1rem;
-padding: 0.5rem 1rem;
-}
-.navbar-scroll li {
-flex: 0 0 auto;
-list-style: none;
-}
-
-.visually-hidden {
-position: absolute !important;
-width: 1px; height: 1px;
-margin: -1px; padding: 0; border: 0;
-overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
-white-space: nowrap;
-}
-
-:root {
---navbar-link-color: #000000;
-}
-
-.navbar-scroll::-webkit-scrollbar {
-height: 6px;
-}
-.navbar-scroll::-webkit-scrollbar-thumb {
-background: var(--navbar-link-color);
-border-radius: 3px;
-}
-.navbar-scroll::-webkit-scrollbar-track {
-background: var(--gray, #eee);
-}
-
-
-.navbar-scroll {
--ms-overflow-style: none;  /* IE & Edge */
-scrollbar-width: none;     /* Firefox */
-}
-.navbar-scroll::-webkit-scrollbar {
-display: none;             /* Chrome, Safari, Opera */
-}
-
-/* ========================================================================
-Button 
-========================================================================== */
-
-/* Primary Button */
-.uk-button-primary {
-background-color: var(--dn-text, #000);
-color: #fff;
-}
-
-/* Primary Button Hover */
-.uk-button-primary:hover {
-background-color: var(--dn-text, #000);
-color: #fff;
-}
-
-/* Primary Button Active */
-.uk-button-primary:active,
-.uk-button-primary.uk-active {
-background-color: var(--dn-text, #000);
-color: #fff;
-}
-
-/* Secondary Button */
-.uk-button-secondary {
-background-color: var(--dn-text, #000);
-color: #fff;
-border: 1px solid transparent;
-}
-
-/* Secondary Button Hover */
-.uk-button-secondary:hover {
-background-color: #fff;
-color: var(--dn-text, #000);
-}
-
-/* Secondary Button Active */
-.uk-button-secondary:active,
-.uk-button-secondary.uk-active {
-background-color: var(--dn-text, #000);
-color: #fff;
-}
-
-/* Contextual Secondary Button Overrides for UIkit Sections/Cards/Overlay */
-.uk-light .uk-button-secondary,
-.uk-section-primary:not(.uk-preserve-color) .uk-button-secondary,
-.uk-section-secondary:not(.uk-preserve-color) .uk-button-secondary,
-.uk-tile-primary:not(.uk-preserve-color) .uk-button-secondary,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-button-secondary,
-.uk-card-primary.uk-card-body .uk-button-secondary,
-.uk-card-primary > :not([class*='uk-card-media']) .uk-button-secondary,
-.uk-card-secondary.uk-card-body .uk-button-secondary,
-.uk-card-secondary > :not([class*='uk-card-media']) .uk-button-secondary,
-.uk-overlay-primary .uk-button-secondary,
-.uk-offcanvas-bar .uk-button-secondary {
-background-color: var(--dn-text, #000);
-color: #fff;
-}
-
-/* ========================================================================
-Links
-========================================================================== */
-
-.uk-link {
-text-decoration: underline;
-cursor: pointer;
-}
-
-.uk-link:hover,
-.uk-link-toggle:hover .uk-link {
-text-decoration: none;
-}
-
-/* ========================================================================
-Lightbox
-========================================================================== */
-
-.uk-lightbox-button {
-box-sizing: border-box;
-width: 50px;
-height: 50px;
-background: rgba(0, 0, 0, 0.3);
-color: rgba(255, 255, 255, 0.7);
-border-radius: 100%;
-/* 1 */
-display: inline-flex;
-justify-content: center;
-align-items: center;
-}
-
-.uk-lightbox-iframe {
-width: 90%;
-height: 90%;
-border: 0px solid black;
-border-radius: 0; /* Default: no rounding for Chrome, Brave, etc. */
-}
-
-/* Safari-only override */
-@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
-.uk-lightbox-iframe {
-border-radius: 25px;
-}
-}
-
-.uk-lightbox-toolbar {
-padding: 5px 5px;
-background: transparent;
-color: rgba(255, 255, 255, 0.7);
-}
-.uk-lightbox-toolbar > * {
-color: rgba(255, 255, 255, 0.7);
-}
-
-.uk-lightbox-toolbar-icon {
-box-sizing: border-box;
-width: 50px;
-height: 50px;
-background: #000;
-color: #fff;
-border-radius: 100%;
-/* 1 */
-display: inline-flex;
-justify-content: center;
-align-items: center;
-}
-
-/* ===== keep only the close button always visible (preserve exact look) ===== */
-
-/* wide selector to match common UIkit close button variants */
-.uk-lightbox .uk-lightbox-button.uk-close,
-.uk-lightbox .uk-lightbox-button.uk-close svg,
-.uk-lightbox .uk-close,
-.uk-lightbox [data-uk-close],
-.uk-lightbox [data-uk-close] > * {
-/* DO NOT change visual properties (width/height/background/color/border-radius/flex)
-— we only override visibility/stacking/interaction and remove hide transforms. */
-position: fixed !important;        /* remove from hidden parent so it stays visible */
-top: 5px !important;               /* align with toolbar padding — preserves placement */
-right: 5px !important;             /* align with toolbar padding */
-z-index: 999999 !important;        /* above overlays */
-display: inline-flex !important;   /* keep your inline-flex layout */
-opacity: 0.7 !important;             /* force fully visible */
-visibility: visible !important;    /* force visible */
-pointer-events: auto !important;   /* clickable even if parent is disabled */
-transform: none !important;        /* cancel hide transforms */
-transition: none !important;       /* prevent fade-out transitions */
-animation: none !important;        /* stop any hiding animations */
-}
-
-/* If UIkit sets helper classes, undo them for close only */
-.uk-lightbox .uk-lightbox-button.uk-close.uk-hidden,
-.uk-lightbox .uk-lightbox-button.uk-close.uk-invisible,
-.uk-lightbox .uk-close.uk-hidden,
-.uk-lightbox .uk-close.uk-invisible,
-.uk-lightbox [data-uk-close].uk-hidden,
-.uk-lightbox [data-uk-close].uk-invisible {
-display: inline-flex !important;
-opacity: 0.7 !important;
-visibility: visible !important;
-pointer-events: auto !important;
-}
-
-/* keep SVG/icon inside intact (do not change color/size) */
-.uk-lightbox .uk-lightbox-button.uk-close svg,
-.uk-lightbox .uk-close svg {
-position: static !important;
-width: auto !important;
-height: auto !important;
-}
-
-/* mobile tweak to avoid overlap while preserving look (keeps same size) */
-@media (max-width: 480px) {
-.uk-lightbox .uk-lightbox-button.uk-close,
-.uk-lightbox .uk-close,
-.uk-lightbox [data-uk-close] {
-top: 8px !important;
-right: 8px !important;
-}
-}
-
-.uk-lightbox,
-.uk-lightbox.uk-open,
-.uk-lightbox .uk-lightbox-items {
-  z-index: 9999 !important; /* or even higher */
-}
-
-/* ========================================================================
-Slider
-========================================================================== */
-
-.uk-slidenav {
-padding: 5px 10px;
-color: rgba(102, 102, 102, 0.5);
-transition: color 0.1s ease-in-out;
-width: 50px;
-height: 50px;
-background: rgba(0, 0, 0, 0.3);
-color: rgba(255, 255, 255, 0.7);
-border-radius: 100%;
-display: inline-flex;
-justify-content: center;
-align-items: center;
-
-}
-
-/* ========================================================================
-Additional CSS:
-========================================================================== */
-
-html {
--webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-button:focus,
-button:active {
--moz-outline: 0 !important;
--ms-outline:0 !important;
--o-outline: 0 !important;
--webkit-outline: 0 !important;
-}
-
-.uk-border-rounded {
-border-radius: 25px;
-}
-
-/* ============================
-Dynamic Navbar & Mobile Menu
-=========================== */
-
-/* ---------- Mobile + Tablet: up to 1024px ---------- */
-@media (max-width: 1024px) {
-
-  /* --- Navbar container --- */
-  #dynamic-navbar-container,
-  nav.uk-navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* keep logo on left */
-    width: 100%;
-    min-height: 60px;
-    background-color: var(--navbar-bg-color, #fff);
-    position: relative;
-    z-index: 1;
-  }
-
-  /* --- Navbar UL --- */
-  #dynamic-navbar-container ul.navbar-scroll,
-  nav.uk-navbar-container ul.navbar-scroll {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* --- Hide all text links, keep layout --- */
-  #dynamic-navbar-container ul.navbar-scroll a:not(:has(img)),
-  nav.uk-navbar-container ul.navbar-scroll a:not(:has(img)) {
-    visibility: hidden;       /* hides but keeps space */
-    pointer-events: none;     /* prevents clicks */
-    height: 0;                /* optional: collapse vertical space */
-    margin: 0;
-    padding: 0;
-  }
-
-  /* --- Logo link visible --- */
-  #dynamic-navbar-container ul.navbar-scroll a:has(img),
-  nav.uk-navbar-container ul.navbar-scroll a:has(img) {
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-  /* --- Logo image styling --- */
-  #dynamic-navbar-container ul.navbar-scroll a:has(img) img,
-  nav.uk-navbar-container ul.navbar-scroll a:has(img) img {
-    display: block;
-    max-height: 40px;
-    width: auto;
-  }
-
-/* --- Logo image spacing --- */
-#dynamic-navbar-container ul.navbar-scroll a:has(img) img,
-nav.uk-navbar-container ul.navbar-scroll a:has(img) img {
-    display: block;
-    max-height: 40px;
-    width: auto;
-    margin-left: 10px; /* move logo 10px from left without breaking flex alignment */
-}
-
-  /* --- Mobile Menu Toggle (Hamburger) --- */
-  #mobile-menu-toggle {
-    display: flex;
-    position: fixed;
-    top: 12.5px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    isolation: isolate;
-    background: transparent;
-  }
-
-  #mobile-menu-toggle .bar {
-    width: 30px;
-    height: 2px;
-    background-color: var(--navbar-link-color, #000);
-    position: absolute;
-    border-radius: 1px;
-    transition: all 0.4s ease;
-    z-index: 2;
-  }
-
-  #mobile-menu-toggle .bar1 { top: 12px; }
-  #mobile-menu-toggle .bar2 { top: 22px; }
-
-  #mobile-menu-toggle.open .bar1 {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  #mobile-menu-toggle.open .bar2 {
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
-  }
-
-  /* --- Mobile Menu Panel --- */
-  #mobile-menu {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: var(--navbar-bg-color, #fff);
-    color: var(--navbar-text-color, #000);
-    padding: 1rem 0;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    z-index: 9998;
-  }
-
-  #mobile-menu.show {
-    display: flex !important;
-  }
-
-  #mobile-menu a {
-    display: block;
-    width: 100%;
-    box-sizing:border-box;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1.25rem;
-    text-align: center;
-    white-space: normal;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    color: var(--navbar-text-color, #000);
-    text-decoration: none;
-    background: transparent;
-  }
-
-  /* Hide logo in mobile menu (optional) */
-  #mobile-menu .navbar-logo { display: none; }
-}
-
-/* ---------- Large screens: 1025px and above ---------- */
-@media (min-width: 1025px) {
-  #mobile-menu-toggle { display: none !important; }
-  #mobile-menu { display: none; }
-
-  /* Navbar container */
-  #dynamic-navbar-container,
-  nav.uk-navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    min-height: 60px;
-    background-color: var(--navbar-bg-color, #fff);
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Navbar links visible */
-  #dynamic-navbar-container ul.navbar-scroll a,
-  nav.uk-navbar-container ul.navbar-scroll a {
-    display: inline-block !important;
-    visibility: visible !important;
-    height: auto !important;
-    margin: initial;
-    padding: initial;
-    text-decoration: none;
-  }
-}
-
-#dynamic-navbar-container .navbar-scroll a:has(img) {
-  text-decoration: none !important;
-  border-bottom: none !important;
-}
-
-/* Prevent underline/bottom-border on logo link in preview/export too */
-nav.uk-navbar-container .navbar-scroll a:has(img),
-.navbar-scroll a:has(img){
-  text-decoration: none !important;
-  border-bottom: none !important; /* overrides .uk-active underline */
-}
-
-/* Hard-kill the bar divider line */
-#editor-dropnavbar.dn-bar,
-.dn-bar{
-  border: 0 !important;
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.accordion-icon {
-  transition: transform 0.2s ease;
-}
-
-/* When accordion item is open */
-.uk-open .accordion-icon {
-  transform: rotate(45deg);
-}
-</style>
-
-
-<link id="custom-font-link" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral&amp;display=swap">
-<style id="export-font-css">
-                body,
-                h1, h2, h3, h4, h5, h6,
-                .live-heading,
-                .live-subtitle,
-                .live-paragraph,
-                a.uk-button {
-                    font-family: 'Spectral', sans-serif !important;
-                }
-            </style>
-
+<script>try{if(window.self!==window.top)document.documentElement.classList.add('sc-internal-page-lightbox');}catch(e){}</script><style>html.sc-internal-page-lightbox .sc-dynamic-navbar,html.sc-internal-page-lightbox #dynamic-navbar-container,html.sc-internal-page-lightbox #mobile-menu-toggle,html.sc-internal-page-lightbox #mobile-menu{display:none!important;}
+html.sc-internal-page-lightbox .dn-bar,html.sc-internal-page-lightbox #dropnavbar-container,html.sc-internal-page-lightbox #drop-navbar,html.sc-internal-page-lightbox .drop-navbar,html.sc-internal-page-lightbox .dn-popover{display:none!important;}</style>
 
 </head>
-<body class="uk-background-muted" id="top">
+<body class="uk-background-muted sc-user-site" id="top">
 <h1 id="site-title-h1" class="visually-hidden">Bella Germaniae – Traduzioni  di letteratura tedesca</h1>
 
 <!-- Mobile Menu (Preview/Export) -->
@@ -701,14 +541,15 @@ nav.uk-navbar-container .navbar-scroll a:has(img),
 })();
 </script>
 
-<nav class="uk-navbar-container" style="background:#ffffff;position:sticky;top:0;z-index:999;">
-<ul class="navbar-scroll" uk-scrollspy-nav="closest: a; scroll: true; offset: 100" style="color:#000000;">
-<li><a class="navbar-logo-link" href="#top"><img src="media/logo.svg" alt="Bella Germaniae – Traduzioni  di letteratura tedesca" class="navbar-logo"></a></li><li><a href="#section-1">Venere in Pesci – Romanzo astrologico</a></li><li><a href="#section-4">La Pagana</a></li>
+<nav class="uk-navbar-container sc-dynamic-navbar" style="background:rgba(255,255,255,1);position:sticky !important;top:0 !important;z-index:9000 !important;">
+<ul class="navbar-scroll" data-sc-preview-nav="1" style="color:#000000;">
+<li><a class="navbar-logo-link sc-page-active" href="index.html"><img src="media/logo.svg" alt="Bella Germaniae – Traduzioni  di letteratura tedesca" class="navbar-logo"></a></li><li class="sc-page-heading-link"><a href="#venere-in-pesci-romanzo-astrologico">Venere in Pesci – Romanzo astrologico</a></li><li class="sc-page-heading-link"><a href="#la-pagana">La Pagana</a></li><li class="sc-page-heading-link"><a href="#bella-germaniae">Bella Germaniae</a></li>
 </ul>
 </nav>
 
-<section id="section-0" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#000000;min-height:60vh;padding:0;margin:0;">
 
+<section id="1" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#000000;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content sc-slider-panel" style="width:100%;margin-top:auto;margin-bottom:auto;">
         <div style="background:#000000; width:100vw; height:100vh; margin:0; padding:0; overflow:hidden;">
           
     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
@@ -718,34 +559,78 @@ nav.uk-navbar-container .navbar-scroll a:has(img),
 
       <ul class="uk-slider-items uk-child-width-1-1" style="height:100vh; margin:0; padding:0;">
         
-      <li>
-        <div class="uk-cover-container" style="width:100vw; height:100vh;">
-          <img src="media/mediafile1.jpeg" alt="Venere in Pesci – Romanzo astrologico" uk-cover>
-          <div class="uk-position-center uk-text-center uk-padding-small" style="color:#ffffff; z-index:2; text-shadow: 0 2px 12px rgba(0,0,0,.55);">
+  <li data-sc-slider-index="0">
+    <div class="uk-cover-container"
+         style="width:100vw;height:100vh;overflow:hidden;">
+
+      <img src="media/hot1.jpeg" alt="" uk-cover>
+
+      
+
+      <div class="uk-position-center uk-text-center uk-padding-small" style="color:#ffffff; z-index:2; text-shadow: 0 2px 12px rgba(0,0,0,.55);">
+           
+           
+           <div class="sc-content-button-pair sc-slider-button-pair"><a href="https://www.amazon.it/Hot-Sociology-Reaction-Acéphale-Sociologie/dp/B0HJZJ1CZM/" class="sc-core-cta sc-core-cta-dark" target="_blank" rel="noopener">Leggi ora</a></div>
+         </div>
+      
+
+    </div>
+  </li>
+
+  <li data-sc-slider-index="1">
+    <div class="uk-cover-container"
+         style="width:100vw;height:100vh;overflow:hidden;">
+
+      <img src="media/Venere-in-Pesci-Romanzo-astrologico-Max-Mohr-Traduzione-Sara-Ferro-W.jpeg" alt="Venere in Pesci – Romanzo astrologico" uk-cover>
+
+      
+
+      <div class="uk-position-center uk-text-center uk-padding-small" style="color:#ffffff; z-index:2; text-shadow: 0 2px 12px rgba(0,0,0,.55);">
            <h2 class="live-heading h-md" style="color:#ffffff; margin:0;">Venere in Pesci – Romanzo astrologico</h2>
-           
-           <div class="uk-margin-top">
-           <a class="uk-button uk-button-secondary uk-border-rounded" href="https://amzn.eu/d/02NTfqmm" target="_blank" rel="noopener">Leggi ora</a>
+           <div class="live-paragraph p-md uk-margin-small-top" style="color:#ffffff;">Max Mohr | Traduzione: Sara Ferro W.</div>
+           <div class="sc-content-button-pair sc-slider-button-pair"><a href="https://amzn.eu/d/02NTfqmm" class="sc-core-cta sc-core-cta-dark" target="_blank" rel="noopener">Leggi ora</a></div>
          </div>
-         </div>
-          
-        </div>
-      </li>
-    
-      <li>
-        <div class="uk-cover-container" style="width:100vw; height:100vh;">
-          <img src="media/mediafile2.jpeg" alt="La Pagana" uk-cover>
-          <div class="uk-position-center uk-text-center uk-padding-small" style="color:#ffffff; z-index:2; text-shadow: 0 2px 12px rgba(0,0,0,.55);">
+      
+
+    </div>
+  </li>
+
+  <li data-sc-slider-index="2">
+    <div class="uk-cover-container"
+         style="width:100vw;height:100vh;overflow:hidden;">
+
+      <img src="media/La-Pagana-Max-Mohr-Traduzione-Sara-Ferro-W.jpeg" alt="La Pagana" uk-cover>
+
+      
+
+      <div class="uk-position-center uk-text-center uk-padding-small" style="color:#ffffff; z-index:2; text-shadow: 0 2px 12px rgba(0,0,0,.55);">
            <h2 class="live-heading h-md" style="color:#ffffff; margin:0;">La Pagana</h2>
-           
-           <div class="uk-margin-top">
-           <a class="uk-button uk-button-secondary uk-border-rounded" href="https://amzn.eu/d/0f6ZhzVT" target="_blank" rel="noopener">Leggi ora</a>
+           <div class="live-paragraph p-md uk-margin-small-top" style="color:#ffffff;">Max Mohr | Traduzione: Sara Ferro W.</div>
+           <div class="sc-content-button-pair sc-slider-button-pair"><a href="https://amzn.eu/d/0f6ZhzVT" class="sc-core-cta sc-core-cta-dark" target="_blank" rel="noopener">Leggi ora</a></div>
          </div>
+      
+
+    </div>
+  </li>
+
+  <li data-sc-slider-index="3">
+    <div class="uk-cover-container"
+         style="width:100vw;height:100vh;overflow:hidden;">
+
+      <img src="media/Donna-senza-remore-Max-Mohr-Traduzione-Sara-Ferro-W.jpeg" alt="Donna senza remore" uk-cover>
+
+      
+
+      <div class="uk-position-center uk-text-center uk-padding-small" style="color:#ffffff; z-index:2; text-shadow: 0 2px 12px rgba(0,0,0,.55);">
+           <h2 class="live-heading h-md" style="color:#ffffff; margin:0;">Donna senza remore</h2>
+           <div class="live-paragraph p-md uk-margin-small-top" style="color:#ffffff;">Max Mohr | Traduzione: Sara Ferro W.</div>
+           <div class="sc-content-button-pair sc-slider-button-pair"><a href="https://www.amazon.it/Donna-senza-remore-Max-Mohr/dp/B0GPQ3YZ6R/" class="sc-core-cta sc-core-cta-dark" target="_blank" rel="noopener">Leggi ora</a></div>
          </div>
-          
-        </div>
-      </li>
-    
+      
+
+    </div>
+  </li>
+
       </ul>
 
       
@@ -757,310 +642,214 @@ nav.uk-navbar-container .navbar-scroll a:has(img),
     </div>
   
         </div>
-      
-</section>
-<section id="section-1" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-<div class="uk-container uk-padding" style="background:#ffffff; color:#000000">
-      <h1 class="uk-heading uk-text-center" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-top; delay: 0; offset: 100; repeat: true"><span>Venere in Pesci – Romanzo astrologico</span></h1>
-      <h3 class="uk-heading uk-text-center uk-padding-large uk-padding-remove-top" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 0; offset: 120; repeat: true">di Max Mohr tradotto da Sara Ferro W.</h3>
-      <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m"
-           uk-grid="masonry: true" uk-lightbox="animation: slide; toggle: a" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150; repeat: false">
-        <div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img1.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img1.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img2.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img2.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img3.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img3.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img4.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img4.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img5.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img5.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img6.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img6.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img7.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img7.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img8.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img8.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img9.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img9.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img10.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img10.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img11.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img11.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery2_img12.jpg" 
-       data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery2_img12.jpg" 
-           alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
       </div>
+</section>
+<section id="venere-in-pesci-romanzo-astrologico" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content sc-gallery-panel" style="width:100%;margin-top:auto;margin-bottom:auto;"><div class="uk-container uk-padding" style="background:#ffffff; color:#000000">
+    <h1 class="uk-heading uk-text-center" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-top; delay: 0; offset: 100; repeat: true"><span>Venere in Pesci – Romanzo astrologico</span></h1>
+    <h3 class="uk-heading uk-text-center uk-padding-large uk-padding-remove-top" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 0; offset: 120; repeat: true">di Max Mohr tradotto da Sara Ferro W.</h3>
+    <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m"
+         uk-grid="masonry: true" uk-lightbox="animation: slide; toggle: a"
+         uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150; repeat: false">
+      <div data-sc-gallery-index="0">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
     </div>
+<div data-sc-gallery-index="1">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-2.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-2.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="2">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-3.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-3.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="3">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-4.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-4.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="4">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-5.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-5.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="5">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-6.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-6.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="6">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-7.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-7.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="7">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-8.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-8.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="8">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-9.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-9.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="9">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-10.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-10.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="10">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-11.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-11.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="11">
+      <a class="uk-inline" data-type="image" href="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-12.jpg" data-caption="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W." aria-label="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Venere-in-Pesci-Romanzo-astrologico-di-Max-Mohr-tradotto-da-Sara-Ferro-W-12.jpg" alt="Venere in Pesci – Romanzo astrologico — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+    </div>
+  </div></div>
 </section>
-<section id="section-2" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-
-<div class="uk-section uk-section-muted uk-flex uk-flex-center uk-flex-middle"
-style="background:#ffffff; min-height:60vh;">
-<div class="uk-container uk-text-justify" style="color:#000000;" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
-
-
-<p class="live-paragraph p-lg" style="color:#000000;"><b style="font-style: italic;">Venere in Pesci - Romanzo astrologico, </b><b>&nbsp;il primo romanzo di Max Mohr tradotto da Sara Ferro W.<br></b><br><i>Berlino, anni ’20. Un medico, il dottor Quaß e una dottoressa in medicina, non abilitata, la signorina Otterloo, entrambi con rapporti di lavoro a dir poco traballanti, si incontrano in occasione di un parto in una ricca villa dove loro malgrado per un equivoco prestano ambedue assistenza alla partoriente – non senza pestarsi i piedi - e fanno la conoscenza di uno strano personaggio, il dottor Abba. Assieme finiranno per aprire alle porte della città una così detta “clinica medico-astrologica“, fondata allo scopo di circonvenire, sebbene molto elegantemente, schiere di nuovi ricchi e tutta una svariata varietà di appartenenti al bel mondo, che come stregati dall'allure del dottor Abba a frotte aderiranno entusiasti all'impresa. Nell'economia del romanzo questi costituiranno una sorta di galleria di tipi umani a metà tra impietoso falò delle vanità e pittura di genere borghese, ritrattistica espressionistica e parodia della Nuova oggettività, raffigurati con uno stile sempre in bilico tra caricatura e impressioni di psicologia del profondo. La trama si snoda attorno alle scelte disperate dei tre, a turno dettate da opportunismo, da uno strano idealismo screziato di spregiudicato pragmatismo o ancora guidate da rigurgiti di anticonformismo, riottosità e ribellione. Una frode ben architettata e riuscita, i cui profitti illeciti verranno spartiti dai tre personaggi di cui prima, capitanati dall'ipnotico Abba.
-</i><br><br><i>Venere in Pesci</i> si sviluppa attorno a tematiche ricorrenti nella vita del suo autore e nelle riflessioni tipiche della sua epoca, tuttavia elaborate da Mohr in maniera sublimemente sui generis, inaspettatamente cruda e tenera: il conflitto tra natura e tecnica, tra morale e denaro - tra la Grande e la Piccola Ragione -, tra città e campagna, tra metropoli e provincia, senza possibilità di risolvere tali tensioni tanto connaturate alla sensibilità moderna. Quindi niente vero e proprio ritorno alla natura, né panegirici in favore dell'idillio bucolico. La via d'uscita, unica e degnissima è quella della parodia, della satira, dell'umorismo, del nonsense, dell'invettiva sociale elegantemente scoccata, tra il serio e il faceto, ma sempre raffinata, sorprendentemente leggera quanto efficace, che schernisce atteggiamenti non registrati dai più come bislacchi - al massimo strambi, comunque ben tollerati da chi si assoggetta volentieri ai capricci della moda e ai dettami della società -, ma che a un più attento scrutinio della ragione non possono che apparire nella loro bizzarria demenziale, maniacali, scurrili, potenzialmente calamitosi. Senza farne troppo un dramma però, le cose vanno secondo il loro destino, solo le stelle sanno, per chi si lascia imbambolare da tali amenità, sebbene, sebbene, sebbene...</p>
-</div>
-</div>
+<section id="3" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;"><div class="uk-section uk-section-muted uk-flex uk-flex-center uk-flex-middle" style="background:#ffffff;min-height:60vh;">
+      <div class="uk-container uk-text-justify" style="color:#000000;" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+        
+        
+        <div class="live-paragraph p-lg" style="color:#000000;"><b style="font-style: italic;">Venere in Pesci - Romanzo astrologico, </b><b>&nbsp;il primo romanzo di Max Mohr tradotto da Sara Ferro W.<br></b><br><i>Berlino, anni ’20. Un medico, il dottor Quaß e una dottoressa in medicina, non abilitata, la signorina Otterloo, entrambi con rapporti di lavoro a dir poco traballanti, si incontrano in occasione di un parto in una ricca villa dove loro malgrado per un equivoco prestano ambedue assistenza alla partoriente – non senza pestarsi i piedi - e fanno la conoscenza di uno strano personaggio, il dottor Abba. Assieme finiranno per aprire alle porte della città una così detta “clinica medico-astrologica“, fondata allo scopo di circonvenire, sebbene molto elegantemente, schiere di nuovi ricchi e tutta una svariata varietà di appartenenti al bel mondo, che come stregati dall'allure del dottor Abba a frotte aderiranno entusiasti all'impresa. Nell'economia del romanzo questi costituiranno una sorta di galleria di tipi umani a metà tra impietoso falò delle vanità e pittura di genere borghese, ritrattistica espressionistica e parodia della Nuova oggettività, raffigurati con uno stile sempre in bilico tra caricatura e impressioni di psicologia del profondo. La trama si snoda attorno alle scelte disperate dei tre, a turno dettate da opportunismo, da uno strano idealismo screziato di spregiudicato pragmatismo o ancora guidate da rigurgiti di anticonformismo, riottosità e ribellione. Una frode ben architettata e riuscita, i cui profitti illeciti verranno spartiti dai tre personaggi di cui prima, capitanati dall'ipnotico Abba.
+</i><br><br><i>Venere in Pesci</i> si sviluppa attorno a tematiche ricorrenti nella vita del suo autore e nelle riflessioni tipiche della sua epoca, tuttavia elaborate da Mohr in maniera sublimemente sui generis, inaspettatamente cruda e tenera: il conflitto tra natura e tecnica, tra morale e denaro - tra la Grande e la Piccola Ragione -, tra città e campagna, tra metropoli e provincia, senza possibilità di risolvere tali tensioni tanto connaturate alla sensibilità moderna. Quindi niente vero e proprio ritorno alla natura, né panegirici in favore dell'idillio bucolico. La via d'uscita, unica e degnissima è quella della parodia, della satira, dell'umorismo, del nonsense, dell'invettiva sociale elegantemente scoccata, tra il serio e il faceto, ma sempre raffinata, sorprendentemente leggera quanto efficace, che schernisce atteggiamenti non registrati dai più come bislacchi - al massimo strambi, comunque ben tollerati da chi si assoggetta volentieri ai capricci della moda e ai dettami della società -, ma che a un più attento scrutinio della ragione non possono che apparire nella loro bizzarria demenziale, maniacali, scurrili, potenzialmente calamitosi. Senza farne troppo un dramma però, le cose vanno secondo il loro destino, solo le stelle sanno, per chi si lascia imbambolare da tali amenità, sebbene, sebbene, sebbene...</div>
+        
+      </div>
+    </div></div>
 </section>
-<section id="section-3" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-
+<section id="venere-in-pesci-romanzo-astrologico-2" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;">
 <div style="position:relative; width:100vw; height:100vh; overflow:hidden;">
-<video src="media/mediafile3.mp4" autoplay loop muted playsinline
-style="width:100vw;height:100vh;object-fit:cover;display:block;" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false"></video>
+<video src="media/Venere-in-Pesci-Romanzo-astrologico.mp4" autoplay loop muted playsinline
+style="width:100vw;height:100vh;object-fit:cover;display:block; pointer-events:none;" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false"></video>
 <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;" class="uk-text-center uk-light">
 
 <div uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
 <h2 class="live-heading uk-heading-large" style="color: #ffffff;"></h2>
 <div class="live-subtitle uk-heading-xlarge" style="color:#ffffff">Venere in Pesci – Romanzo astrologico</div><div class="live-paragraph large" style="color:#ffffff;margin-top:0.5em;">tradotto da Sara Ferro W.</div>
-<a href="https://www.amazon.it/gp/product/B0C9SPDWJQ" class="uk-button uk-button-primary uk-margin-top uk-border-rounded" target="_blank">Leggi ora</a>
+<div class="sc-content-button-pair"><a href="https://www.amazon.it/gp/product/B0C9SPDWJQ" class="sc-core-cta sc-core-cta-light" target="_blank" rel="noopener">Leggi ora</a></div>
 </div>
 
 </div>
 </div>
-
+</div>
 </section>
-<section id="section-4" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-<div class="uk-container uk-padding" style="background:#ffffff; color:#000000">
-      <h1 class="uk-heading uk-text-center" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-top; delay: 0; offset: 100; repeat: true"><span>La Pagana</span></h1>
-      <h3 class="uk-heading uk-text-center uk-padding-large uk-padding-remove-top" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 0; offset: 120; repeat: true">di Max Mohr tradotto da Sara Ferro W.</h3>
-      <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m"
-           uk-grid="masonry: true" uk-lightbox="animation: slide; toggle: a" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150; repeat: false">
-        <div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img1.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img1.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img2.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img2.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img3.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img3.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img4.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img4.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img5.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img5.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img6.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img6.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img7.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img7.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img8.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img8.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img9.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img9.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img10.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img10.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img11.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img11.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-<div>
-    <a class="uk-inline" data-type="image" href="media/gallery5_img12.jpg" 
-       data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." 
-       aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-      <img class="uk-border-rounded" style="width:100%;height:auto;display:block" 
-           src="media/gallery5_img12.jpg" 
-           alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
-    </a>
-  </div>
-      </div>
+<section id="la-pagana" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content sc-gallery-panel" style="width:100%;margin-top:auto;margin-bottom:auto;"><div class="uk-container uk-padding" style="background:#ffffff; color:#000000">
+    <h1 class="uk-heading uk-text-center" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-top; delay: 0; offset: 100; repeat: true"><span>La Pagana</span></h1>
+    <h3 class="uk-heading uk-text-center uk-padding-large uk-padding-remove-top" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 0; offset: 120; repeat: true">di Max Mohr tradotto da Sara Ferro W.</h3>
+    <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m"
+         uk-grid="masonry: true" uk-lightbox="animation: slide; toggle: a"
+         uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150; repeat: false">
+      <div data-sc-gallery-index="0">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
     </div>
+<div data-sc-gallery-index="1">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-2.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-2.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="2">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-3.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-3.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="3">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-4.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-4.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="4">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-5.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-5.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="5">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-6.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-6.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="6">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-7.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-7.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="7">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-8.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-8.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="8">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-9.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-9.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="9">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-10.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-10.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="10">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-11.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-11.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="11">
+      <a class="uk-inline" data-type="image" href="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-12.jpg" data-caption="La Pagana — di Max Mohr tradotto da Sara Ferro W." aria-label="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-La-Pagana-di-Max-Mohr-tradotto-da-Sara-Ferro-W-12.jpg" alt="La Pagana — di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+    </div>
+  </div></div>
 </section>
-<section id="section-5" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-
-<div class="uk-section uk-section-muted uk-flex uk-flex-center uk-flex-middle"
-style="background:#ffffff; min-height:60vh;">
-<div class="uk-container uk-text-justify" style="color:#000000;" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
-
-
-<p class="live-paragraph p-lg" style="color:#000000;"><b><i>La Pagana</i>, il secondo romanzo di Max Mohr tradotto da Sara Ferro W. - già traduttrice di <i>Venere in Pesci</i>.
+<section id="6" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;"><div class="uk-section uk-section-muted uk-flex uk-flex-center uk-flex-middle" style="background:#ffffff;min-height:60vh;">
+      <div class="uk-container uk-text-justify" style="color:#000000;" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+        
+        
+        <div class="live-paragraph p-lg" style="color:#000000;"><b><i>La Pagana</i>, il secondo romanzo di Max Mohr tradotto da Sara Ferro W. - già traduttrice di <i>Venere in Pesci</i>.
 <br><br></b>
 (...) Una volta l’inseguimento pagano si inoltrava ansimante nella foresta, con le suole nude sulle foglie vecchie, con le cosce larghe sulle sterpaglie del frangivento, sempre più in profondità nel sottobosco, via via più lontano dal sole, quindi l'uomo veniva più vicino, senza parole, senza un richiamo, allora l'odore muschioso si levava intorno alla donna, allora il suo cammino si faceva debole, deboli il suo cuore e le sue viscere, quindi lei giungeva alla macchia di muschio tra i pini impigliati, lì cadeva con le ginocchia allentate, lì anche lui cadeva sulla terra umida della sua terra, il signore della terra, l'uomo. Poi erano arrivati i sacerdoti e si erano eretti sopra la coppia umana e avevano sistemato i loro sgabelli nelle stanze dei loro dèi invisibili, per poter stare più in alto della coppia umana, e il loro discorso era stato: "Tu devi e tu non devi!". Dovrai strisciare sul tuo ventre e mangerai polvere, dovrai avere sudore sulla tua fronte, dovrai porgere la guancia sinistra, dovrai essere povero o vedere di passare attraverso la cruna di un ago, e dovrai pagare bene i tuoi sacerdoti, affinché ti dicano ciò che devi. Poi si era avventato lo Stato sulla coppia intimidita e il suo discorso era stato: "Tu puoi e tu non puoi!". Puoi morire per lo Stato e generare figli, puoi essere schiavo dello Stato e pagare le tasse, ma non puoi calpestare il prato verde e non puoi essere povero o sarai arrestato, non puoi fare niente in nero e pensare. E parlate con la mamma? Per un anno nella terra pietrosa della Glonn! E parlate con papà? Divorato pelle e capelli dalla città urbana... Finché la libertà non giunse finalmente alla coppia umana disperata e sui giornali si lesse: "La coppia umana è libera, alleluia!". Allora la coppia liberata si gettò sul nuovo letto nuziale in libertà e da lì nel vuoto, proprio come era stato prescritto dal loro giornale. Ma il giorno dopo era finita la ragionevolezza e sputavano sui reciproci desideri fantasma e maledicevano i loro nati morti e rompevano la libertà di carta, perché era stata solo la libertà degli schiavi liberati e non la libertà delle persone cresciute libere... Quindi cosa faceva una donna quando, dopo il fallimento dello Stato e della Chiesa e della casa dei genitori e della libertà di stampa, un uomo maschio le piaceva? (...)
 <br><br>​
-(…) I cinesi avevano costruito una muraglia intorno al loro impero e il professor Gfäller le aveva parlato del significato più profondo di questa muraglia; aveva trascorso dieci anni in Mongolia come specialista di botanica dell'Asia orientale. All'interno di quel muro non c'era uno Stato, ma un impero, un impero umano. All'interno di quel muro, la morte non veniva ingannata con le favole dell'aldilà, ma era inclusa nell'esistenza come fratello oscuro di questa vita luminosa e presa in carico dalla devozione pagana dell’aldiquà. All'interno di quel muro non c'era una meta verso la quale l'umanità dovesse marciare con la fronte aggrottata e il pugno chiuso, non c'era la meta ultraterrena del cielo come avevano importata i missionari, non c'era la meta mondana del progresso e dello sviluppo importata dai tecnici e dai commercianti, dall'Europa e dall'America, dai russi e dai militari e da Cook and son: c'era un vagare e un girare in tondo, senza meta, e in mezzo a tutto questo viveva, in dinastie monastiche e in dinastie familiari, in solitudine e in intricate alleanze senza direzione, se stesso, l'uomo. Laggiù c'erano le più belle piante perenni della terra. E anche se era solo un regno umano giallo, un esempio lontano e fatiscente di un vero regno umano: era stato e poteva essere di nuovo. (…)</p>
-</div>
-</div>
+(…) I cinesi avevano costruito una muraglia intorno al loro impero e il professor Gfäller le aveva parlato del significato più profondo di questa muraglia; aveva trascorso dieci anni in Mongolia come specialista di botanica dell'Asia orientale. All'interno di quel muro non c'era uno Stato, ma un impero, un impero umano. All'interno di quel muro, la morte non veniva ingannata con le favole dell'aldilà, ma era inclusa nell'esistenza come fratello oscuro di questa vita luminosa e presa in carico dalla devozione pagana dell’aldiquà. All'interno di quel muro non c'era una meta verso la quale l'umanità dovesse marciare con la fronte aggrottata e il pugno chiuso, non c'era la meta ultraterrena del cielo come avevano importata i missionari, non c'era la meta mondana del progresso e dello sviluppo importata dai tecnici e dai commercianti, dall'Europa e dall'America, dai russi e dai militari e da Cook and son: c'era un vagare e un girare in tondo, senza meta, e in mezzo a tutto questo viveva, in dinastie monastiche e in dinastie familiari, in solitudine e in intricate alleanze senza direzione, se stesso, l'uomo. Laggiù c'erano le più belle piante perenni della terra. E anche se era solo un regno umano giallo, un esempio lontano e fatiscente di un vero regno umano: era stato e poteva essere di nuovo. (…)</div>
+        
+      </div>
+    </div></div>
 </section>
-<section id="section-6" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-
+<section id="la-pagana-2" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;">
 <div style="position:relative; width:100vw; height:100vh; overflow:hidden;">
-<video src="media/mediafile4.mp4" autoplay loop muted playsinline
-style="width:100vw;height:100vh;object-fit:cover;display:block;" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false"></video>
+<video src="media/La-Pagana.mp4" autoplay loop muted playsinline
+style="width:100vw;height:100vh;object-fit:cover;display:block; pointer-events:none;" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false"></video>
 <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;" class="uk-text-center uk-light">
 
 <div uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
 <h2 class="live-heading uk-heading-large" style="color: #ffffff;"></h2>
 <div class="live-subtitle uk-heading-xlarge" style="color:#ffffff">La Pagana</div><div class="live-paragraph large" style="color:#ffffff;margin-top:0.5em;">tradotta da Sara Ferro W. </div>
-<a href="https://www.amazon.it/gp/product/B0DPJ4ST95" class="uk-button uk-button-primary uk-margin-top uk-border-rounded" target="_blank">Leggi ora</a>
+<div class="sc-content-button-pair"><a href="https://www.amazon.it/gp/product/B0DPJ4ST95" class="sc-core-cta sc-core-cta-light" target="_blank" rel="noopener">Leggi ora</a></div>
 </div>
 
 </div>
 </div>
-
+</div>
 </section>
-<section id="section-7" class="uk-section uk-section-primary" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:60vh;padding:0;margin:0;">
-
+<section id="bella-germaniae" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;">
         <div class="uk-section uk-section-muted uk-flex uk-flex-center uk-flex-middle"
              style="background:#ffffff; min-height:60vh;">
           
 <div class="uk-container uk-width-1-1 uk-padding-large">
-  <div style="max-width: 800px; margin: 0 auto;">
+  <div style="max-width:800px;margin:0 auto;">
     <h2 class="live-heading h-md" style="color:#000000;">Bella Germaniae</h2>
     <ul class="uk-accordion uk-margin-medium-top" uk-accordion="multiple: false">
       
@@ -1080,18 +869,534 @@ style="width:100vw;height:100vh;object-fit:cover;display:block;" uk-scrollspy="c
 </div>
   
         </div>
-      
+      </div>
 </section>
 
 <footer class="uk-section uk-section-small" 
 style="background:#000000; color:#ffffff; text-align:center;">
-<div class="footer-social" style="margin-bottom:10px;"><a href="https://www.amazon.it/dp/B0CBDS58C3?binding=paperback" uk-icon="icon: cart; ratio: 1.5" target="_blank" style="margin:0 8px; color:#ffffff"></a></div>
+<div class="footer-social" style="margin-bottom:10px;"><a href="https://www.amazon.it/dp/B0CBDS58C3?binding=paperback" uk-icon="icon: cart; ratio: 1.5" target="_blank" rel="noopener" style="margin:0 8px; color:#ffffff"></a></div>
+
+
 <p><strong>Bella Germaniae – Traduzioni  di letteratura tedesca</strong></p>
 
 <p>&copy; 2026 Bella Germaniae</p>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
+<script id="sc-protected-mail-runtime">
+(function(){
+  var KEY=0x5A;
+  function decode(hex){
+    try{
+      var bytes=[];
+      String(hex||'').replace(/../g,function(pair){bytes.push((parseInt(pair,16)^KEY)&255);return pair;});
+      if(window.TextDecoder) return new TextDecoder().decode(new Uint8Array(bytes));
+      var bin=''; for(var i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]);
+      try{return decodeURIComponent(escape(bin));}catch(_){return bin;}
+    }catch(_){return '';}
+  }
+
+  function fieldLabel(el){
+    var id=el.id||'';
+    var label=id ? document.querySelector('label[for="'+CSS.escape(id)+'"]') : null;
+    var txt=label ? label.textContent.replace(/\s*\*\s*$/,'').trim() : '';
+    return txt || el.name || el.getAttribute('placeholder') || id || 'Field';
+  }
+
+  function collectMailBody(form){
+    var lines=[];
+    var handledRadio=new Set();
+
+    form.querySelectorAll('input, textarea, select').forEach(function(el){
+      if(el.disabled || el.type==='submit' || el.type==='button' || el.type==='hidden') return;
+
+      var key=fieldLabel(el);
+
+      if(el.type==='radio'){
+        var group=el.name||key;
+        if(handledRadio.has(group)) return;
+        handledRadio.add(group);
+        var selected=form.querySelector('input[type="radio"][name="'+CSS.escape(el.name||'')+'"]:checked');
+        lines.push(key+': '+(selected ? selected.value : 'No selection'));
+        return;
+      }
+
+      if(el.type==='checkbox'){
+        lines.push(key+': '+(el.checked ? (el.value && el.value!=='on' ? el.value : 'Yes') : 'No'));
+        return;
+      }
+
+      if(el.type==='file'){
+        var names=el.files && el.files.length
+          ? Array.from(el.files).map(function(f){return f.name;}).join(', ')
+          : 'No file selected';
+        lines.push(key+': '+names);
+        return;
+      }
+
+      var value=String(el.value||'').trim();
+      lines.push(key+': '+value);
+    });
+
+    return lines.join('\r\n');
+  }
+
+  function composeMail(form){
+    if(!form) return false;
+    if(typeof form.reportValidity==='function' && !form.reportValidity()) return false;
+
+    var email=decode(form.getAttribute('data-sc-protected-mail'));
+    if(!email) return false;
+
+    var subject=form.getAttribute('data-sc-mail-subject')||'Contact';
+    var body=collectMailBody(form);
+    var mailto='mailto:'+email
+      +'?subject='+encodeURIComponent(subject)
+      +'&body='+encodeURIComponent(body);
+
+    /* iOS/Safari: launch mailto directly inside the user's tap gesture. */
+    window.location.href=mailto;
+    return false;
+  }
+
+  window.scComposeProtectedMailto=composeMail;
+
+  function bindMailtoForm(form){
+    if(!form || form.dataset.scMailBound==='1') return;
+    form.dataset.scMailBound='1';
+    form.removeAttribute('action');
+    form.removeAttribute('method');
+
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      ev.stopPropagation();
+      composeMail(form);
+      return false;
+    });
+  }
+
+  function activate(root){
+    (root||document).querySelectorAll('[data-sc-protected-mail]').forEach(function(el){
+      var email=decode(el.getAttribute('data-sc-protected-mail'));
+      if(!email) return;
+      if(el.matches('a')){
+        el.href='mailto:'+email;
+        var text=el.querySelector('[data-sc-protected-mail-text]');
+        if(text) text.textContent=email;
+      }else if(el.matches('form[data-sc-delivery="mailto"]')){
+        bindMailtoForm(el);
+      }
+    });
+  }
+  function boot(){
+    activate(document);
+    if(window.MutationObserver){
+      new MutationObserver(function(records){
+        records.forEach(function(r){r.addedNodes.forEach(function(n){if(n&&n.nodeType===1) activate(n);});});
+      }).observe(document.documentElement,{childList:true,subtree:true});
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot,{once:true});
+  else boot();
+})();
+</script>
+<script id="sc-form-file-runtime">
+(function(){
+  function bind(){
+    document.querySelectorAll('.sc-file-native:not([data-sc-file-bound])').forEach(function(input){
+      input.setAttribute('data-sc-file-bound','1');
+      input.addEventListener('change',function(){
+        var out=document.querySelector('[data-sc-file-name="'+input.id+'"]');
+        if(out) out.textContent=input.files&&input.files.length
+          ? Array.from(input.files).map(function(f){return f.name;}).join(', ')
+          : 'No file selected';
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true});
+  else bind();
+})();
+</script>
+
+
+<style>
+@media (max-width: 900px) {
+  #site-search-toggle,
+  #site-back-to-top {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    padding: 8px !important;
+  }
+  #site-search-toggle > span,
+  #site-back-to-top > span,
+  #site-search-toggle svg,
+  #site-back-to-top svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Search layering:
+   Editor section controls use z-index:2147483000.
+   Search must sit above them, while Lightbox must still sit above Search. */
+body.sc-search-navbar-mode #dynamic-navbar-container,
+body.sc-search-navbar-mode #preview-dynamic-nav,
+body.sc-search-navbar-mode nav.sc-dynamic-navbar{
+  z-index:2147483100 !important;
+  overflow:visible !important;
+}
+#site-search-widget,
+#site-search-panel{
+  z-index:2147483150 !important;
+}
+.uk-lightbox,
+.uk-lightbox.uk-open,
+.uk-lightbox .uk-lightbox-items{
+  z-index:2147483200 !important;
+}
+
+/* Search as a genuine Dynamic Nav Bar item. */
+#site-search-widget.sc-search-navbar{
+  position:relative;
+  z-index:2147483150;
+}
+#site-search-widget.sc-search-navbar #site-search-toggle{
+  width:40px !important;
+  height:40px !important;
+  min-width:40px !important;
+  min-height:40px !important;
+  padding:8px !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  color:var(--navbar-link-color,#111) !important;
+}
+#site-search-widget.sc-search-navbar #site-search-toggle svg{
+  width:20px !important;
+  height:20px !important;
+}
+#site-search-widget.sc-search-navbar #site-search-toggle svg,
+#site-search-widget.sc-search-navbar #site-search-toggle svg *,
+body.sc-search-navbar-mode #site-search-toggle svg,
+body.sc-search-navbar-mode #site-search-toggle svg *{
+  stroke-width:2 !important;
+}
+#site-search-widget.sc-search-navbar #site-search-panel{
+  right:0;
+  left:auto;
+  top:calc(100% + 14px);
+  bottom:auto;
+  transform:none;
+}
+
+/* Mobile navbar Search + menu are above page content, below Lightbox. */
+body.sc-search-navbar-mode #mobile-menu{
+  z-index:2147483120 !important;
+}
+body.sc-search-navbar-mode #mobile-menu-toggle{
+  z-index:2147483140 !important;
+}
+
+/* Mobile navbar search icon sits immediately before the hamburger. */
+@media (max-width:1024px){
+  body.sc-search-navbar-mode #site-search-toggle{
+    position:fixed !important;
+    top:12.5px !important;
+    right:58px !important;
+    left:auto !important;
+    z-index:2147483150 !important;
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    padding:8px !important;
+    border:0 !important;
+    border-radius:50% !important;
+    background:transparent !important;
+    color:var(--navbar-link-color,#111) !important;
+    box-shadow:none !important;
+  }
+  body.sc-search-navbar-mode #site-search-toggle svg{
+    width:20px !important;
+    height:20px !important;
+  }
+  body.sc-search-navbar-mode #site-search-panel.sc-search-mobile-panel{
+    position:static !important;
+    width:calc(100% - 32px) !important;
+    margin:12px auto 4px !important;
+    transform:none !important;
+    box-shadow:none !important;
+    border-radius:14px !important;
+    order:9999;
+  }
+}
+</style>
+
+<div id="site-search-widget"
+  class="sc-search-navbar"
+  style="position:relative;z-index:2147483150;">
+  <button id="site-search-toggle" type="button" aria-label="Search"
+    style="width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:#111;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;display:grid;place-items:center;padding:var(--sc-float-pad,0);">
+    <span uk-icon="search"></span>
+  </button>
+  <div id="site-search-panel"
+    style="display:none;position:absolute;right:0;top:54px;width:min(340px,82vw);background:#fff;color:#111;padding:12px;border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,.25);">
+    <input id="site-search-input" type="search" placeholder="Search all pages..."
+  style="width:100%;box-sizing:border-box;border:0;border-bottom:2px solid #111;padding:10px 8px;font:inherit;background:#fff !important;color:#111 !important;-webkit-text-fill-color:#111 !important;-webkit-appearance:none;appearance:none;outline:none;">
+    <div id="site-search-results" style="max-height:300px;overflow:auto;margin-top:8px;"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var MODE="export";
+  var NAVBAR_MODE=true;
+  var CURRENT_PAGE_ID="home";
+  var INDEX_B64="W3sicGFnZUlkIjoiaG9tZSIsInBhZ2VUaXRsZSI6IkhvbWUiLCJhbmNob3IiOiIxIiwidGV4dCI6IkhvbWUg4oCUIExlZ2dpIG9yYSBWZW5lcmUgaW4gUGVzY2kg4oCTIFJvbWFuem8gYXN0cm9sb2dpY28gTWF4IE1vaHIgfCBUcmFkdXppb25lOiBTYXJhIEZlcnJvIFcuIExlZ2dpIG9yYSBMYSBQYWdhbmEgTWF4IE1vaHIgfCBUcmFkdXppb25lOiBTYXJhIEZlcnJvIFcuIExlZ2dpIG9yYSBEb25uYSBzZW56YSByZW1vcmUgTWF4IE1vaHIgfCBUcmFkdXppb25lOiBTYXJhIEZlcnJvIFcuIExlZ2dpIG9yYSIsInVybCI6ImluZGV4Lmh0bWwifSx7InBhZ2VJZCI6ImhvbWUiLCJwYWdlVGl0bGUiOiJIb21lIiwiYW5jaG9yIjoidmVuZXJlLWluLXBlc2NpLXJvbWFuem8tYXN0cm9sb2dpY28iLCJ0ZXh0IjoiSG9tZSDigJQgVmVuZXJlIGluIFBlc2NpIOKAkyBSb21hbnpvIGFzdHJvbG9naWNvIOKAlCBWZW5lcmUgaW4gUGVzY2kg4oCTIFJvbWFuem8gYXN0cm9sb2dpY28gZGkgTWF4IE1vaHIgdHJhZG90dG8gZGEgU2FyYSBGZXJybyBXLiIsInVybCI6ImluZGV4Lmh0bWwifSx7InBhZ2VJZCI6ImhvbWUiLCJwYWdlVGl0bGUiOiJIb21lIiwiYW5jaG9yIjoiMyIsInRleHQiOiJIb21lIOKAlCBWZW5lcmUgaW4gUGVzY2kgLSBSb21hbnpvIGFzdHJvbG9naWNvLCBpbCBwcmltbyByb21hbnpvIGRpIE1heCBNb2hyIHRyYWRvdHRvIGRhIFNhcmEgRmVycm8gVy4gQmVybGlubywgYW5uaSDigJkyMC4gVW4gbWVkaWNvLCBpbCBkb3R0b3IgUXVhw58gZSB1bmEgZG90dG9yZXNzYSBpbiBtZWRpY2luYSwgbm9uIGFiaWxpdGF0YSwgbGEgc2lnbm9yaW5hIE90dGVybG9vLCBlbnRyYW1iaSBjb24gcmFwcG9ydGkgZGkgbGF2b3JvIGEgZGlyIHBvY28gdHJhYmFsbGFudGksIHNpIGluY29udHJhbm8gaW4gb2NjYXNpb25lIGRpIHVuIHBhcnRvIGluIHVuYSByaWNjYSB2aWxsYSBkb3ZlIGxvcm8gbWFsZ3JhZG8gcGVyIHVuIGVxdWl2b2NvIHByZXN0YW5vIGFtYmVkdWUgYXNzaXN0ZW56YSBhbGxhIHBhcnRvcmllbnRlIOKAkyBub24gc2VuemEgcGVzdGFyc2kgaSBwaWVkaSAtIGUgZmFubm8gbGEgY29ub3NjZW56YSBkaSB1bm8gc3RyYW5vIHBlcnNvbmFnZ2lvLCBpbCBkb3R0b3IgQWJiYS4gQXNzaWVtZSBmaW5pcmFubm8gcGVyIGFwcmlyZSBhbGxlIHBvcnRlIGRlbGxhIGNpdHTDoCB1bmEgY29zw6wgZGV0dGEg4oCcY2xpbmljYSBtZWRpY28tYXN0cm9sb2dpY2HigJwsIGZvbmRhdGEgYWxsbyBzY29wbyBkaSBjaXJjb252ZW5pcmUsIHNlYmJlbmUgbW9sdG8gZWxlZ2FudGVtZW50ZSwgc2NoaWVyZSBkaSBudW92aSByaWNjaGkgZSB0dXR0YSB1bmEgc3ZhcmlhdGEgdmFyaWV0w6AgZGkgYXBwYXJ0ZW5lbnRpIGFsIGJlbCBtb25kbywgY2hlIGNvbWUgc3RyZWdhdGkgZGFsbCdhbGx1cmUgZGVsIGRvdHRvciBBYmJhIGEgZnJvdHRlIGFkZXJpcmFubm8gZW50dXNpYXN0aSBhbGwnaW1wcmVzYS4gTmVsbCdlY29ub21pYSBkZWwgcm9tYW56byBxdWVzdGkgY29zdGl0dWlyYW5ubyB1bmEgc29ydGEgZGkgZ2FsbGVyaWEgZGkgdGlwaSB1bWFuaSBhIG1ldMOgIHRyYSBpbXBpZXRvc28gZmFsw7IgZGVsbGUgdmFuaXTDoCBlIHBpdHR1cmEgZGkgZ2VuZXJlIGJvcmdoZXNlLCByaXRyYXR0aXN0aWNhIGVzcHJlc3Npb25pc3RpY2EgZSBwYXJvZGlhIGRlbGxhIE51b3ZhIG9nZ2V0dGl2aXTDoCwgcmFmZmlndXJhdGkgY29uIHVubyBzdGlsZSBzZW1wcmUgaW4gYmlsaWNvIHRyYSBjYXJpY2F0dXJhIGUgaW1wcmVzc2lvbmkgZGkgcHNpY29sb2dpYSBkZWwgcHJvZm9uZG8uIExhIHRyYW1hIHNpIHNub2RhIGF0dG9ybm8gYWxsZSBzY2VsdGUgZGlzcGVyYXRlIGRlaSB0cmUsIGEgdHVybm8gZGV0dGF0ZSBkYSBvcHBvcnR1bmlzbW8sIGRhIHVubyBzdHJhbm8gaWRlYWxpc21vIHNjcmV6aWF0byBkaSBzcHJlZ2l1ZGljYXRvIHByYWdtYXRpc21vIG8gYW5jb3JhIGd1aWRhdGUgZGEgcmlndXJnaXRpIGRpIGFudGljb25mb3JtaXNtbywgcmlvdHRvc2l0w6AgZSByaWJlbGxpb25lLiBVbmEgZnJvZGUgYmVuIGFyY2hpdGV0dGF0YSBlIHJpdXNjaXRhLCBpIGN1aSBwcm9maXR0aSBpbGxlY2l0aSB2ZXJyYW5ubyBzcGFydGl0aSBkYWkgdHJlIHBlcnNvbmFnZ2kgZGkgY3VpIHByaW1hLCBjYXBpdGFuYXRpIGRhbGwnaXBub3RpY28gQWJiYS4gVmVuZXJlIGluIFBlc2NpIHNpIHN2aWx1cHBhIGF0dG9ybm8gYSB0ZW1hdGljaGUgcmljb3JyZW50aSBuZWxsYSB2aXRhIGRlbCBzdW8gYXV0b3JlIGUgbmVsbGUgcmlmbGVzc2lvbmkgdGlwaWNoZSBkZWxsYSBzdWEgZXBvY2EsIHR1dHRhdmlhIGVsYWJvcmF0ZSBkYSBNb2hyIGluIG1hbmllcmEgc3VibGltZW1lbnRlIHN1aSBnZW5lcmlzLCBpbmFzcGV0dGF0YW1lbnRlIGNydWRhIGUgdGVuZXJhOiBpbCBjb25mbGl0dG8gdHJhIG5hdHVyYSBlIHRlY25pY2EsIHRyYSBtb3JhbGUgZSBkZW5hcm8gLSB0cmEgbGEgR3JhbmRlIGUgbGEgUGljY29sYSBSYWdpb25lIC0sIHRyYSBjaXR0w6AgZSBjYW1wYWduYSwgdHJhIG1ldHJvcG9saSBlIHByb3ZpbmNpYSwgc2VuemEgcG9zc2liaWxpdMOgIGRpIHJpc29sdmVyZSB0YWxpIHRlbnNpb25pIHRhbnRvIGNvbm5hdHVyYXRlIGFsbGEgc2Vuc2liaWxpdMOgIG1vZGVybmEuIFF1aW5kaSBuaWVudGUgdmVybyBlIHByb3ByaW8gcml0b3JubyBhbGxhIG5hdHVyYSwgbsOpIHBhbmVnaXJpY2kgaW4gZmF2b3JlIGRlbGwnaWRpbGxpbyBidWNvbGljby4gTGEgdmlhIGQndXNjaXRhLCB1bmljYSBlIGRlZ25pc3NpbWEgw6ggcXVlbGxhIGRlbGxhIHBhcm9kaWEsIGRlbGxhIHNhdGlyYSwgZGVsbCd1bW9yaXNtbywgZGVsIG5vbnNlbnNlLCBkZWxsJ2ludmV0dGl2YSBzb2NpYWxlIGVsZWdhbnRlbWVudGUgc2NvY2NhdGEsIHRyYSBpbCBzZXJpbyBlIGlsIGZhY2V0bywgbWEgc2VtcHJlIHJhZmZpbmF0YSwgc29ycHJlbmRlbnRlbWVudGUgbGVnZ2VyYSBxdWFudG8gZWZmaWNhY2UsIGNoZSBzY2hlcm5pc2NlIGF0dGVnZ2lhbWVudGkgbm9uIHJlZ2lzdHJhdGkgZGFpIHBpw7kgY29tZSBiaXNsYWNjaGkgLSBhbCBtYXNzaW1vIHN0cmFtYmksIGNvbXVucXVlIGJlbiB0b2xsZXJhdGkgZGEgY2hpIHNpIGFzc29nZ2V0dGEgdm9sZW50aWVyaSBhaSBjYXByaWNjaSBkZWxsYSBtb2RhIGUgYWkgZGV0dGFtaSBkZWxsYSBzb2NpZXTDoCAtLCBtYSBjaGUgYSB1biBwacO5IGF0dGVudG8gc2NydXRpbmlvIGRlbGxhIHJhZ2lvbmUgbm9uIHBvc3Nvbm8gY2hlIGFwcGFyaXJlIG5lbGxhIGxvcm8gYml6emFycmlhIGRlbWVuemlhbGUsIG1hbmlhY2FsaSwgc2N1cnJpbGksIHBvdGVuemlhbG1lbnRlIGNhbGFtaXRvc2kuIFNlbnphIGZhcm5lIHRyb3BwbyB1biBkcmFtbWEgcGVyw7IsIGxlIGNvc2UgdmFubm8gc2Vjb25kbyBpbCBsb3JvIGRlc3Rpbm8sIHNvbG8gbGUgc3RlbGxlIHNhbm5vLCBwZXIgY2hpIHNpIGxhc2NpYSBpbWJhbWJvbGFyZSBkYSB0YWxpIGFtZW5pdMOgLCBzZWJiZW5lLCBzZWJiZW5lLCBzZWJiZW5lLi4uIiwidXJsIjoiaW5kZXguaHRtbCJ9LHsicGFnZUlkIjoiaG9tZSIsInBhZ2VUaXRsZSI6IkhvbWUiLCJhbmNob3IiOiJ2ZW5lcmUtaW4tcGVzY2ktcm9tYW56by1hc3Ryb2xvZ2ljby0yIiwidGV4dCI6IkhvbWUg4oCUIFZlbmVyZSBpbiBQZXNjaSDigJMgUm9tYW56byBhc3Ryb2xvZ2ljb3RyYWRvdHRvIGRhIFNhcmEgRmVycm8gVy4gTGVnZ2kgb3JhIiwidXJsIjoiaW5kZXguaHRtbCJ9LHsicGFnZUlkIjoiaG9tZSIsInBhZ2VUaXRsZSI6IkhvbWUiLCJhbmNob3IiOiJsYS1wYWdhbmEiLCJ0ZXh0IjoiSG9tZSDigJQgTGEgUGFnYW5hIOKAlCBMYSBQYWdhbmEgZGkgTWF4IE1vaHIgdHJhZG90dG8gZGEgU2FyYSBGZXJybyBXLiIsInVybCI6ImluZGV4Lmh0bWwifSx7InBhZ2VJZCI6ImhvbWUiLCJwYWdlVGl0bGUiOiJIb21lIiwiYW5jaG9yIjoiNiIsInRleHQiOiJIb21lIOKAlCBMYSBQYWdhbmEsIGlsIHNlY29uZG8gcm9tYW56byBkaSBNYXggTW9ociB0cmFkb3R0byBkYSBTYXJhIEZlcnJvIFcuIC0gZ2nDoCB0cmFkdXR0cmljZSBkaSBWZW5lcmUgaW4gUGVzY2kuICguLi4pIFVuYSB2b2x0YSBs4oCZaW5zZWd1aW1lbnRvIHBhZ2FubyBzaSBpbm9sdHJhdmEgYW5zaW1hbnRlIG5lbGxhIGZvcmVzdGEsIGNvbiBsZSBzdW9sZSBudWRlIHN1bGxlIGZvZ2xpZSB2ZWNjaGllLCBjb24gbGUgY29zY2UgbGFyZ2hlIHN1bGxlIHN0ZXJwYWdsaWUgZGVsIGZyYW5naXZlbnRvLCBzZW1wcmUgcGnDuSBpbiBwcm9mb25kaXTDoCBuZWwgc290dG9ib3NjbywgdmlhIHZpYSBwacO5IGxvbnRhbm8gZGFsIHNvbGUsIHF1aW5kaSBsJ3VvbW8gdmVuaXZhIHBpw7kgdmljaW5vLCBzZW56YSBwYXJvbGUsIHNlbnphIHVuIHJpY2hpYW1vLCBhbGxvcmEgbCdvZG9yZSBtdXNjaGlvc28gc2kgbGV2YXZhIGludG9ybm8gYWxsYSBkb25uYSwgYWxsb3JhIGlsIHN1byBjYW1taW5vIHNpIGZhY2V2YSBkZWJvbGUsIGRlYm9saSBpbCBzdW8gY3VvcmUgZSBsZSBzdWUgdmlzY2VyZSwgcXVpbmRpIGxlaSBnaXVuZ2V2YSBhbGxhIG1hY2NoaWEgZGkgbXVzY2hpbyB0cmEgaSBwaW5pIGltcGlnbGlhdGksIGzDrCBjYWRldmEgY29uIGxlIGdpbm9jY2hpYSBhbGxlbnRhdGUsIGzDrCBhbmNoZSBsdWkgY2FkZXZhIHN1bGxhIHRlcnJhIHVtaWRhIGRlbGxhIHN1YSB0ZXJyYSwgaWwgc2lnbm9yZSBkZWxsYSB0ZXJyYSwgbCd1b21vLiBQb2kgZXJhbm8gYXJyaXZhdGkgaSBzYWNlcmRvdGkgZSBzaSBlcmFubyBlcmV0dGkgc29wcmEgbGEgY29wcGlhIHVtYW5hIGUgYXZldmFubyBzaXN0ZW1hdG8gaSBsb3JvIHNnYWJlbGxpIG5lbGxlIHN0YW56ZSBkZWkgbG9ybyBkw6hpIGludmlzaWJpbGksIHBlciBwb3RlciBzdGFyZSBwacO5IGluIGFsdG8gZGVsbGEgY29wcGlhIHVtYW5hLCBlIGlsIGxvcm8gZGlzY29yc28gZXJhIHN0YXRvOiBcIlR1IGRldmkgZSB0dSBub24gZGV2aSFcIi4gRG92cmFpIHN0cmlzY2lhcmUgc3VsIHR1byB2ZW50cmUgZSBtYW5nZXJhaSBwb2x2ZXJlLCBkb3ZyYWkgYXZlcmUgc3Vkb3JlIHN1bGxhIHR1YSBmcm9udGUsIGRvdnJhaSBwb3JnZXJlIGxhIGd1YW5jaWEgc2luaXN0cmEsIGRvdnJhaSBlc3NlcmUgcG92ZXJvIG8gdmVkZXJlIGRpIHBhc3NhcmUgYXR0cmF2ZXJzbyBsYSBjcnVuYSBkaSB1biBhZ28sIGUgZG92cmFpIHBhZ2FyZSBiZW5lIGkgdHVvaSBzYWNlcmRvdGksIGFmZmluY2jDqSB0aSBkaWNhbm8gY2nDsiBjaGUgZGV2aS4gUG9pIHNpIGVyYSBhdnZlbnRhdG8gbG8gU3RhdG8gc3VsbGEgY29wcGlhIGludGltaWRpdGEgZSBpbCBzdW8gZGlzY29yc28gZXJhIHN0YXRvOiBcIlR1IHB1b2kgZSB0dSBub24gcHVvaSFcIi4gUHVvaSBtb3JpcmUgcGVyIGxvIFN0YXRvIGUgZ2VuZXJhcmUgZmlnbGksIHB1b2kgZXNzZXJlIHNjaGlhdm8gZGVsbG8gU3RhdG8gZSBwYWdhcmUgbGUgdGFzc2UsIG1hIG5vbiBwdW9pIGNhbHBlc3RhcmUgaWwgcHJhdG8gdmVyZGUgZSBub24gcHVvaSBlc3NlcmUgcG92ZXJvIG8gc2FyYWkgYXJyZXN0YXRvLCBub24gcHVvaSBmYXJlIG5pZW50ZSBpbiBuZXJvIGUgcGVuc2FyZS4gRSBwYXJsYXRlIGNvbiBsYSBtYW1tYT8gUGVyIHVuIGFubm8gbmVsbGEgdGVycmEgcGlldHJvc2EgZGVsbGEgR2xvbm4hIEUgcGFybGF0ZSBjb24gcGFww6A/IERpdm9yYXRvIHBlbGxlIGUgY2FwZWxsaSBkYWxsYSBjaXR0w6AgdXJiYW5hLi4uIEZpbmNow6kgbGEgbGliZXJ0w6Agbm9uIGdpdW5zZSBmaW5hbG1lbnRlIGFsbGEgY29wcGlhIHVtYW5hIGRpc3BlcmF0YSBlIHN1aSBnaW9ybmFsaSBzaSBsZXNzZTogXCJMYSBjb3BwaWEgdW1hbmEgw6ggbGliZXJhLCBhbGxlbHVpYSFcIi4gQWxsb3JhIGxhIGNvcHBpYSBsaWJlcmF0YSBzaSBnZXR0w7Igc3VsIG51b3ZvIGxldHRvIG51emlhbGUgaW4gbGliZXJ0w6AgZSBkYSBsw6wgbmVsIHZ1b3RvLCBwcm9wcmlvIGNvbWUgZXJhIHN0YXRvIHByZXNjcml0dG8gZGFsIGxvcm8gZ2lvcm5hbGUuIE1hIGlsIGdpb3JubyBkb3BvIGVyYSBmaW5pdGEgbGEgcmFnaW9uZXZvbGV6emEgZSBzcHV0YXZhbm8gc3VpIHJlY2lwcm9jaSBkZXNpZGVyaSBmYW50YXNtYSBlIG1hbGVkaWNldmFubyBpIGxvcm8gbmF0aSBtb3J0aSBlIHJvbXBldmFubyBsYSBsaWJlcnTDoCBkaSBjYXJ0YSwgcGVyY2jDqSBlcmEgc3RhdGEgc29sbyBsYSBsaWJlcnTDoCBkZWdsaSBzY2hpYXZpIGxpYmVyYXRpIGUgbm9uIGxhIGxpYmVydMOgIGRlbGxlIHBlcnNvbmUgY3Jlc2NpdXRlIGxpYmVyZS4uLiBRdWluZGkgY29zYSBmYWNldmEgdW5hIGRvbm5hIHF1YW5kbywgZG9wbyBpbCBmYWxsaW1lbnRvIGRlbGxvIFN0YXRvIGUgZGVsbGEgQ2hpZXNhIGUgZGVsbGEgY2FzYSBkZWkgZ2VuaXRvcmkgZSBkZWxsYSBsaWJlcnTDoCBkaSBzdGFtcGEsIHVuIHVvbW8gbWFzY2hpbyBsZSBwaWFjZXZhPyAoLi4uKSDigIsgKOKApikgSSBjaW5lc2kgYXZldmFubyBjb3N0cnVpdG8gdW5hIG11cmFnbGlhIGludG9ybm8gYWwgbG9ybyBpbXBlcm8gZSBpbCBwcm9mZXNzb3IgR2bDpGxsZXIgbGUgYXZldmEgcGFybGF0byBkZWwgc2lnbmlmaWNhdG8gcGnDuSBwcm9mb25kbyBkaSBxdWVzdGEgbXVyYWdsaWE7IGF2ZXZhIHRyYXNjb3JzbyBkaWVjaSBhbm5pIGluIE1vbmdvbGlhIGNvbWUgc3BlY2lhbGlzdGEgZGkgYm90YW5pY2EgZGVsbCdBc2lhIG9yaWVudGFsZS4gQWxsJ2ludGVybm8gZGkgcXVlbCBtdXJvIG5vbiBjJ2VyYSB1bm8gU3RhdG8sIG1hIHVuIGltcGVybywgdW4gaW1wZXJvIHVtYW5vLiBBbGwnaW50ZXJubyBkaSBxdWVsIG11cm8sIGxhIG1vcnRlIG5vbiB2ZW5pdmEgaW5nYW5uYXRhIGNvbiBsZSBmYXZvbGUgZGVsbCdhbGRpbMOgLCBtYSBlcmEgaW5jbHVzYSBuZWxsJ2VzaXN0ZW56YSBjb21lIGZyYXRlbGxvIG9zY3VybyBkaSBxdWVzdGEgdml0YSBsdW1pbm9zYSBlIHByZXNhIGluIGNhcmljbyBkYWxsYSBkZXZvemlvbmUgcGFnYW5hIGRlbGzigJlhbGRpcXXDoC4gQWxsJ2ludGVybm8gZGkgcXVlbCBtdXJvIG5vbiBjJ2VyYSB1bmEgbWV0YSB2ZXJzbyBsYSBxdWFsZSBsJ3VtYW5pdMOgIGRvdmVzc2UgbWFyY2lhcmUgY29uIGxhIGZyb250ZSBhZ2dyb3R0YXRhIGUgaWwgcHVnbm8gY2hpdXNvLCBub24gYydlcmEgbGEgbWV0YSB1bHRyYXRlcnJlbmEgZGVsIGNpZWxvIGNvbWUgYXZldmFubyBpbXBvcnRhdGEgaSBtaXNzaW9uYXJpLCBub24gYydlcmEgbGEgbWV0YSBtb25kYW5hIGRlbCBwcm9ncmVzc28gZSBkZWxsbyBzdmlsdXBwbyBpbXBvcnRhdGEgZGFpIHRlY25pY2kgZSBkYWkgY29tbWVyY2lhbnRpLCBkYWxsJ0V1cm9wYSBlIGRhbGwnQW1lcmljYSwgZGFpIHJ1c3NpIGUgZGFpIG1pbGl0YXJpIGUgZGEgQ29vayBhbmQgc29uOiBjJ2VyYSB1biB2YWdhcmUgZSB1biBnaXJhcmUgaW4gdG9uZG8sIHNlbnphIG1ldGEsIGUgaW4gbWV6em8gYSB0dXR0byBxdWVzdG8gdml2ZXZhLCBpbiBkaW5hc3RpZSBtb25hc3RpY2hlIGUgaW4gZGluYXN0aWUgZmFtaWxpYXJpLCBpbiBzb2xpdHVkaW5lIGUgaW4gaW50cmljYXRlIGFsbGVhbnplIHNlbnphIGRpcmV6aW9uZSwgc2Ugc3Rlc3NvLCBsJ3VvbW8uIExhZ2dpw7kgYydlcmFubyBsZSBwacO5IGJlbGxlIHBpYW50ZSBwZXJlbm5pIGRlbGxhIHRlcnJhLiBFIGFuY2hlIHNlIGVyYSBzb2xvIHVuIHJlZ25vIHVtYW5vIGdpYWxsbywgdW4gZXNlbXBpbyBsb250YW5vIGUgZmF0aXNjZW50ZSBkaSB1biB2ZXJvIHJlZ25vIHVtYW5vOiBlcmEgc3RhdG8gZSBwb3RldmEgZXNzZXJlIGRpIG51b3ZvLiAo4oCmKSIsInVybCI6ImluZGV4Lmh0bWwifSx7InBhZ2VJZCI6ImhvbWUiLCJwYWdlVGl0bGUiOiJIb21lIiwiYW5jaG9yIjoibGEtcGFnYW5hLTIiLCJ0ZXh0IjoiSG9tZSDigJQgTGEgUGFnYW5hdHJhZG90dGEgZGEgU2FyYSBGZXJybyBXLiBMZWdnaSBvcmEiLCJ1cmwiOiJpbmRleC5odG1sIn0seyJwYWdlSWQiOiJob21lIiwicGFnZVRpdGxlIjoiSG9tZSIsImFuY2hvciI6ImJlbGxhLWdlcm1hbmlhZSIsInRleHQiOiJIb21lIOKAlCBCZWxsYSBHZXJtYW5pYWUg4oCUIEJlbGxhIEdlcm1hbmlhZSBDaGkgc2lhbW8gQmVsbGEgR2VybWFuaWFlIMOoIHVuYSB0cmliw7kgZGkgYXV0b3JpIGUgdHJhZHV0dG9yaSBjaGUgYXV0YXJjaGljYW1lbnRlIHNpIHB1YmJsaWNhbm8gbWFyY2hpYXRpIGEgZmVycm8gZSBmdW9jbywgbWV6emkgY29uIGN1aSBub24gZGV2YXN0YW5vIG1hIGFsbCdvcHBvc3RvIGNvbXBsZXRhbm8gaWwgcGFub3JhbWEgb2ZmZXJ0byBkYWwgc2lzdGVtYSBlZGl0b3JpYWxlLiBDb24gbGEgc3BhZGEgYWxpYXMgbGEgcGVubmEgQmVsbGEgR2VybWFuaWFlIGN1cmEgdGF1bWF0dXJnaWNhbWVudGUgYWwgZ3JpZG8gZGkgc2ltaWxpYSBzaW1pbGlidXMgY3VyYW50dXIgb3BlcmUgbmF0aXZlIGRlbGxvIHNwYXppbyBvbWVvcGF0aWNvIG1pdHRlbGV1cm9wZW8gY29uIGZvY3VzIGUgZmlhbW1lIHN1bGxhIEdlcm1hbmlhLCBzZW56YSB0cmF1bWksIHNvbG8gVHLDpHVtZSBvc3NpYSBzb2duaSwgc2VnbmF0YW1lbnRlIHNlZ25hdHVyZSB1bHRyYW1vbmRhbmUgdHJhZG90dGUgaW4gc2VnbmFsaSBtb25kYW5pc3NpbWksIGFpIHBpw7kgYWwgcGnDuSB0cm9wcG8gbW9uZGFuaS4gVHJhZHV6aW9uaSBsZXR0ZXJhcmllIGRhbCB0ZWRlc2NvIGFsbOKAmWl0YWxpYW5vIGUgZGFsbOKAmWl0YWxpYW5vIGFsIHRlZGVzY28gZGkgb3BlcmUgc29sbyBhbGzigJlvY2NoaW8gc3RhbmNvIGFsbOKAmWFwcGFyZW56YSBkYXRhdGUsIGNoZSB0dXR0YXZpYSwgdHV0dGFmaWF0YSwgdHV0dG9kw6wgc3VvbmFubyBpbmVkaXRlIGdpw6AgcGVyIGVzc2VyZSBzdGF0ZSBkZXR0ZSBpbiBhbHRyYSBsaW5ndWEgZSBhIGRpc3BldHRvIGRpIGVzc2VyIHN0YXRlIHNlcHBlbGxpdGUgdml2ZSwgdmVnZXRlIHNlYmJlbmUgcGVyIGF2ZXIgc29mZmVydG8gdGFsZSBzb3J0ZSwgbWFuY28gYSBkaXJsbywgYWxtZW5vIGJlbGxpY29zZSBxdWFudG8gVW1hIFRodXJtYW4gaW4gS2lsbCBCaWxsLiBNYSBhbmNoZSBvcGVyZSBuYXJyYXRpdmUgZSBwb2V0aWNoZSBudW92ZSBkaSBwYWNjbyBlIHBlciBuaWVudGUgdW4gcGFjY28sIHNlIG5vbiBwaWVubyBkaSByZWdhbGkgcmVnYWxpLCBkZWduaSBkaWduaXRhcmkgZGVsIHRlbXBvIGRpIGxldHR1cmEuIENvbXVuZSBkZXRlcm1pbmF0b3JlIGUgZmlsbyBjb25kdXR0b3JlIHVuIHRyYW5zZmVyIGN1bHR1cmFsZSAtIGFuY2hlIHNvbG8gYW5kYXRhLCBhbCBtZWdsaW8gYW5kYXRhIGUgcml0b3JubyAtIHRyYSBsYSBHZXJtYW5pYSBlIGzigJlJdGFsaWEgZS9vIHZpY2V2ZXJzYS4gQmVsbGUgbGV0dGVyZSBpc3BpcmFudGkgYmVsbGUgY29zZSwgYmVsbGljb3NlIGNvbWUgbG8gcHXDsiBlc3NlcmUgdW5hIHBhcnRpdGEgYSBzY2FjY2hpLCBzZW56YSBtYWNjaGlhIGUgc2VuemEgcGF1cmEgbsOpIHNwYXJnaW1lbnRpIGRpIHNhbmd1ZS4gUGl1dHRvc3RvIGluZnVzaW9uaSBkaSBxdWVzdGlvbmkgYXBlcnRlLCBzcGFsYW5jYXRlIHN1IGFiaXNzaSBkaSBwcm9mb25kaXTDoCBjb3NtaWNoZSwgY2hlIGxhc2NpYW5vIGF0dG9uaXRpIGUgZG9wbyBxdWVsIGJyZXZlIGx1bmdvIGFkZGlvIGFsbOKAmXVtYW5vIHRyb3BwbyB1bWFubywgYmlzb2dub3NpIGRpIHBhcm9sZSB1bWFuaXNzaW1lIC0gZOKAmXVtYW5pdMOgIHZhcmllZ2F0YSBtYSBpbnZhcmlhYmlsbWVudGUgdGVuZGVudGUgYWwgcml0cm92YXJlIGzigJl1bWFubyBvbHRyZSBs4oCZdW1hbm8uIE9wZXJhIHNpbWlsIGVkaXRvcmlhbG1lbnRlIHB1ciBub24gZXNzZW5kbyB1biBlZGl0b3JlLCBvcGVyYSBzb2xvIG9nbmkgdm9sdGEgY2hlIGlsIHBvdGVuemlhbGUgZWxlbWVudG8gY2hlIHNpIHNlbnRlIGNoaWFtYXRvIGluIGNhdXNhIGxvIHJpdGllbmUgb3Bwb3J0dW5vLCBwcm9tdW92ZW5kbyBsYXZvcmkgc3RyYXZhZ2FudGksIGludXNpdGF0aSwgZXRlcm9jbGl0aSwgYSBzZWNvbmRhIGRlbGzigJllc3RybywgbmVsbG8gc3RpbGUsIG5lbCBjb250ZW51dG8sIG5lbGxhIGZvcm1hLCBuZWwgbWVzc2FnZ2lvLiBCZWxsYSBHZXJtYW5pYWUgYSBkaWZmZXJlbnphIGRpIEJlbGxhIEl0YWxpYSAtIGRpY2l0dXJhIGNvbiBjdWkgT2x0cmFscGUgc3Blc3NvIHNpIGluc2lzdGUgYWQgaW5kaWNhcmUgY29uIGdyYW5kZSBzdmlvbGluYXJlIGVtb3ppb25hdG8gbCdJdGFsaWEgLSBlc2lzdGUgZGF2dmVyby4gSWwgcmVzdG8gw6ggc29sbyBCZWwgUGFlc2UsIG1hcmNhIGTigJllc3BvcnRhemlvbmUuIEluIGFzc2VuemEgZGkgZGl6aW9uaSBwZXIgaW5kaWNhcmUgbGEgR2VybWFuaWEsIHNpYW1vIHJpY29yc2kgYWdsaSBhbnRpY2hpLCBuZWxsYSBmYXR0aXNwZWNpZSBhIFBsaW5pbyBJbCBWZWNjaGlvLCBjaGUgY29uIGxlIHN1ZSBHdWVycmUgZGVsbGEgR2VybWFuaWEgbyB0ZXV0b25pY2hlIGZhcsOgIHRhY2l0YW1lbnRlIGRhIGJsdWVwcmludCBhIFRhY2l0by4gQmVsbGEgR2VybWFuaWFlIGR1bnF1ZSwgcGVyIHBpw7kgb3BlcmUgZSBtZW5vIGd1ZXJyZSAtIGMnw6ggc2VtcHJlIHVuYSBzb2x1emlvbmUgcGnDuSB2YW50YWdnaW9zYSBwZXIgdHV0dGk7IGNoZSBsYSBsZXR0dXJhIC0gcXVlc3RvIGwnYXVndXJpbyAtIHBvc3NhIGFpdXRhcmUgYSBzY292YXJsZS4iLCJ1cmwiOiJpbmRleC5odG1sIn1d";
+  var ROUTES_B64="eyJob21lIjoiaW5kZXguaHRtbCJ9";
+  var SEARCH_NO_RESULTS="Cerca un'altra parola";
+  var SEARCH_PAGE_LABEL="Pagine";
+  var widget=document.getElementById('site-search-widget');
+  var toggle=document.getElementById('site-search-toggle');
+  var panel=document.getElementById('site-search-panel');
+  var input=document.getElementById('site-search-input');
+  var results=document.getElementById('site-search-results');
+  if(!widget||!toggle||!panel||!input||!results) return;
+
+  function decode(b64){
+    try{return JSON.parse(decodeURIComponent(escape(atob(b64||''))))}catch(e){return []}
+  }
+  var INDEX=decode(INDEX_B64);
+  var ROUTES=decode(ROUTES_B64) || {};
+
+  function mobileMenu(){
+    return document.getElementById('mobile-menu');
+  }
+  function hamburger(){
+    return document.getElementById('mobile-menu-toggle');
+  }
+
+  function mountNavbarSearch(){
+    if(!NAVBAR_MODE) return;
+
+    document.body.classList.add('sc-search-navbar-mode');
+
+    var mobile=window.matchMedia('(max-width:1024px)').matches;
+    var nav=
+      document.getElementById('dynamic-navbar-container') ||
+      document.querySelector('#preview-dynamic-nav .sc-dynamic-navbar') ||
+      document.querySelector('nav.sc-dynamic-navbar') ||
+      document.querySelector('nav.uk-navbar-container');
+    var mm=mobileMenu();
+
+    if(mobile){
+      if(widget.parentNode!==document.body) document.body.appendChild(widget);
+      widget.style.position='static';
+      panel.classList.add('sc-search-mobile-panel');
+
+      /* Search belongs after navigation links. openPanel() re-appends it after
+         any Mobile Menu rebuild, so it always survives regenerated menu content. */
+      if(mm && panel.parentNode!==mm) mm.appendChild(panel);
+    }else{
+      panel.classList.remove('sc-search-mobile-panel');
+      if(nav && widget.parentNode!==nav) nav.appendChild(widget);
+      if(panel.parentNode!==widget) widget.appendChild(panel);
+      widget.style.marginLeft='auto';
+      widget.style.marginRight='12px';
+      widget.style.flex='0 0 auto';
+    }
+
+    try{ if(window.UIkit) UIkit.update(document.body); }catch(e){}
+  }
+
+  function openPanel(){
+    if(NAVBAR_MODE && window.matchMedia('(max-width:1024px)').matches){
+      var mm=mobileMenu();
+      var hb=hamburger();
+
+      /* The mobile-menu builder clears/recreates its links. Rebuild first,
+         then append Search after those links so it cannot be discarded. */
+      try{
+        if(typeof window.__rebuildMobileMenu==='function') window.__rebuildMobileMenu();
+      }catch(e){}
+
+      mm=mobileMenu();
+      if(mm && panel.parentNode!==mm) mm.appendChild(panel);
+
+      if(mm) mm.classList.add('show');
+      if(hb) hb.classList.add('open');
+
+      panel.classList.add('sc-search-mobile-panel');
+      panel.style.display='block';
+      setTimeout(function(){input.focus();},30);
+      return;
+    }
+
+    panel.style.display='block';
+    setTimeout(function(){input.focus();},20);
+  }
+
+function closePanel(){
+  panel.style.display='none';
+
+  var mobileMenu=document.getElementById('mobile-menu');
+  var mobileMenuToggle=document.getElementById('mobile-menu-toggle');
+
+  if(mobileMenu){
+    mobileMenu.classList.remove('show');
+    mobileMenu.setAttribute('aria-hidden','true');
+  }
+
+  if(mobileMenuToggle){
+    mobileMenuToggle.classList.remove('open');
+    mobileMenuToggle.setAttribute('aria-expanded','false');
+  }
+}
+
+  toggle.addEventListener('click',function(e){
+    /* Search lives outside #mobile-menu, so the Mobile Menu's document-level
+       outside-click handler would otherwise close the menu immediately. */
+    if(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(typeof e.stopImmediatePropagation==='function') e.stopImmediatePropagation();
+    }
+
+    var open=panel.style.display!=='none';
+    if(open) closePanel(); else openPanel();
+  });
+
+  function go(hit){
+    closePanel();
+
+    if(MODE==='preview'){
+      if(typeof window.__previewSwitchPage==='function'){
+        window.__previewSwitchPage(hit.pageId,hit.anchor||'');
+        return;
+      }
+      var previewLink=document.querySelector('[data-preview-page-id="'+hit.pageId+'"]');
+      if(previewLink){
+        previewLink.click();
+        if(hit.anchor){
+          setTimeout(function(){
+            var t=document.getElementById(hit.anchor);
+            if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+          },80);
+        }
+        return;
+      }
+    }
+
+    var here=document.getElementById(hit.anchor||'');
+    if(hit.pageId===CURRENT_PAGE_ID && here){
+      here.scrollIntoView({behavior:'smooth',block:'start'});
+      return;
+    }
+
+    var route=(ROUTES && ROUTES[hit.pageId]) ? ROUTES[hit.pageId] : hit.url;
+    if(route){
+      var target=route + (hit.anchor ? '#'+encodeURIComponent(hit.anchor) : '');
+      window.location.assign(target);
+    }
+  }
+
+  function doSearch(){
+    var q=input.value.trim().toLowerCase();
+    results.innerHTML='';
+    if(!q) return;
+
+    var hits=INDEX.filter(function(hit){
+      return String(hit.text||'').toLowerCase().includes(q);
+    }).slice(0,30);
+
+    hits.forEach(function(hit){
+      var b=document.createElement('button');
+      b.type='button';
+      b.style.cssText='display:block;width:100%;text-align:left;border:0;background:transparent;color:#111 !important;padding:10px 8px;cursor:pointer;border-radius:10px;';
+
+      var title=document.createElement('strong');
+      title.textContent=hit.pageTitle||SEARCH_PAGE_LABEL;
+      title.style.cssText='display:block;font-size:12px;margin-bottom:2px;color:#111 !important;';
+
+      var excerpt=document.createElement('span');
+      excerpt.textContent=String(hit.text||'').length>110
+        ? String(hit.text||'').slice(0,110)+'…'
+        : String(hit.text||'');
+      excerpt.style.cssText='display:block;font-size:12px;opacity:.72;line-height:1.35;color:#111 !important;';
+
+      b.appendChild(title);
+      b.appendChild(excerpt);
+      b.addEventListener('click',function(){
+  closePanel();
+  go(hit);
+});
+      results.appendChild(b);
+    });
+
+    if(!hits.length){
+      var d=document.createElement('div');
+      d.textContent=SEARCH_NO_RESULTS;
+      d.style.cssText='padding:10px 8px;opacity:.6;';
+      results.appendChild(d);
+    }
+  }
+
+  input.addEventListener('input',doSearch);
+
+  if(NAVBAR_MODE){
+    mountNavbarSearch();
+    window.addEventListener('resize',mountNavbarSearch);
+
+    /* Hamburger closes the mobile search panel together with the menu. */
+    var hb=hamburger();
+    if(hb){
+      hb.addEventListener('click',function(){
+        setTimeout(function(){
+          var mm=mobileMenu();
+          if(mm && !mm.classList.contains('show')) closePanel();
+        },0);
+      });
+    }
+  }
+})();
+</script>
+
+<style>
+#site-share-widget{position:fixed;left:22px;bottom:22px;z-index:920;font-family:inherit}
+#site-share-toggle{width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:#111;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;display:grid;place-items:center}
+#site-share-panel{display:none;position:absolute;left:0;bottom:62px;width:min(280px,82vw);max-height:min(70vh,620px);overflow:auto;padding:10px;background:#fff;color:#111;border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,.25)}
+#site-share-panel.sc-open{display:block}.sc-share-action{width:100%;display:flex;align-items:center;gap:10px;border:0;background:transparent;color:inherit;padding:10px 12px;border-radius:12px;cursor:pointer;text-align:left;font:inherit}.sc-share-action:hover{background:rgba(0,0,0,.06)}.sc-share-action svg{width:20px;height:20px}
+@media(max-width:900px){#site-share-toggle{width:40px;height:40px}#site-share-toggle svg{width:20px;height:20px}#site-share-panel{bottom:50px}}
+</style>
+<div id="site-share-widget" data-excluded-pages="[]" data-share-permalink-map="{&quot;home&quot;:&quot;&quot;}" data-share-page-id="home"><button id="site-share-toggle" type="button" aria-label="Share"><span uk-icon="social"></span></button><div id="site-share-panel" role="dialog" aria-label="Share this page"><button type="button" class="sc-share-action" data-share-id="copy-link" data-share-action="copy-link" data-share-template=""><span uk-icon="copy"></span><span>Copy Link</span></button><button type="button" class="sc-share-action" data-share-id="facebook" data-share-action="url" data-share-template="https://www.facebook.com/sharer/sharer.php?u={url}"><span uk-icon="facebook"></span><span>Facebook</span></button><button type="button" class="sc-share-action" data-share-id="x" data-share-action="url" data-share-template="https://twitter.com/intent/tweet?url={url}&amp;text={title}"><span uk-icon="x"></span><span>X / Twitter</span></button><button type="button" class="sc-share-action" data-share-id="linkedin" data-share-action="url" data-share-template="https://www.linkedin.com/sharing/share-offsite/?url={url}"><span uk-icon="linkedin"></span><span>LinkedIn</span></button><button type="button" class="sc-share-action" data-share-id="tiktok" data-share-action="copy-open" data-share-template="https://www.tiktok.com/"><span uk-icon="tiktok"></span><span>TikTok</span></button><button type="button" class="sc-share-action" data-share-id="instagram" data-share-action="copy-open" data-share-template="https://www.instagram.com/"><span uk-icon="instagram"></span><span>Instagram</span></button><button type="button" class="sc-share-action" data-share-id="whatsapp" data-share-action="url" data-share-template="https://wa.me/?text={title}%20{url}"><span uk-icon="whatsapp"></span><span>WhatsApp</span></button><button type="button" class="sc-share-action" data-share-id="telegram" data-share-action="url" data-share-template="https://t.me/share/url?url={url}&amp;text={title}"><span uk-icon="telegram"></span><span>Telegram</span></button><button type="button" class="sc-share-action" data-share-id="reddit" data-share-action="url" data-share-template="https://www.reddit.com/submit?url={url}&amp;title={title}"><span uk-icon="reddit"></span><span>Reddit</span></button><button type="button" class="sc-share-action" data-share-id="threads" data-share-action="url" data-share-template="https://www.threads.net/intent/post?text={title}%20{url}"><span uk-icon="threads"></span><span>Threads</span></button><button type="button" class="sc-share-action" data-share-id="bluesky" data-share-action="url" data-share-template="https://bsky.app/intent/compose?text={title}%20{url}"><span uk-icon="bluesky"></span><span>Bluesky</span></button><button type="button" class="sc-share-action" data-share-id="mastodon" data-share-action="url" data-share-template="https://mastodon.social/share?text={title}%20{url}"><span uk-icon="mastodon"></span><span>Mastodon</span></button><button type="button" class="sc-share-action" data-share-id="pinterest" data-share-action="url" data-share-template="https://pinterest.com/pin/create/button/?url={url}&amp;description={title}"><span uk-icon="pinterest"></span><span>Pinterest</span></button><button type="button" class="sc-share-action" data-share-id="tumblr" data-share-action="url" data-share-template="https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&amp;title={title}"><span uk-icon="tumblr"></span><span>Tumblr</span></button><button type="button" class="sc-share-action" data-share-id="email" data-share-action="email" data-share-template=""><span uk-icon="mail"></span><span>Email</span></button></div></div>
+<script>(function(){
+ var w=document.getElementById('site-share-widget'),t=document.getElementById('site-share-toggle'),p=document.getElementById('site-share-panel');if(!w||!t||!p)return;
+ var excluded=[];try{excluded=JSON.parse(w.getAttribute('data-excluded-pages')||'[]')}catch(e){}
+ var permalinkMap={};try{permalinkMap=JSON.parse(w.getAttribute('data-share-permalink-map')||'{}')}catch(e){}
+ var fixedPageId=String(w.getAttribute('data-share-page-id')||'');
+ function activePageId(){return String(window.__previewCurrentPageId||fixedPageId||'')}
+ function syncAllowed(){var id=activePageId();if(id)w.style.display=excluded.indexOf(id)>-1?'none':''}syncAllowed();if("export"==='preview')setInterval(syncAllowed,250);
+ t.addEventListener('click',function(e){e.stopPropagation();p.classList.toggle('sc-open')});document.addEventListener('click',function(e){if(!w.contains(e.target))p.classList.remove('sc-open')});
+ function currentLink(){return location.href}
+ function cleanCurrentLink(){return location.href.split('#')[0]+(location.hash&&location.hash.indexOf('#preview-page:')!==0?location.hash:'')}
+ function configuredPermalink(){var u=String(permalinkMap[activePageId()]||'').trim();return u||cleanCurrentLink()}
+ function openUrl(u){window.open(u,'_blank','noopener,noreferrer')}
+ function fallback(v){var a=document.createElement('textarea');a.value=v;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}
+ function copy(v,done){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(done).catch(function(){fallback(v);done()});else{fallback(v);done()}}
+ function templ(t,u,title){var raw=String(t||'').trim(),U=encodeURIComponent(u),T=encodeURIComponent(title),X=encodeURIComponent((title?title+' ':'')+u);if(!raw)return '';if(/{(?:url|title|text)}/i.test(raw))return raw.split('{url}').join(U).split('{title}').join(T).split('{text}').join(X);return raw+U}
+ p.addEventListener('click',function(e){var b=e.target.closest('[data-share-id]');if(!b)return;var action=b.getAttribute('data-share-action'),template=b.getAttribute('data-share-template')||'',url=cleanCurrentLink(),title=document.title||'';
+   if(action==='copy-permalink'){var old=b.innerHTML;copy(configuredPermalink(),function(){b.textContent='Permalink copied';setTimeout(function(){b.innerHTML=old;try{UIkit.update(b)}catch(e){}},1400)})}
+   else if(action==='copy-link'){var old2=b.innerHTML;copy(currentLink(),function(){b.textContent='Link copied';setTimeout(function(){b.innerHTML=old2;try{UIkit.update(b)}catch(e){}},1400)})}
+   else if(action==='email'){location.href='mailto:?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(title+'\n\n'+url)}
+   else if(action==='copy-open'){copy(url,function(){openUrl(template)})}
+   else if(action==='url'&&template){openUrl(templ(template,url,title))}
+ });
+})();</script>
+
+
+<script src="assets/js/uikit.min.js"></script>
+<script src="assets/js/uikit-icons.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -1210,6 +1515,212 @@ document.addEventListener('DOMContentLoaded', () => {
   updateMobileMenuVisibility();
 });
 </script>
+<script>
+/* CORE universal local-service notice
+   Works in Preview/blob:, exported file:// pages, dynamic Lightboxes,
+   Slideshow, Add Video, and same-origin/srcdoc Embed documents. */
+(function(){
+  function isLocalContext(win){
+    try {
+      var p=String((win||window).location.protocol||'');
+      return !(p === 'http:' || p === 'https:');
+    } catch(e) {
+      return true;
+    }
+  }
+
+  function isYouTubeSrc(src){
+    var s=String(src||'').toLowerCase();
+    return s.indexOf('youtube.com/embed/') !== -1 ||
+           s.indexOf('youtube-nocookie.com/embed/') !== -1 ||
+           s.indexOf('youtube.com/watch?') !== -1 ||
+           s.indexOf('youtu.be/') !== -1;
+  }
+
+  function warningText(){
+    return '<span style="display:block;white-space:normal;">YouTube does not allow local playback.<br>Upload the website to a server to play this video.</span>';
+  }
+
+  function ensurePositioned(el, win){
+    try {
+      if ((win||window).getComputedStyle(el).position === 'static') el.style.position='relative';
+    } catch(e) {
+      if (!el.style.position) el.style.position='relative';
+    }
+  }
+
+  function decorateYouTubeFrame(frame, doc, win){
+    if (!frame || frame.dataset.scLocalYoutubeDone === '1') return;
+    var src=String(frame.getAttribute('src')||'');
+    if (!isYouTubeSrc(src)) return;
+
+    frame.dataset.scLocalYoutubeDone='1';
+
+    var isFull = frame.classList.contains('sc-youtube-fullscreen-player');
+    var isSlider = frame.classList.contains('sc-slider-youtube-player');
+    var inLightbox = !!frame.closest('.uk-lightbox');
+
+    var host = frame.parentElement;
+    if (!host) return;
+    ensurePositioned(host, win);
+
+    // Preserve the errored player so users understand this is a local-playback limitation.
+    if (isFull || isSlider) {
+      frame.style.filter='blur(14px)';
+      frame.style.opacity='.55';
+    } else if (inLightbox) {
+      frame.style.opacity='.42';
+    } else {
+      frame.style.opacity='.48';
+    }
+
+    var notice=doc.createElement('div');
+    notice.className='sc-runtime-youtube-warning';
+    notice.innerHTML=warningText();
+    notice.style.boxSizing='border-box';
+    notice.style.textAlign='center';
+    notice.style.color='#fff';
+    notice.style.fontWeight='800';
+    notice.style.lineHeight='1.25';
+    notice.style.letterSpacing='.01em';
+    notice.style.pointerEvents='none';
+
+    if (isFull || isSlider) {
+      // Fullscreen Add Video + Slideshow: keep the player visible but blurred,
+      // and place the warning at the top so headings/subheadings/buttons remain visible.
+      notice.style.cssText += ';position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center;padding:100px 28px 28px;background:transparent;font-size:clamp(16px,2vw,28px);z-index:2147483000;';
+    } else if (inLightbox) {
+      notice.style.cssText += ';position:absolute;top:18px;left:50%;transform:translateX(-50%);padding:12px 18px;background:rgba(255,145,0,.92);border-radius:12px;font-size:clamp(13px,1.25vw,18px);max-width:min(760px,calc(100% - 32px));width:max-content;z-index:2147483000;';
+    } else {
+      // Regular Add Video / custom Embed.
+      notice.style.cssText += ';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:28px;background:rgba(255,145,0,.92);font-size:clamp(16px,2vw,28px);z-index:2147483000;';
+    }
+
+    host.appendChild(notice);
+  }
+
+  function scanDocument(doc, win){
+    if (!doc || !isLocalContext(win)) return;
+
+    try {
+      doc.querySelectorAll('.sc-formspree-local-warning').forEach(function(notice){
+        notice.style.display='flex';
+      });
+    } catch(e) {}
+
+    try {
+      doc.querySelectorAll('iframe').forEach(function(frame){
+        var src=String(frame.getAttribute('src')||'');
+
+        // Direct YouTube iframe in Add Video / Slider / Lightbox / custom markup.
+        if (isYouTubeSrc(src)) decorateYouTubeFrame(frame,doc,win);
+
+        // Same-origin/srcdoc Embed: scan its inner document too.
+        try {
+          var innerDoc=frame.contentDocument;
+          var innerWin=frame.contentWindow;
+          if (innerDoc && innerDoc.documentElement) scanDocument(innerDoc,innerWin);
+        } catch(e) {}
+      });
+    } catch(e) {}
+  }
+
+  function scanAll(){
+    scanDocument(document,window);
+  }
+
+  document.addEventListener('submit',function(e){
+    if(!isLocalContext(window)) return;
+    var form=e.target;
+    if(form && form.matches && form.matches('.sc-generated-form[action*="formspree.io"]')){
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  },true);
+
+  document.addEventListener('DOMContentLoaded',function(){
+    scanAll();
+    setTimeout(scanAll,100);
+    setTimeout(scanAll,500);
+  });
+
+  window.addEventListener('load',function(){
+    scanAll();
+    setTimeout(scanAll,300);
+    setTimeout(scanAll,1200);
+  });
+
+  // UIkit Lightbox and asynchronously generated Embed/Slider iframe content.
+  document.addEventListener('click',function(){
+    setTimeout(scanAll,50);
+    setTimeout(scanAll,250);
+    setTimeout(scanAll,700);
+  },true);
+
+  try {
+    new MutationObserver(function(){
+      scanAll();
+    }).observe(document.documentElement,{childList:true,subtree:true});
+  } catch(e) {}
+
+  // Covers iframe navigations / late srcdoc loading without aggressive polling.
+  setInterval(scanAll,1500);
+})();
+</script>
+
+<script>
+(function(){
+  function shuffle(el){
+    if(!el)return;
+    var a=Array.prototype.slice.call(el.children||[]);
+    for(var i=a.length-1;i>0;i--){
+      var j=Math.floor(Math.random()*(i+1));
+      var t=a[i];a[i]=a[j];a[j]=t;
+    }
+    a.forEach(function(child){el.appendChild(child);});
+  }
+  function run(){
+    document.querySelectorAll('.sc-random-gallery').forEach(function(section){
+      var grid=section.querySelector('[uk-lightbox][uk-grid],[uk-grid][uk-lightbox]');
+      shuffle(grid);
+    });
+    document.querySelectorAll('.sc-random-grid').forEach(function(section){
+      var grids=Array.prototype.slice.call(section.querySelectorAll('[uk-grid]'));
+      var grid=grids.find(function(g){return g.children&&g.children.length>1;});
+      shuffle(grid);
+    });
+    document.querySelectorAll('.sc-random-slider').forEach(function(section){
+      shuffle(section.querySelector('.uk-slider-items'));
+    });
+    try{if(window.UIkit)UIkit.update(document);}catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',run);
+})();
+</script>
+<script>
+(function(){
+  function protect(root){
+    if(!root||!root.querySelectorAll)return;
+    function mark(el){
+      if(!el||el.nodeType!==1)return;
+      el.setAttribute('translate','no');
+      if(el.classList)el.classList.add('notranslate');
+    }
+    try{
+      if(root.matches&&root.matches('[uk-icon],[data-uk-icon],.uk-icon,.uk-icon-button'))mark(root);
+      root.querySelectorAll('[uk-icon],[data-uk-icon],.uk-icon,.uk-icon-button').forEach(mark);
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    protect(document);
+    try{
+      new MutationObserver(function(ms){
+        ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n&&n.nodeType===1)protect(n);});});
+      }).observe(document.documentElement,{childList:true,subtree:true});
+    }catch(e){}
+  });
+})();
+</script>
 
 <script>
 (function(){
@@ -1264,8 +1775,43 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('dragstart', function(e){ e.preventDefault(); });
   }
 
+  function syncHeadingActive(){
+    var nav=document.querySelector('.navbar-scroll[data-sc-preview-nav="1"]');
+    if(!nav) return;
+
+    var headingLinks=Array.from(nav.querySelectorAll('.sc-page-heading-link > a[href^="#"]'));
+    if(!headingLinks.length) return;
+
+    var offset=110;
+    var active=null;
+    var best=-Infinity;
+
+    headingLinks.forEach(function(a){
+      var id=(a.getAttribute('href')||'').slice(1);
+      if(!id) return;
+      var target=document.getElementById(id);
+      if(!target) return;
+
+      var top=target.getBoundingClientRect().top-offset;
+      if(top<=0 && top>best){
+        best=top;
+        active=a;
+      }
+    });
+
+    // Only heading links participate in scroll state.
+    // Page links are NEVER promoted as the "next" scroll target.
+    headingLinks.forEach(function(a){
+      a.classList.toggle('uk-active',a===active);
+    });
+  }
+
   function init(){
     document.querySelectorAll('.dn-scroll, .navbar-scroll').forEach(bind);
+    syncHeadingActive();
+    window.addEventListener('scroll',syncHeadingActive,{passive:true});
+    window.addEventListener('resize',syncHeadingActive);
+    window.__scSyncHeadingActive=syncHeadingActive;
   }
 
   if (document.readyState === 'loading') {
