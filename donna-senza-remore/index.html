@@ -1,0 +1,1617 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Bella Germaniae – Traduzioni mittelmediali & Pubblicazioni pseudologiche</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bella Germaniae è una tribù di autori e traduttori che autarchicamente si pubblicano marchiati a ferro e fuoco, mezzi con cui non devastano ma all'opposto completano il panorama offerto dal sistema editoriale.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Bella Germaniae">
+<style>
+
+                .core-editor #page h1, .core-editor #page h2, .core-editor #page h3,
+                .core-editor #page h4, .core-editor #page h5, .core-editor #page h6,
+                .core-editor #page .live-heading,
+                .core-editor #page .live-subtitle,
+                .core-editor #editor-footer h1, .core-editor #editor-footer h2, .core-editor #editor-footer h3,
+                .core-editor #editor-footer h4, .core-editor #editor-footer h5, .core-editor #editor-footer h6,
+                .core-editor #editor-footer .live-heading,
+                .core-editor #editor-footer .live-subtitle,
+                body:not(.core-editor) h1, body:not(.core-editor) h2, body:not(.core-editor) h3,
+                body:not(.core-editor) h4, body:not(.core-editor) h5, body:not(.core-editor) h6,
+                body:not(.core-editor) .live-heading,
+                body:not(.core-editor) .live-subtitle {
+                    font-family: 'Rock Salt', sans-serif !important;
+                }
+            
+/* Sacrisoft CORE CTA — single global button system */
+.sc-core-cta{
+  --sc-btn-bg:transparent;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#ffffff;
+
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+
+  min-height:52px;
+  padding:0 30px;
+  margin-top:18px;
+
+  border:1px solid var(--sc-btn-border);
+  border-radius:25px;
+
+  background:var(--sc-btn-bg);
+  color:var(--sc-btn-text) !important;
+
+  font:inherit;
+  font-size:16px;
+  font-weight:500;
+  line-height:1.2;
+  text-align:center;
+  text-decoration:none !important;
+  text-transform:none;
+  letter-spacing:normal;
+
+  cursor:pointer;
+  transition:
+    background .18s ease,
+    color .18s ease,
+    border-color .18s ease,
+    opacity .18s ease,
+    filter .18s ease,
+    transform .18s ease;
+}
+
+/* Default: white outline */
+.sc-core-cta-default{
+  --sc-btn-bg:transparent;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#ffffff;
+}
+.sc-core-cta-default:hover{
+  --sc-btn-bg:#ffffff;
+  --sc-btn-text:#000000;
+}
+
+/* Light: white background / black text */
+.sc-core-cta-light{
+  --sc-btn-bg:#ffffff;
+  --sc-btn-text:#000000;
+  --sc-btn-border:#ffffff;
+}
+.sc-core-cta-light:hover{
+  --sc-btn-bg:#f2f2f2;
+  --sc-btn-border:#f2f2f2;
+}
+
+/* Dark: black background / white text */
+.sc-core-cta-dark{
+  --sc-btn-bg:#000000;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#000000;
+}
+.sc-core-cta-dark:hover{
+  --sc-btn-bg:#222222;
+  --sc-btn-border:#222222;
+}
+
+/* Text: intentionally larger and readable */
+.sc-core-cta-text{
+  min-height:auto;
+  padding:4px 0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#ffffff !important;
+  font-size:1.35rem;
+  line-height:1.35;
+  text-decoration:underline !important;
+  text-underline-offset:.18em;
+}
+.sc-core-cta-text:hover{
+  opacity:.75;
+}
+
+/* Custom: CSS variables are written inline by makeButtonHtml() */
+.sc-core-cta-custom{
+  --sc-btn-bg:#FFA500;
+  --sc-btn-text:#ffffff;
+  --sc-btn-border:#FFA500;
+}
+.sc-core-cta-custom:hover{
+  filter:brightness(.92);
+}
+
+/* Content button groups */
+.sc-content-button-pair,
+.faq-answer-buttons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.faq-answer-buttons{
+  justify-content:flex-start;
+}
+
+.sc-content-button-pair .sc-core-cta,
+.faq-answer-buttons .sc-core-cta{
+  margin-top:0;
+}
+
+/* Lightbox wrappers should behave like the button itself. */
+.sc-content-button-pair > .sc-lightbox-link,
+.faq-answer-buttons > .sc-lightbox-link{
+  display:inline-flex;
+}
+
+/* Mobile: stack only when needed, with space before button 2. */
+@media(max-width:640px){
+  .sc-content-button-pair,
+  .faq-answer-buttons{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .sc-content-button-pair > *,
+  .faq-answer-buttons > *{
+    width:100%;
+  }
+
+  .sc-content-button-pair > *:nth-child(2),
+  .faq-answer-buttons > *:nth-child(2){
+    margin-top:12px;
+  }
+
+  .sc-content-button-pair .sc-core-cta,
+  .faq-answer-buttons .sc-core-cta{
+    width:100%;
+  }
+}
+
+/* Default: UIkit-like white outline */
+.sc-core-cta.sc-core-cta-default{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:1px solid #ffffff !important;
+}
+.sc-core-cta.sc-core-cta-default:hover{
+  background:#ffffff !important;
+  color:#000000 !important;
+}
+
+/* Light: white background / black text */
+.sc-core-cta.sc-core-cta-light{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:1px solid #ffffff !important;
+}
+.sc-core-cta.sc-core-cta-light:hover{
+  background:#f2f2f2 !important;
+  color:#000000 !important;
+}
+
+/* Dark: black background / white text */
+.sc-core-cta.sc-core-cta-dark{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border:1px solid #000000 !important;
+}
+.sc-core-cta.sc-core-cta-dark:hover{
+  background:#222222 !important;
+  color:#ffffff !important;
+}
+
+/* Text: larger white text, no box */
+.sc-core-cta.sc-core-cta-text{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  font-size:1.35rem !important;
+  line-height:1.35 !important;
+  text-decoration:underline;
+  text-underline-offset:.18em;
+}
+.sc-core-cta.sc-core-cta-text:hover{
+  color:#ffffff !important;
+  opacity:.78;
+}
+
+/* Custom: orange / white by default */
+.sc-core-cta.sc-core-cta-custom{
+  background:#FFA500 !important;
+  color:#ffffff !important;
+  border:1px solid #FFA500 !important;
+}
+.sc-core-cta.sc-core-cta-custom:hover{
+  filter:brightness(.92);
+}
+
+/* Paired CTA responsive behavior */
+.sc-content-button-pair,
+.faq-answer-buttons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.faq-answer-buttons{
+  justify-content:flex-start;
+}
+.sc-content-button-pair .sc-core-cta,
+.faq-answer-buttons .sc-core-cta{
+  margin-top:0 !important;
+}
+
+@media(max-width:640px){
+  .sc-content-button-pair,
+  .faq-answer-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .sc-content-button-pair > * ,
+  .faq-answer-buttons > *{
+    width:100%;
+  }
+  .sc-content-button-pair > *:nth-child(2),
+  .faq-answer-buttons > *:nth-child(2){
+    margin-top:12px !important;
+  }
+  .sc-content-button-pair .sc-core-cta,
+  .faq-answer-buttons .sc-core-cta{
+    width:100%;
+    text-align:center;
+  }
+}
+
+
+/* ============================================================
+   Sacrisoft CORE CTA — final override
+   One button system; no outlines.
+   ============================================================ */
+.sc-core-cta{
+  border:0 !important;
+  padding-left:46px !important;
+  padding-right:46px !important;
+}
+
+/* Default: white outline / white text -> solid white / black text */
+.sc-core-cta.sc-core-cta-default,
+.sc-core-cta-default{
+  background:transparent !important;
+  color:#ffffff !important;
+  border:1px solid #ffffff !important;
+}
+.sc-core-cta.sc-core-cta-default:hover,
+.sc-core-cta-default:hover{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+}
+
+/* Light: white / black -> black / white */
+.sc-core-cta.sc-core-cta-light,
+.sc-core-cta-light{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:0 !important;
+}
+.sc-core-cta.sc-core-cta-light:hover,
+.sc-core-cta-light:hover{
+  background:#000000 !important;
+  color:#ffffff !important;
+}
+
+/* Dark: black / white -> white / black */
+.sc-core-cta.sc-core-cta-dark,
+.sc-core-cta-dark{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border:0 !important;
+}
+.sc-core-cta.sc-core-cta-dark:hover,
+.sc-core-cta-dark:hover{
+  background:#ffffff !important;
+  color:#000000 !important;
+}
+
+/* Custom: chosen BG/Text; hover swaps them */
+.sc-core-cta.sc-core-cta-custom,
+.sc-core-cta-custom{
+  background:var(--sc-btn-bg,#FFA500) !important;
+  color:var(--sc-btn-text,#ffffff) !important;
+  border:0 !important;
+}
+.sc-core-cta.sc-core-cta-custom:hover,
+.sc-core-cta-custom:hover{
+  background:var(--sc-btn-text,#ffffff) !important;
+  color:var(--sc-btn-bg,#FFA500) !important;
+  border:0 !important;
+  filter:none !important;
+}
+
+/* Text CTA: large white label with UIkit-like animated underline */
+.sc-core-cta.sc-core-cta-text,
+.sc-core-cta-text{
+  position:relative !important;
+  display:inline-flex !important;
+  min-height:auto !important;
+  padding:5px 1px !important;
+  background:transparent !important;
+  color:#ffffff !important;
+  border:0 !important;
+  border-radius:0 !important;
+  font-size:1.35rem !important;
+  line-height:1.35 !important;
+  text-decoration:none !important;
+}
+.sc-core-cta.sc-core-cta-text::after,
+.sc-core-cta-text::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:0;
+  height:1px;
+  background:currentColor;
+  transition:right .25s ease-out;
+}
+.sc-core-cta.sc-core-cta-text:hover::after,
+.sc-core-cta-text:hover::after{
+  right:0;
+}
+.sc-core-cta.sc-core-cta-text:hover,
+.sc-core-cta-text:hover{
+  color:#ffffff !important;
+  opacity:1 !important;
+}
+
+@media(max-width:640px){
+  .sc-core-cta{
+    padding-left:32px !important;
+    padding-right:32px !important;
+  }
+  .sc-content-button-pair > *:nth-child(2),
+  .faq-answer-buttons > *:nth-child(2){
+    margin-top:12px !important;
+  }
+}
+
+/* ============================================================
+   MOBILE BUTTONS — NEVER FULL WIDTH
+   ============================================================ */
+@media (max-width:640px){
+  .sc-content-button-pair > *,
+  .faq-answer-buttons > *,
+  .sc-content-button-pair .sc-core-cta,
+  .faq-answer-buttons .sc-core-cta{
+    width:auto !important;
+    max-width:none !important;
+  }
+
+  .sc-content-button-pair,
+  .faq-answer-buttons{
+    align-items:center !important;
+  }
+}
+
+</style>
+
+<link rel="icon" href="media/favicon.png">
+  <link rel="shortcut icon" href="media/favicon.png">
+<meta property="og:image" content="media/social.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Bella Germaniae",
+  "url": "https://bellagermaniae.org",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bella Germaniae"
+  },
+  "inLanguage": "it",
+  "description": "Bella Germaniae è una tribù di autori e traduttori che autarchicamente si pubblicano marchiati a ferro e fuoco, mezzi con cui non devastano ma all'opposto completano il panorama offerto dal sistema editoriale."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Venere in Pesci: Romanzo astrologico",
+  "author": "Max Mohr",
+  "isbn": "979-8398715941",
+  "genre": "Literary",
+  "datePublished": "0023-07-07",
+  "description": "Venere in Pesci, tradotta da Sara Ferro W., si sviluppa attorno a tematiche ricorrenti nella vita del suo autore e nelle riflessioni tipiche della sua epoca, tuttavia elaborate da Mohr in maniera sublimemente sui generis, inaspettatamente cruda e tenera: il conflitto tra natura e tecnica, tra morale e denaro - tra la Grande e la Piccola Ragione -, tra città e campagna, tra metropoli e provincia, senza possibilità di risolvere tali tensioni tanto connaturate alla sensibilità moderna. Quindi niente vero e proprio ritorno alla natura, né panegirici in favore dell'idillio bucolico. La via d'uscita, unica e degnissima è quella della parodia, della satira, dell'umorismo, del nonsense, dell'invettiva sociale elegantemente scoccata, tra il serio e il faceto, ma sempre raffinata, sorprendentemente leggera quanto efficace, che schernisce atteggiamenti non registrati dai più come bislacchi - al massimo strambi, comunque ben tollerati da chi si assoggetta volentieri ai capricci della moda e ai dettami della società -, ma che a un più attento scrutinio della ragione non possono che apparire nella loro bizzarria demenziale, maniacali, scurrili, potenzialmente calamitosi. Senza farne troppo un dramma però, le cose vanno secondo il loro destino, solo le stelle sanno, per chi si lascia imbambolare da tali amenità, sebbene, sebbene, sebbene..."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "La Pagana",
+  "author": "Max Mohr",
+  "isbn": "979-8301995613",
+  "genre": "Literary",
+  "datePublished": "2024-12-01",
+  "description": "\"La Pagana\", il secondo romanzo di Max Mohr tradotto da Sara Ferro W. - già traduttrice di \"Venere in Pesci\".\n\n(...) Una volta l’inseguimento pagano si inoltrava ansimante nella foresta, con le suole nude sulle foglie vecchie, con le cosce larghe sulle sterpaglie del frangivento, sempre più in profondità nel sottobosco, via via più lontano dal sole, quindi l'uomo veniva più vicino, senza parole, senza un richiamo, allora l'odore muschioso si levava intorno alla donna, allora il suo cammino si faceva debole, deboli il suo cuore e le sue viscere, quindi lei giungeva alla macchia di muschio tra i pini impigliati, lì cadeva con le ginocchia allentate, lì anche lui cadeva sulla terra umida della sua terra, il signore della terra, l'uomo. Poi erano arrivati i sacerdoti e si erano eretti sopra la coppia umana e avevano sistemato i loro sgabelli nelle stanze dei loro dèi invisibili, per poter stare più in alto della coppia umana, e il loro discorso era stato: \"Tu devi e tu non devi!\". Dovrai strisciare sul tuo ventre e mangerai polvere, dovrai avere sudore sulla tua fronte, dovrai porgere la guancia sinistra, dovrai essere povero o vedere di passare attraverso la cruna di un ago, e dovrai pagare bene i tuoi sacerdoti, affinché ti dicano ciò che devi. Poi si era avventato lo Stato sulla coppia intimidita e il suo discorso era stato: \"Tu puoi e tu non puoi!\". Puoi morire per lo Stato e generare figli, puoi essere schiavo dello Stato e pagare le tasse, ma non puoi calpestare il prato verde e non puoi essere povero o sarai arrestato, non puoi fare niente in nero e pensare. E parlate con la mamma? Per un anno nella terra pietrosa della Glonn! E parlate con papà? Divorato pelle e capelli dalla città urbana... Finché la libertà non giunse finalmente alla coppia umana disperata e sui giornali si lesse: \"La coppia umana è libera, alleluia!\". Allora la coppia liberata si gettò sul nuovo letto nuziale in libertà e da lì nel vuoto, proprio come era stato prescritto dal loro giornale. Ma il giorno dopo era finita la ragionevolezza e sputavano sui reciproci desideri fantasma e maledicevano i loro nati morti e rompevano la libertà di carta, perché era stata solo la libertà degli schiavi liberati e non la libertà delle persone cresciute libere... Quindi cosa faceva una donna quando, dopo il fallimento dello Stato e della Chiesa e della casa dei genitori e della libertà di stampa, un uomo maschio le piaceva? (...)"
+}
+</script>
+<link rel="stylesheet" href="../assets/css/uikit.min.css" />
+<link rel="stylesheet" href="../assets/css/custom.css" />
+
+
+
+<link id="custom-font-link" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rock+Salt&amp;display=swap">
+
+
+<script>try{if(window.self!==window.top)document.documentElement.classList.add('sc-internal-page-lightbox');}catch(e){}</script><style>html.sc-internal-page-lightbox .sc-dynamic-navbar,html.sc-internal-page-lightbox #dynamic-navbar-container,html.sc-internal-page-lightbox #mobile-menu-toggle,html.sc-internal-page-lightbox #mobile-menu{display:none!important;}
+html.sc-internal-page-lightbox .dn-bar,html.sc-internal-page-lightbox #dropnavbar-container,html.sc-internal-page-lightbox #drop-navbar,html.sc-internal-page-lightbox .drop-navbar,html.sc-internal-page-lightbox .dn-popover{display:none!important;}</style>
+
+</head>
+<body class="uk-background-muted sc-user-site" id="top">
+<h1 id="site-title-h1" class="visually-hidden">Bella Germaniae – Traduzioni  mittelmediali & Pubblicazioni pseudologiche</h1>
+
+<!-- Mobile Menu (Preview/Export) -->
+<div id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+  <div class="bar bar1"></div>
+  <div class="bar bar2"></div>
+</div>
+<div id="mobile-menu" aria-hidden="true"></div>
+<script>
+(function(){
+  var toggle = document.getElementById('mobile-menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+
+  function build(){
+    var nav = document.querySelector('nav.uk-navbar-container ul.navbar-scroll');
+    if (!nav) return;
+
+    // Sync colors from navbar (matches app2 behavior)
+    try {
+      var navbarBg = getComputedStyle(nav.parentElement).backgroundColor;
+      var navbarText = getComputedStyle(nav).color;
+      document.documentElement.style.setProperty('--navbar-bg-color', navbarBg);
+      document.documentElement.style.setProperty('--navbar-text-color', navbarText);
+      document.documentElement.style.setProperty('--navbar-link-color', navbarText);
+    } catch(e) {}
+    // Build a simple vertical menu from the navbar links
+    var ul = document.createElement('ul');
+    ul.className = 'uk-nav uk-nav-default';
+    nav.querySelectorAll('li a').forEach(function(a){
+      var li = document.createElement('li');
+      var link = a.cloneNode(true);
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+    menu.innerHTML = '';
+    menu.appendChild(ul);
+  }
+
+  function setOpen(state){
+    if (state){
+      build();
+      menu.classList.add('show');
+      menu.setAttribute('aria-hidden','false');
+      toggle.classList.add('open');
+      toggle.setAttribute('aria-expanded','true');
+    } else {
+      menu.classList.remove('show');
+      menu.setAttribute('aria-hidden','true');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  }
+  function isOpen(){ return menu.classList.contains('show'); }
+
+  toggle.addEventListener('click', function(){
+    setOpen(!isOpen());
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function(e){
+    if (!isOpen()) return;
+    if (toggle === e.target || toggle.contains(e.target)) return;
+    if (menu.contains(e.target)) return;
+    setOpen(false);
+  });
+
+  // Close on link click. For hash anchors, compensate for the sticky
+  // Dynamic Nav Bar so the target is not hidden underneath it.
+  menu.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a');
+    if (!a) return;
+
+    var href = a.getAttribute('href') || '';
+    if (href.charAt(0) === '#') {
+      var id = '';
+      try { id = decodeURIComponent(href.slice(1)); } catch (_) { id = href.slice(1); }
+      var target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        var nav = document.querySelector('nav.uk-navbar-container.sc-dynamic-navbar, nav.sc-dynamic-navbar');
+        var navHeight = nav ? nav.getBoundingClientRect().height : 0;
+        var extra = 12;
+        var top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - navHeight - extra);
+        setOpen(false);
+        window.scrollTo({top:top,behavior:'smooth'});
+        return;
+      }
+    }
+
+    setOpen(false);
+  });
+
+  // Rebuild on load (and after global links refresh)
+  window.addEventListener('load', function(){ build(); });
+
+  // Close if resizing up
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1024) setOpen(false);
+  });
+
+  // Expose a tiny hook used by global-links loader (safe no-op elsewhere)
+  window.__rebuildMobileMenu = build;
+})();
+</script>
+
+<nav class="uk-navbar-container sc-dynamic-navbar" style="background:rgba(255,255,255,1);position:sticky !important;top:0 !important;z-index:9000 !important;">
+<ul class="navbar-scroll" data-sc-preview-nav="1" style="color:#000000;">
+<li><a class="navbar-logo-link" href="../index.html"><img src="media/logo.svg" alt="Bella Germaniae – Traduzioni  mittelmediali & Pubblicazioni pseudologiche" class="navbar-logo"></a></li><li><a class="" href="../index.html">Home</a></li><li><a href="../venere-in-pesci/index.html">Venere in Pesci</a></li><li><a href="../la-pagana/index.html">La Pagana</a></li><li><a class="sc-page-active" href="../donna-senza-remore/index.html">Donna senza remore</a></li><li class="sc-page-heading-link"><a href="#il-libro">Il libro</a></li><li class="sc-page-heading-link"><a href="#sinossi">Sinossi</a></li>
+</ul>
+</nav>
+
+
+<section id="donna-senza-remore" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;">
+<div style="position:relative; width:100vw; height:100vh; overflow:hidden;">
+<video src="media/Donna-senza-remore.mp4" autoplay loop muted playsinline
+style="width:100vw;height:100vh;object-fit:cover;display:block; pointer-events:none;" uk-scrollspy="cls: uk-animation-slide-bottom; repeat: false"></video>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;" class="uk-text-center uk-light">
+
+<div uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
+<h2 class="live-heading uk-heading-large" style="color: #ffffff;"></h2>
+<div class="live-subtitle uk-heading-xlarge" style="color:#ffffff">Donna senza remore</div><div class="live-paragraph large" style="color:#ffffff;margin-top:0.5em;">Max Mohr | Traduzione: Sara Ferro W.</div>
+<div class="sc-content-button-pair"><a href="https://www.amazon.it/gp/product/B0GPQ3YZ6R" class="sc-core-cta sc-core-cta-light" target="_blank" rel="noopener">Leggi ora</a></div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<section id="il-libro" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content sc-gallery-panel" style="width:100%;margin-top:auto;margin-bottom:auto;"><div class="uk-container uk-padding" style="background:#ffffff; color:#000000">
+    <h1 class="uk-heading uk-text-center" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-top; delay: 0; offset: 100; repeat: true"><span>Il libro</span></h1>
+    <h3 class="uk-heading uk-text-center uk-padding-large uk-padding-remove-top" style="color:#000000" uk-scrollspy="cls: uk-animation-slide-bottom; delay: 0; offset: 120; repeat: true">Donna senza remore di Max Mohr tradotto da Sara Ferro W.</h3>
+    <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m"
+         uk-grid="masonry: true" uk-lightbox="animation: slide; toggle: a"
+         uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150; repeat: false">
+      <div data-sc-gallery-index="0">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="1">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-2.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-2.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="2">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-3.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-3.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="3">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-4.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-4.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="4">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-5.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-5.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="5">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-6.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-6.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="6">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-7.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-7.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="7">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-8.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-8.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+<div data-sc-gallery-index="8">
+      <a class="uk-inline" data-type="image" href="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-9.jpg" data-caption="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W." aria-label="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+        <img class="uk-border-rounded" style="width:100%;height:auto;display:block" src="media/Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-Il-libro-Donna-senza-remore-di-Max-Mohr-tradotto-da-Sara-Ferro-W-9.jpg" alt="Il libro — Donna senza remore di Max Mohr tradotto da Sara Ferro W.">
+      </a>
+    </div>
+    </div>
+  </div></div>
+</section>
+<section id="sinossi" class="uk-section uk-section-primary sc-auto-panel" uk-height-viewport="offset-top: true" style="background:#ffffff;min-height:100vh;padding:0;margin:0;display:flex;flex-direction:column;box-sizing:border-box;">
+<div class="sc-panel-content" style="width:100%;margin-top:auto;margin-bottom:auto;"><div class="uk-section uk-section-muted uk-flex uk-flex-center uk-flex-middle" style="background:#ffffff;min-height:60vh;">
+      <div class="uk-container uk-text-justify" style="color:#000000;" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+        <h2 class="live-heading h-lg" style="color:#000000;">Sinossi</h2>
+        
+        <div class="live-paragraph p-lg" style="color:#000000;"><b><i><br></i></b><strong>Con “Donna senza remore”, Sara Ferro W. firma la terza traduzione italiana di un romanzo di Max Mohr, dopo “Venere in Pesci” e “La Pagana”.</strong><b>&nbsp;<br></b><p style="text-align: justify;"><i>"Il fatale cammino di una donna d’oggi, dalla vincolatezza alla famiglia verso una vita libera da ogni legame.</i></p><p style="text-align: justify;"><i>Tutti gli uomini di Mohr vivono con un’oscurità primordiale alle spalle. Nei loro percorsi seguono una spinta che viene dall’inconscio. È la paura, la sensazione di essere recisi, che nasce dalla marea calante, dal vuoto del mondo, a sospingerli in peregrinazioni senza tregua. Fuggono dalle falsità del loro tempo e cercano la propria vita, per esserne felici.</i></p><p style="text-align: justify;"><i>Per quanto le vicende di questo romanzo siano così mosse, avvincenti, attuali, limpide come la luce del giorno e leggere, altrettanto singolare, notturno e inafferrabile è il suo sottosuolo."</i></p><p style="text-align: justify;">La storia segue Lina Fenn, una donna fuori dalle convenzioni, attraversata da una tensione continua fra maternità, amore, libertà e responsabilità. Dopo una vita irregolare e un passato segnato da passioni assolute e scelte radicali, Lina vive a Feuz, un maso isolato sulle Alpi, insieme alla figlia Jane, nata da una relazione con Paul Fenn, uomo morto prematuramente e idealizzato come figura di verità e profondità.</p><p style="text-align: justify;">Lina cresce Jane lontano dal mondo, in una sorta di isolamento volontario che vuole protezione ma che progressivamente si rivela anche possesso. La gravidanza successiva finisce tragicamente: la bambina nasce morto, e il medico dottor Bollmann, uomo fallito ma ancora capace di compassione, assiste Lina in una notte carica di dolore e lucidità. Questo evento segna un punto di svolta: Lina comprende che non può continuare a vivere fuori dal tempo e dalla società.</p><p style="text-align: justify;">Decide così di vendere Feuz e trasferirsi a Berlino, dove vive sotto il nome di Frau Lina Fenn, vedova del professor Fenn. Qui Jane entra finalmente nel mondo: la scuola, la città, le relazioni. Lina è combattuta tra il desiderio di restare sola e la consapevolezza che la figlia deve appartenere anche al padre biologico, Herr Gade, potente uomo d’affari che “nuota con la corrente del suo tempo”. Gade è una figura ambigua: efficiente, dominante, ma segretamente attratta da una forma di libertà che non osa vivere se non nei suoi vagabondaggi serali da “uomo senza tasche”.</p><p style="text-align: justify;">Il romanzo si chiude come una parabola: la donna che ha attraversato città, uomini, maternità e solitudini trova la verità non nel successo né nella rinuncia, ma nell’atto finale di compassione assoluta.</p><p style="text-align: justify;">Il canto di Felix, la luna, e il silenzio delle montagne restano come eco di una bellezza tragica e necessaria.<br></p></div>
+        <div class="sc-content-button-pair"><a href="https://www.amazon.it/gp/product/B0GPQ3YZ6R" class="sc-core-cta sc-core-cta-dark" target="_blank" rel="noopener">Leggi ora</a></div>
+      </div>
+    </div></div>
+</section>
+
+<footer class="uk-section uk-section-small" 
+style="background:#000000; color:#ffffff; text-align:center;">
+<div class="footer-social" style="margin-bottom:10px;"><a href="https://www.amazon.it/dp/B0CBDS58C3?binding=paperback" uk-icon="icon: cart; ratio: 1.5" target="_blank" rel="noopener" style="margin:0 8px; color:#ffffff"></a><a href="https://www.amazon.it/dp/B0HKG6Z46V?binding=paperback" uk-icon="icon: bag; ratio: 1.5" target="_blank" rel="noopener" style="margin:0 8px; color:#ffffff"></a></div>
+
+
+<p><strong>Bella Germaniae – Traduzioni  mittelmediali & Pubblicazioni pseudologiche</strong></p>
+
+<p>&copy; 2026 Bella Germaniae</p>
+</footer>
+<script id="sc-protected-mail-runtime">
+(function(){
+  var KEY=0x5A;
+  function decode(hex){
+    try{
+      var bytes=[];
+      String(hex||'').replace(/../g,function(pair){bytes.push((parseInt(pair,16)^KEY)&255);return pair;});
+      if(window.TextDecoder) return new TextDecoder().decode(new Uint8Array(bytes));
+      var bin=''; for(var i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]);
+      try{return decodeURIComponent(escape(bin));}catch(_){return bin;}
+    }catch(_){return '';}
+  }
+
+  function fieldLabel(el){
+    var id=el.id||'';
+    var label=id ? document.querySelector('label[for="'+CSS.escape(id)+'"]') : null;
+    var txt=label ? label.textContent.replace(/\s*\*\s*$/,'').trim() : '';
+    return txt || el.name || el.getAttribute('placeholder') || id || 'Field';
+  }
+
+  function collectMailBody(form){
+    var lines=[];
+    var handledRadio=new Set();
+
+    form.querySelectorAll('input, textarea, select').forEach(function(el){
+      if(el.disabled || el.type==='submit' || el.type==='button' || el.type==='hidden') return;
+
+      var key=fieldLabel(el);
+
+      if(el.type==='radio'){
+        var group=el.name||key;
+        if(handledRadio.has(group)) return;
+        handledRadio.add(group);
+        var selected=form.querySelector('input[type="radio"][name="'+CSS.escape(el.name||'')+'"]:checked');
+        lines.push(key+': '+(selected ? selected.value : 'No selection'));
+        return;
+      }
+
+      if(el.type==='checkbox'){
+        lines.push(key+': '+(el.checked ? (el.value && el.value!=='on' ? el.value : 'Yes') : 'No'));
+        return;
+      }
+
+      if(el.type==='file'){
+        var names=el.files && el.files.length
+          ? Array.from(el.files).map(function(f){return f.name;}).join(', ')
+          : 'No file selected';
+        lines.push(key+': '+names);
+        return;
+      }
+
+      var value=String(el.value||'').trim();
+      lines.push(key+': '+value);
+    });
+
+    return lines.join('\r\n');
+  }
+
+  function composeMail(form){
+    if(!form) return false;
+    if(typeof form.reportValidity==='function' && !form.reportValidity()) return false;
+
+    var email=decode(form.getAttribute('data-sc-protected-mail'));
+    if(!email) return false;
+
+    var subject=form.getAttribute('data-sc-mail-subject')||'Contact';
+    var body=collectMailBody(form);
+    var mailto='mailto:'+email
+      +'?subject='+encodeURIComponent(subject)
+      +'&body='+encodeURIComponent(body);
+
+    /* iOS/Safari: launch mailto directly inside the user's tap gesture. */
+    window.location.href=mailto;
+    return false;
+  }
+
+  window.scComposeProtectedMailto=composeMail;
+
+  function bindMailtoForm(form){
+    if(!form || form.dataset.scMailBound==='1') return;
+    form.dataset.scMailBound='1';
+    form.removeAttribute('action');
+    form.removeAttribute('method');
+
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      ev.stopPropagation();
+      composeMail(form);
+      return false;
+    });
+  }
+
+  function activate(root){
+    (root||document).querySelectorAll('[data-sc-protected-mail]').forEach(function(el){
+      var email=decode(el.getAttribute('data-sc-protected-mail'));
+      if(!email) return;
+      if(el.matches('a')){
+        el.href='mailto:'+email;
+        var text=el.querySelector('[data-sc-protected-mail-text]');
+        if(text) text.textContent=email;
+      }else if(el.matches('form[data-sc-delivery="mailto"]')){
+        bindMailtoForm(el);
+      }
+    });
+  }
+  function boot(){
+    activate(document);
+    if(window.MutationObserver){
+      new MutationObserver(function(records){
+        records.forEach(function(r){r.addedNodes.forEach(function(n){if(n&&n.nodeType===1) activate(n);});});
+      }).observe(document.documentElement,{childList:true,subtree:true});
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot,{once:true});
+  else boot();
+})();
+</script>
+<script id="sc-form-file-runtime">
+(function(){
+  function bind(){
+    document.querySelectorAll('.sc-file-native:not([data-sc-file-bound])').forEach(function(input){
+      input.setAttribute('data-sc-file-bound','1');
+      input.addEventListener('change',function(){
+        var out=document.querySelector('[data-sc-file-name="'+input.id+'"]');
+        if(out) out.textContent=input.files&&input.files.length
+          ? Array.from(input.files).map(function(f){return f.name;}).join(', ')
+          : 'No file selected';
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true});
+  else bind();
+})();
+</script>
+
+
+<style>
+@media (max-width: 900px) {
+  #site-search-toggle,
+  #site-back-to-top {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    padding: 8px !important;
+  }
+  #site-search-toggle > span,
+  #site-back-to-top > span,
+  #site-search-toggle svg,
+  #site-back-to-top svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Search layering:
+   Editor section controls use z-index:2147483000.
+   Search must sit above them, while Lightbox must still sit above Search. */
+body.sc-search-navbar-mode #dynamic-navbar-container,
+body.sc-search-navbar-mode #preview-dynamic-nav,
+body.sc-search-navbar-mode nav.sc-dynamic-navbar{
+  z-index:2147483100 !important;
+  overflow:visible !important;
+}
+#site-search-widget,
+#site-search-panel{
+  z-index:2147483150 !important;
+}
+.uk-lightbox,
+.uk-lightbox.uk-open,
+.uk-lightbox .uk-lightbox-items{
+  z-index:2147483200 !important;
+}
+
+/* Search as a genuine Dynamic Nav Bar item. */
+#site-search-widget.sc-search-navbar{
+  position:relative;
+  z-index:2147483150;
+}
+#site-search-widget.sc-search-navbar #site-search-toggle{
+  width:40px !important;
+  height:40px !important;
+  min-width:40px !important;
+  min-height:40px !important;
+  padding:8px !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  color:var(--navbar-link-color,#111) !important;
+}
+#site-search-widget.sc-search-navbar #site-search-toggle svg{
+  width:20px !important;
+  height:20px !important;
+}
+#site-search-widget.sc-search-navbar #site-search-toggle svg,
+#site-search-widget.sc-search-navbar #site-search-toggle svg *,
+body.sc-search-navbar-mode #site-search-toggle svg,
+body.sc-search-navbar-mode #site-search-toggle svg *{
+  stroke-width:2 !important;
+}
+#site-search-widget.sc-search-navbar #site-search-panel{
+  right:0;
+  left:auto;
+  top:calc(100% + 14px);
+  bottom:auto;
+  transform:none;
+}
+
+/* Mobile navbar Search + menu are above page content, below Lightbox. */
+body.sc-search-navbar-mode #mobile-menu{
+  z-index:2147483120 !important;
+}
+body.sc-search-navbar-mode #mobile-menu-toggle{
+  z-index:2147483140 !important;
+}
+
+/* Mobile navbar search icon sits immediately before the hamburger. */
+@media (max-width:1024px){
+  body.sc-search-navbar-mode #site-search-toggle{
+    position:fixed !important;
+    top:12.5px !important;
+    right:58px !important;
+    left:auto !important;
+    z-index:2147483150 !important;
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    padding:8px !important;
+    border:0 !important;
+    border-radius:50% !important;
+    background:transparent !important;
+    color:var(--navbar-link-color,#111) !important;
+    box-shadow:none !important;
+  }
+  body.sc-search-navbar-mode #site-search-toggle svg{
+    width:20px !important;
+    height:20px !important;
+  }
+  body.sc-search-navbar-mode #site-search-panel.sc-search-mobile-panel{
+    position:static !important;
+    width:calc(100% - 32px) !important;
+    margin:12px auto 4px !important;
+    transform:none !important;
+    box-shadow:none !important;
+    border-radius:14px !important;
+    order:9999;
+  }
+}
+</style>
+
+<div id="site-search-widget"
+  class="sc-search-navbar"
+  style="position:relative;z-index:2147483150;">
+  <button id="site-search-toggle" type="button" aria-label="Search"
+    style="width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:#111;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;display:grid;place-items:center;padding:var(--sc-float-pad,0);">
+    <span uk-icon="search"></span>
+  </button>
+  <div id="site-search-panel"
+    style="display:none;position:absolute;right:0;top:54px;width:min(340px,82vw);background:#fff;color:#111;padding:12px;border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,.25);">
+    <input id="site-search-input" type="search" placeholder="Search all pages..."
+  style="width:100%;box-sizing:border-box;border:0;border-bottom:2px solid #111;padding:10px 8px;font:inherit;background:#fff !important;color:#111 !important;-webkit-text-fill-color:#111 !important;-webkit-appearance:none;appearance:none;outline:none;">
+    <div id="site-search-results" style="max-height:300px;overflow:auto;margin-top:8px;"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var MODE="export";
+  var NAVBAR_MODE=true;
+  var CURRENT_PAGE_ID="page-xlnu3mmg";
+  var INDEX_B64="W3sicGFnZUlkIjoiaG9tZSIsInBhZ2VUaXRsZSI6IkhvbWUiLCJhbmNob3IiOiIxIiwidGV4dCI6IkhvbWUg4oCUIExlZ2dpIG9yYSBMZWdnaSBvcmEgU2NvcHJpIGRpIHBpw7kgU2NvcHJpIGRpIHBpw7kgTGVnZ2kgb3JhIiwidXJsIjoiLi4vaW5kZXguaHRtbCJ9LHsicGFnZUlkIjoiaG9tZSIsInBhZ2VUaXRsZSI6IkhvbWUiLCJhbmNob3IiOiJiZWxsYS1nZXJtYW5pYWUiLCJ0ZXh0IjoiSG9tZSDigJQgQmVsbGEgR2VybWFuaWFlIOKAlCBCZWxsYSBHZXJtYW5pYWUgQmVsbGEgR2VybWFuaWFlIMOoIHVuYSB0cmliw7kgZGkgYXV0b3JpIGUgdHJhZHV0dG9yaSBjaGUgYXV0YXJjaGljYW1lbnRlIHNpIHB1YmJsaWNhbm8gbWFyY2hpYXRpIGEgZmVycm8gZSBmdW9jbywgbWV6emkgY29uIGN1aSBub24gZGV2YXN0YW5vIG1hIGFsbCdvcHBvc3RvIGNvbXBsZXRhbm8gaWwgcGFub3JhbWEgb2ZmZXJ0byBkYWwgc2lzdGVtYSBlZGl0b3JpYWxlLiBDb24gbGEgc3BhZGEgYWxpYXMgbGEgcGVubmEgQmVsbGEgR2VybWFuaWFlIGN1cmEgdGF1bWF0dXJnaWNhbWVudGUgYWwgZ3JpZG8gZGkgc2ltaWxpYSBzaW1pbGlidXMgY3VyYW50dXIgb3BlcmUgbmF0aXZlIGRlbGxvIHNwYXppbyBvbWVvcGF0aWNvIG1pdHRlbGV1cm9wZW8gY29uIGZvY3VzIGUgZmlhbW1lIHN1bGxhIEdlcm1hbmlhLCBzZW56YSB0cmF1bWksIHNvbG8gVHLDpHVtZSBvc3NpYSBzb2duaSwgc2VnbmF0YW1lbnRlIHNlZ25hdHVyZSB1bHRyYW1vbmRhbmUgdHJhZG90dGUgaW4gc2VnbmFsaSBtb25kYW5pc3NpbWksIGFpIHBpw7kgYWwgcGnDuSB0cm9wcG8gbW9uZGFuaS4gVHJhZHV6aW9uaSBsZXR0ZXJhcmllIGRhbCB0ZWRlc2NvIGFsbOKAmWl0YWxpYW5vIGUgZGFsbOKAmWl0YWxpYW5vIGFsIHRlZGVzY28gZGkgb3BlcmUgc29sbyBhbGzigJlvY2NoaW8gc3RhbmNvIGFsbOKAmWFwcGFyZW56YSBkYXRhdGUsIGNoZSB0dXR0YXZpYSwgdHV0dGFmaWF0YSwgdHV0dG9kw6wgc3VvbmFubyBpbmVkaXRlIGdpw6AgcGVyIGVzc2VyZSBzdGF0ZSBkZXR0ZSBpbiBhbHRyYSBsaW5ndWEgZSBhIGRpc3BldHRvIGRpIGVzc2VyIHN0YXRlIHNlcHBlbGxpdGUgdml2ZSwgdmVnZXRlIHNlYmJlbmUgcGVyIGF2ZXIgc29mZmVydG8gdGFsZSBzb3J0ZSwgbWFuY28gYSBkaXJsbywgYWxtZW5vIGJlbGxpY29zZSBxdWFudG8gVW1hIFRodXJtYW4gaW4gS2lsbCBCaWxsLiDigItNYSBhbmNoZSBvcGVyZSBzYWdnaWFtZW50ZSBuYXJyYXRpdmUgbnVvdmUgZGkgcGFjY28gZSBwZXIgbmllbnRlIHVuIHBhY2NvLCBzZSBub24gcGllbm8gZGkgcmVnYWxpIHJlZ2FsaSwgZGVnbmkgZGlnbml0YXJpIGRlbCB0ZW1wbyBkaSBsZXR0dXJhLiBDb211bmUgZGV0ZXJtaW5hdG9yZSBlIGZpbG8gY29uZHV0dG9yZSB1biB0cmFuc2ZlciBjdWx0dXJhbGUgLSBhbmNoZSBzb2xvIGFuZGF0YSwgYWwgbWVnbGlvIGFuZGF0YSBlIHJpdG9ybm8gLSB0cmEgbGEgR2VybWFuaWEgZSBs4oCZSXRhbGlhIGUvbyB2aWNldmVyc2EuIEJlbGxlIGxldHRlcmUgaXNwaXJhbnRpIGJlbGxlIGNvc2UsIGJlbGxpY29zZSBjb21lIGxvIHB1w7IgZXNzZXJlIHVuYSBwYXJ0aXRhIGEgc2NhY2NoaSwgc2VuemEgbWFjY2hpYSBlIHNlbnphIHBhdXJhIG7DqSBzcGFyZ2ltZW50aSBkaSBzYW5ndWUuIFBpdXR0b3N0byBpbmZ1c2lvbmkgZGkgcXVlc3Rpb25pIGFwZXJ0ZSwgc3BhbGFuY2F0ZSBzdSBhYmlzc2kgZGkgcHJvZm9uZGl0w6AgY29zbWljaGUsIGNoZSBsYXNjaWFubyBhdHRvbml0aSBlIGRvcG8gcXVlbCBicmV2ZSBsdW5nbyBhZGRpbyBhbGzigJl1bWFubyB0cm9wcG8gdW1hbm8sIGJpc29nbm9zaSBkaSBwYXJvbGUgdW1hbmlzc2ltZSAtIGTigJl1bWFuaXTDoCB2YXJpZWdhdGEgbWEgaW52YXJpYWJpbG1lbnRlIHRlbmRlbnRlIGFsIHJpdHJvdmFyZSBs4oCZdW1hbm8gb2x0cmUgbOKAmXVtYW5vLiBFIHRhbHZvbHRhIGFuY2hlIG5lbGzigJlhc29jaWFsZSwgbMOgIGRvdmUgc2kgcmlmdWdpYSB1bmEgcmljZXJjYSBkZWwgc2Fjcm8gdGFudG8gdG90YWxpenphbnRlIHF1YW50byBwb2NvIGRpc3Bvc3RhIGEgcHJlc2VudGFyc2kgY29uIGkgbWV6emkgc2FwaWVudGkgY2hlIGNpIHNpIGFzcGV0dGVyZWJiZS4gw4ggcHJvcHJpbyBuZWkgbWV6emkgaW5zaXBpZW50aSwgbmVsbGUgZGV2aWF6aW9uaSwgbmVsbGUgZmFsc2UgcGlzdGUsIG5lbGxlIG1hc2NoZXJlIGUgbmVsbGUgZm9ybWUgYXBwYXJlbnRlbWVudGUgaW5hZGVndWF0ZSBjaGUgQmVsbGEgR2VybWFuaWFlIGFtYSBhbmRhcmUgYSBjZXJjYXJlIGNpw7IgY2hlLCBjb24gc3RydW1lbnRpIHBpw7kgcmlzcGV0dGFiaWxpLCByaXNjaGllcmViYmUgZGkgbm9uIGZhcnNpIHRyb3ZhcmUuIERhIHF1aSBQc2V1ZG9sb2dpYSwgbGEgbm9zdHJhIGNvbGxhbmEgZGVkaWNhdGEgYWxsYSBtZW56b2duYSBjaGUgbm9uIHNpIGFjY29udGVudGEgZGkgbWVudGlyZTogcHNldWRvbG9naWUgY29tZSBjb3N0cnV6aW9uaSwgZmluemlvbmksIGZhbHNpZmljYXppb25pLCBldGVyb2Rvc3NpZSBlIGFsdHJlIGZvcm1lIGRpIHZlcml0w6AgdHJhdmVzdGl0YSwgY2FwYWNpIGRpIGluc2ludWFyc2kgZG92ZSBpbCBkaXNjb3JzbyBzZXJpbyBub24gYXJyaXZhLiBOb24gbGEgdmVyaXTDoCBjb250cm8gbGEgbWVuem9nbmEsIGR1bnF1ZSwgbWEgbGEgbWVuem9nbmEgY29tZSBwb3NzaWJpbGUgdmVpY29sbyBkaSB2ZXJpdMOgOyBub24gaWwgZmFsc28gY29tZSBlcnJvcmUgZGEgY29ycmVnZ2VyZSwgYmVuc8OsIGNvbWUgbWF0ZXJpYSBkYSBpbnRlcnJvZ2FyZSwgc29wcmF0dHV0dG8gcXVhbmRvIGNvbWluY2lhIGEgcmFjY29udGFyZSBxdWFsY29zYSBjaGUgaWwgdmVybywgZGEgc29sbywgbm9uIHNhIHBpw7kgZGlyZS4gUHNldWRvbG9naWEgw6ggcGVyY2nDsiBhbmNoZSB1biBtb2RvIGRpIGxlZ2dlcmU6IChub24pIHByZW5kZXJlIHN1bCBzZXJpbyBjacOyIGNoZSAobm9uKSBwb3RyZWJiZSAobm9uKSBlc3NlcmxvLCBkaWZmaWRhcmUgZGkgY2nDsiBjaGUgc2kgcHJlc2VudGEgY29tZSBkZWZpbml0aXZvLCBzZWd1aXJlIGxlIHBpc3RlIGxhdGVyYWxpLCBsYXNjaWFyZSBjaGUgbGV0dGVyYXR1cmEsIHN0b3JpYSwgcG9lc2lhLCB0ZW9yaWEsIG1pdG8gZSBpbnZlbnppb25lIHNpIGNvbnRhbWluaW5vIHJlY2lwcm9jYW1lbnRlLiBVbmEgcHNldWRvbG9naWEgY2hlLCBhIGZ1cmlhIGRpIG1lenppIGltcHJvcHJpIGUgcHJvY2VkaW1lbnRpIHBvY28gb3J0b2Rvc3NpLCBmaW5pc2NhIG1hZ2FyaSBwZXIgYXZ2aWNpbmFyc2kgYWwgc2Fjcm8gcHJvcHJpbyBtZW50cmUgZmluZ2UgZGkgY2VyY2FybG8gYWx0cm92ZS4g4oCLT3BlcmEgaW5kaWUgZWRpdG9yaWFsbWVudGUgZGVjZW50cmFsbWVudGUsIG9wZXJhIHNvbG8gb2duaSB2b2x0YSBjaGUgaWwgcG90ZW56aWFsZSBlbGVtZW50byBjaGUgc2kgc2VudGUgY2hpYW1hdG8gaW4gY2F1c2EgbG8gcml0aWVuZSBvcHBvcnR1bm8sIHByb211b3ZlbmRvIGxhdm9yaSBzdHJhdmFnYW50aSwgaW51c2l0YXRpLCBldGVyb2NsaXRpLCBhIHNlY29uZGEgZGVsbOKAmWVzdHJvLCBuZWxsbyBzdGlsZSwgbmVsIGNvbnRlbnV0bywgbmVsbGEgZm9ybWEsIG5lbCBtZXNzYWdnaW8uIEUgZHVucXVlIGFuY2hlIG5lbCByZWdpbWUuIFBlcmNow6kgaWwgcmVnaW1lIHB1w7IgY2FtYmlhcmUgZHVyYW50ZSBpbCBnaW9jby4gQmVsbGEgR2VybWFuaWFlIG5vbiBwcmV0ZW5kZSBkaSBzdGFiaWxpcmUgaW4gYW50aWNpcG8gZG92ZSBkZWJiYSBmaW5pcmUgdW7igJlvcGVyYSwgdW5hIHRyYWR1emlvbmUsIHVuYSByaWNlcmNhIG8gdW4gZXNwZXJpbWVudG8uIFByZWZlcmlzY2UgdmVkZXJlIGNoZSBjb3NhIHN1Y2NlZGUgbWV0dGVuZG9saSBpbiBjaXJjb2xvLiBVbmEgcGFnaW5hIHB1w7IgZGl2ZW50YXJlIHVuIGRpc3Bvc2l0aXZvOyB1bmEgdHJhZHV6aW9uZSB1biBwYXNzYWdnaW8gZGkgZnJvbnRpZXJhOyB1biBhcmNoaXZpbyB1biBtYXRlcmlhbGUgdml2bzsgdW5hIGNvbnZlcnNhemlvbmUgdW4gY29ycHVzOyB1biBjb3JwdXMgdW4gZ2lvY287IHVuIGdpb2NvIHVuYSBmb3JtYSBkaSBjb25vc2NlbnphLiBFIHVuYSBmb3JtYSBkaSBjb25vc2NlbnphLCB0YWx2b2x0YSwgdW5hIGZvcm1hIGRpIHBlcnR1cmJhemlvbmUuIEJlbGxhIEdlcm1hbmlhZSBhIGRpZmZlcmVuemEgZGkgQmVsbGEgSXRhbGlhIC0gZGljaXR1cmEgY29uIGN1aSBPbHRyYWxwZSBzcGVzc28gc2kgaW5zaXN0ZSBhZCBpbmRpY2FyZSBjb24gZ3JhbmRlIHN2aW9saW5hcmUgZW1vemlvbmF0byBsJ0l0YWxpYSAtIGVzaXN0ZSBkYXZ2ZXJvLiBJbCByZXN0byDDqCBzb2xvIEJlbCBQYWVzZSwgbWFyY2EgZOKAmWVzcG9ydGF6aW9uZS4gSW4gYXNzZW56YSBkaSBkaXppb25pIHBlciBpbmRpY2FyZSBsYSBHZXJtYW5pYSwgc2lhbW8gcmljb3JzaSBhZ2xpIGFudGljaGksIG5lbGxhIGZhdHRpc3BlY2llIGEgUGxpbmlvIElsIFZlY2NoaW8sIGNoZSBjb24gbGUgc3VlIEd1ZXJyZSBkZWxsYSBHZXJtYW5pYSBvIHRldXRvbmljaGUgZmFyw6AgdGFjaXRhbWVudGUgZGEgYmx1ZXByaW50IGEgVGFjaXRvLiBCZWxsYSBHZXJtYW5pYWUgZHVucXVlLCBwZXIgcGnDuSBvcGVyZSBlIG1lbm8gZ3VlcnJlIC0gYyfDqCBzZW1wcmUgdW5hIHNvbHV6aW9uZSBwacO5IHZhbnRhZ2dpb3NhIHBlciB0dXR0aTsgY2hlIGxhIGxldHR1cmEgLSBxdWVzdG8gbCdhdWd1cmlvIC0gcG9zc2EgYWl1dGFyZSBhIHNjb3ZhcmxlLiIsInVybCI6Ii4uL2luZGV4Lmh0bWwifSx7InBhZ2VJZCI6InBhZ2UtNjJoNzZ4bGIiLCJwYWdlVGl0bGUiOiJWZW5lcmUgaW4gUGVzY2kiLCJhbmNob3IiOiJ2ZW5lcmUtaW4tcGVzY2kiLCJ0ZXh0IjoiVmVuZXJlIGluIFBlc2NpIOKAlCBWZW5lcmUgaW4gUGVzY2lNYXggTW9ociB8IFRyYWR1emlvbmU6IFNhcmEgRmVycm8gVy4gTGVnZ2kgb3JhIiwidXJsIjoiLi4vdmVuZXJlLWluLXBlc2NpL2luZGV4Lmh0bWwifSx7InBhZ2VJZCI6InBhZ2UtNjJoNzZ4bGIiLCJwYWdlVGl0bGUiOiJWZW5lcmUgaW4gUGVzY2kiLCJhbmNob3IiOiJpbC1saWJybyIsInRleHQiOiJWZW5lcmUgaW4gUGVzY2kg4oCUIElsIGxpYnJvIOKAlCBJbCBsaWJybyBWZW5lcmUgaW4gUGVzY2kgZGkgTWF4IE1vaHIgdHJhZG90dG8gZGEgU2FyYSBGZXJybyBXLiIsInVybCI6Ii4uL3ZlbmVyZS1pbi1wZXNjaS9pbmRleC5odG1sIn0seyJwYWdlSWQiOiJwYWdlLTYyaDc2eGxiIiwicGFnZVRpdGxlIjoiVmVuZXJlIGluIFBlc2NpIiwiYW5jaG9yIjoic2lub3NzaSIsInRleHQiOiJWZW5lcmUgaW4gUGVzY2kg4oCUIFNpbm9zc2kg4oCUIFNpbm9zc2kg4oCLVmVuZXJlIGluIFBlc2NpIC0gUm9tYW56byBhc3Ryb2xvZ2ljbywgaWwgcHJpbW8gcm9tYW56byBkaSBNYXggTW9ociB0cmFkb3R0byBkYSBTYXJhIEZlcnJvIFcuIOKAiyDigItcIkJlcmxpbm8sIGFubmkg4oCZMjAuIFVuIG1lZGljbywgaWwgZG90dG9yIFF1YcOfIGUgdW5hIGRvdHRvcmVzc2EgaW4gbWVkaWNpbmEsIG5vbiBhYmlsaXRhdGEsIGxhIHNpZ25vcmluYSBPdHRlcmxvbywgZW50cmFtYmkgY29uIHJhcHBvcnRpIGRpIGxhdm9ybyBhIGRpciBwb2NvIHRyYWJhbGxhbnRpLCBzaSBpbmNvbnRyYW5vIGluIG9jY2FzaW9uZSBkaSB1biBwYXJ0byBpbiB1bmEgcmljY2EgdmlsbGEgZG92ZSBsb3JvIG1hbGdyYWRvIHBlciB1biBlcXVpdm9jbyBwcmVzdGFubyBhbWJlZHVlIGFzc2lzdGVuemEgYWxsYSBwYXJ0b3JpZW50ZSDigJMgbm9uIHNlbnphIHBlc3RhcnNpIGkgcGllZGkgLSBlIGZhbm5vIGxhIGNvbm9zY2VuemEgZGkgdW5vIHN0cmFubyBwZXJzb25hZ2dpbywgaWwgZG90dG9yIEFiYmEuIEFzc2llbWUgZmluaXJhbm5vIHBlciBhcHJpcmUgYWxsZSBwb3J0ZSBkZWxsYSBjaXR0w6AgdW5hIGNvc8OsIGRldHRhIOKAnGNsaW5pY2EgbWVkaWNvLWFzdHJvbG9naWNh4oCcLCBmb25kYXRhIGFsbG8gc2NvcG8gZGkgY2lyY29udmVuaXJlLCBzZWJiZW5lIG1vbHRvIGVsZWdhbnRlbWVudGUsIHNjaGllcmUgZGkgbnVvdmkgcmljY2hpIGUgdHV0dGEgdW5hIHN2YXJpYXRhIHZhcmlldMOgIGRpIGFwcGFydGVuZW50aSBhbCBiZWwgbW9uZG8sIGNoZSBjb21lIHN0cmVnYXRpIGRhbGwnYWxsdXJlIGRlbCBkb3R0b3IgQWJiYSBhIGZyb3R0ZSBhZGVyaXJhbm5vIGVudHVzaWFzdGkgYWxsJ2ltcHJlc2EuIE5lbGwnZWNvbm9taWEgZGVsIHJvbWFuem8gcXVlc3RpIGNvc3RpdHVpcmFubm8gdW5hIHNvcnRhIGRpIGdhbGxlcmlhIGRpIHRpcGkgdW1hbmkgYSBtZXTDoCB0cmEgaW1waWV0b3NvIGZhbMOyIGRlbGxlIHZhbml0w6AgZSBwaXR0dXJhIGRpIGdlbmVyZSBib3JnaGVzZSwgcml0cmF0dGlzdGljYSBlc3ByZXNzaW9uaXN0aWNhIGUgcGFyb2RpYSBkZWxsYSBOdW92YSBvZ2dldHRpdml0w6AsIHJhZmZpZ3VyYXRpIGNvbiB1bm8gc3RpbGUgc2VtcHJlIGluIGJpbGljbyB0cmEgY2FyaWNhdHVyYSBlIGltcHJlc3Npb25pIGRpIHBzaWNvbG9naWEgZGVsIHByb2ZvbmRvLiBMYSB0cmFtYSBzaSBzbm9kYSBhdHRvcm5vIGFsbGUgc2NlbHRlIGRpc3BlcmF0ZSBkZWkgdHJlLCBhIHR1cm5vIGRldHRhdGUgZGEgb3Bwb3J0dW5pc21vLCBkYSB1bm8gc3RyYW5vIGlkZWFsaXNtbyBzY3JlemlhdG8gZGkgc3ByZWdpdWRpY2F0byBwcmFnbWF0aXNtbyBvIGFuY29yYSBndWlkYXRlIGRhIHJpZ3VyZ2l0aSBkaSBhbnRpY29uZm9ybWlzbW8sIHJpb3R0b3NpdMOgIGUgcmliZWxsaW9uZS4gVW5hIGZyb2RlIGJlbiBhcmNoaXRldHRhdGEgZSByaXVzY2l0YSwgaSBjdWkgcHJvZml0dGkgaWxsZWNpdGkgdmVycmFubm8gc3BhcnRpdGkgZGFpIHRyZSBwZXJzb25hZ2dpIGRpIGN1aSBwcmltYSwgY2FwaXRhbmF0aSBkYWxsJ2lwbm90aWNvIEFiYmEuXCIgVmVuZXJlIGluIFBlc2NpIHNpIHN2aWx1cHBhIGF0dG9ybm8gYSB0ZW1hdGljaGUgcmljb3JyZW50aSBuZWxsYSB2aXRhIGRlbCBzdW8gYXV0b3JlIGUgbmVsbGUgcmlmbGVzc2lvbmkgdGlwaWNoZSBkZWxsYSBzdWEgZXBvY2EsIHR1dHRhdmlhIGVsYWJvcmF0ZSBkYSBNb2hyIGluIG1hbmllcmEgc3VibGltZW1lbnRlIHN1aSBnZW5lcmlzLCBpbmFzcGV0dGF0YW1lbnRlIGNydWRhIGUgdGVuZXJhOiBpbCBjb25mbGl0dG8gdHJhIG5hdHVyYSBlIHRlY25pY2EsIHRyYSBtb3JhbGUgZSBkZW5hcm8gLSB0cmEgbGEgR3JhbmRlIGUgbGEgUGljY29sYSBSYWdpb25lIC0sIHRyYSBjaXR0w6AgZSBjYW1wYWduYSwgdHJhIG1ldHJvcG9saSBlIHByb3ZpbmNpYSwgc2VuemEgcG9zc2liaWxpdMOgIGRpIHJpc29sdmVyZSB0YWxpIHRlbnNpb25pIHRhbnRvIGNvbm5hdHVyYXRlIGFsbGEgc2Vuc2liaWxpdMOgIG1vZGVybmEuIFF1aW5kaSBuaWVudGUgdmVybyBlIHByb3ByaW8gcml0b3JubyBhbGxhIG5hdHVyYSwgbsOpIHBhbmVnaXJpY2kgaW4gZmF2b3JlIGRlbGwnaWRpbGxpbyBidWNvbGljby4gTGEgdmlhIGQndXNjaXRhLCB1bmljYSBlIGRlZ25pc3NpbWEgw6ggcXVlbGxhIGRlbGxhIHBhcm9kaWEsIGRlbGxhIHNhdGlyYSwgZGVsbCd1bW9yaXNtbywgZGVsIG5vbnNlbnNlLCBkZWxsJ2ludmV0dGl2YSBzb2NpYWxlIGVsZWdhbnRlbWVudGUgc2NvY2NhdGEsIHRyYSBpbCBzZXJpbyBlIGlsIGZhY2V0bywgbWEgc2VtcHJlIHJhZmZpbmF0YSwgc29ycHJlbmRlbnRlbWVudGUgbGVnZ2VyYSBxdWFudG8gZWZmaWNhY2UsIGNoZSBzY2hlcm5pc2NlIGF0dGVnZ2lhbWVudGkgbm9uIHJlZ2lzdHJhdGkgZGFpIHBpw7kgY29tZSBiaXNsYWNjaGkgLSBhbCBtYXNzaW1vIHN0cmFtYmksIGNvbXVucXVlIGJlbiB0b2xsZXJhdGkgZGEgY2hpIHNpIGFzc29nZ2V0dGEgdm9sZW50aWVyaSBhaSBjYXByaWNjaSBkZWxsYSBtb2RhIGUgYWkgZGV0dGFtaSBkZWxsYSBzb2NpZXTDoCAtLCBtYSBjaGUgYSB1biBwacO5IGF0dGVudG8gc2NydXRpbmlvIGRlbGxhIHJhZ2lvbmUgbm9uIHBvc3Nvbm8gY2hlIGFwcGFyaXJlIG5lbGxhIGxvcm8gYml6emFycmlhIGRlbWVuemlhbGUsIG1hbmlhY2FsaSwgc2N1cnJpbGksIHBvdGVuemlhbG1lbnRlIGNhbGFtaXRvc2kuIFNlbnphIGZhcm5lIHRyb3BwbyB1biBkcmFtbWEgcGVyw7IsIGxlIGNvc2UgdmFubm8gc2Vjb25kbyBpbCBsb3JvIGRlc3Rpbm8sIHNvbG8gbGUgc3RlbGxlIHNhbm5vLCBwZXIgY2hpIHNpIGxhc2NpYSBpbWJhbWJvbGFyZSBkYSB0YWxpIGFtZW5pdMOgLCBzZWJiZW5lLCBzZWJiZW5lLCBzZWJiZW5lLi4uIExlZ2dpIG9yYSIsInVybCI6Ii4uL3ZlbmVyZS1pbi1wZXNjaS9pbmRleC5odG1sIn0seyJwYWdlSWQiOiJwYWdlLTRxcTM5Mnl4IiwicGFnZVRpdGxlIjoiTGEgUGFnYW5hIiwiYW5jaG9yIjoibGEtcGFnYW5hIiwidGV4dCI6IkxhIFBhZ2FuYSDigJQgTGEgUGFnYW5hTWF4IE1vaHIgfCBUcmFkdXppb25lOiBTYXJhIEZlcnJvIFcuIExlZ2dpIG9yYSIsInVybCI6Ii4uL2xhLXBhZ2FuYS9pbmRleC5odG1sIn0seyJwYWdlSWQiOiJwYWdlLTRxcTM5Mnl4IiwicGFnZVRpdGxlIjoiTGEgUGFnYW5hIiwiYW5jaG9yIjoiaWwtbGlicm8iLCJ0ZXh0IjoiTGEgUGFnYW5hIOKAlCBJbCBsaWJybyDigJQgSWwgbGlicm8gTGEgUGFnYW5hIGRpIE1heCBNb2hyIHRyYWRvdHRvIGRhIFNhcmEgRmVycm8gVy4iLCJ1cmwiOiIuLi9sYS1wYWdhbmEvaW5kZXguaHRtbCJ9LHsicGFnZUlkIjoicGFnZS00cXEzOTJ5eCIsInBhZ2VUaXRsZSI6IkxhIFBhZ2FuYSIsImFuY2hvciI6InNpbm9zc2kiLCJ0ZXh0IjoiTGEgUGFnYW5hIOKAlCBTaW5vc3NpIOKAlCBTaW5vc3NpIOKAi0xhIFBhZ2FuYSwgaWwgc2Vjb25kbyByb21hbnpvIGRpIE1heCBNb2hyIHRyYWRvdHRvIGRhIFNhcmEgRmVycm8gVy4gLSBnacOgIHRyYWR1dHRyaWNlIGRpIFZlbmVyZSBpbiBQZXNjaS4g4oCLIOKAiyguLi4pIFVuYSB2b2x0YSBs4oCZaW5zZWd1aW1lbnRvIHBhZ2FubyBzaSBpbm9sdHJhdmEgYW5zaW1hbnRlIG5lbGxhIGZvcmVzdGEsIGNvbiBsZSBzdW9sZSBudWRlIHN1bGxlIGZvZ2xpZSB2ZWNjaGllLCBjb24gbGUgY29zY2UgbGFyZ2hlIHN1bGxlIHN0ZXJwYWdsaWUgZGVsIGZyYW5naXZlbnRvLCBzZW1wcmUgcGnDuSBpbiBwcm9mb25kaXTDoCBuZWwgc290dG9ib3NjbywgdmlhIHZpYSBwacO5IGxvbnRhbm8gZGFsIHNvbGUsIHF1aW5kaSBsJ3VvbW8gdmVuaXZhIHBpw7kgdmljaW5vLCBzZW56YSBwYXJvbGUsIHNlbnphIHVuIHJpY2hpYW1vLCBhbGxvcmEgbCdvZG9yZSBtdXNjaGlvc28gc2kgbGV2YXZhIGludG9ybm8gYWxsYSBkb25uYSwgYWxsb3JhIGlsIHN1byBjYW1taW5vIHNpIGZhY2V2YSBkZWJvbGUsIGRlYm9saSBpbCBzdW8gY3VvcmUgZSBsZSBzdWUgdmlzY2VyZSwgcXVpbmRpIGxlaSBnaXVuZ2V2YSBhbGxhIG1hY2NoaWEgZGkgbXVzY2hpbyB0cmEgaSBwaW5pIGltcGlnbGlhdGksIGzDrCBjYWRldmEgY29uIGxlIGdpbm9jY2hpYSBhbGxlbnRhdGUsIGzDrCBhbmNoZSBsdWkgY2FkZXZhIHN1bGxhIHRlcnJhIHVtaWRhIGRlbGxhIHN1YSB0ZXJyYSwgaWwgc2lnbm9yZSBkZWxsYSB0ZXJyYSwgbCd1b21vLiBQb2kgZXJhbm8gYXJyaXZhdGkgaSBzYWNlcmRvdGkgZSBzaSBlcmFubyBlcmV0dGkgc29wcmEgbGEgY29wcGlhIHVtYW5hIGUgYXZldmFubyBzaXN0ZW1hdG8gaSBsb3JvIHNnYWJlbGxpIG5lbGxlIHN0YW56ZSBkZWkgbG9ybyBkw6hpIGludmlzaWJpbGksIHBlciBwb3RlciBzdGFyZSBwacO5IGluIGFsdG8gZGVsbGEgY29wcGlhIHVtYW5hLCBlIGlsIGxvcm8gZGlzY29yc28gZXJhIHN0YXRvOiBcIlR1IGRldmkgZSB0dSBub24gZGV2aSFcIi4gRG92cmFpIHN0cmlzY2lhcmUgc3VsIHR1byB2ZW50cmUgZSBtYW5nZXJhaSBwb2x2ZXJlLCBkb3ZyYWkgYXZlcmUgc3Vkb3JlIHN1bGxhIHR1YSBmcm9udGUsIGRvdnJhaSBwb3JnZXJlIGxhIGd1YW5jaWEgc2luaXN0cmEsIGRvdnJhaSBlc3NlcmUgcG92ZXJvIG8gdmVkZXJlIGRpIHBhc3NhcmUgYXR0cmF2ZXJzbyBsYSBjcnVuYSBkaSB1biBhZ28sIGUgZG92cmFpIHBhZ2FyZSBiZW5lIGkgdHVvaSBzYWNlcmRvdGksIGFmZmluY2jDqSB0aSBkaWNhbm8gY2nDsiBjaGUgZGV2aS4gUG9pIHNpIGVyYSBhdnZlbnRhdG8gbG8gU3RhdG8gc3VsbGEgY29wcGlhIGludGltaWRpdGEgZSBpbCBzdW8gZGlzY29yc28gZXJhIHN0YXRvOiBcIlR1IHB1b2kgZSB0dSBub24gcHVvaSFcIi4gUHVvaSBtb3JpcmUgcGVyIGxvIFN0YXRvIGUgZ2VuZXJhcmUgZmlnbGksIHB1b2kgZXNzZXJlIHNjaGlhdm8gZGVsbG8gU3RhdG8gZSBwYWdhcmUgbGUgdGFzc2UsIG1hIG5vbiBwdW9pIGNhbHBlc3RhcmUgaWwgcHJhdG8gdmVyZGUgZSBub24gcHVvaSBlc3NlcmUgcG92ZXJvIG8gc2FyYWkgYXJyZXN0YXRvLCBub24gcHVvaSBmYXJlIG5pZW50ZSBpbiBuZXJvIGUgcGVuc2FyZS4gRSBwYXJsYXRlIGNvbiBsYSBtYW1tYT8gUGVyIHVuIGFubm8gbmVsbGEgdGVycmEgcGlldHJvc2EgZGVsbGEgR2xvbm4hIEUgcGFybGF0ZSBjb24gcGFww6A/IERpdm9yYXRvIHBlbGxlIGUgY2FwZWxsaSBkYWxsYSBjaXR0w6AgdXJiYW5hLi4uIEZpbmNow6kgbGEgbGliZXJ0w6Agbm9uIGdpdW5zZSBmaW5hbG1lbnRlIGFsbGEgY29wcGlhIHVtYW5hIGRpc3BlcmF0YSBlIHN1aSBnaW9ybmFsaSBzaSBsZXNzZTogXCJMYSBjb3BwaWEgdW1hbmEgw6ggbGliZXJhLCBhbGxlbHVpYSFcIi4gQWxsb3JhIGxhIGNvcHBpYSBsaWJlcmF0YSBzaSBnZXR0w7Igc3VsIG51b3ZvIGxldHRvIG51emlhbGUgaW4gbGliZXJ0w6AgZSBkYSBsw6wgbmVsIHZ1b3RvLCBwcm9wcmlvIGNvbWUgZXJhIHN0YXRvIHByZXNjcml0dG8gZGFsIGxvcm8gZ2lvcm5hbGUuIE1hIGlsIGdpb3JubyBkb3BvIGVyYSBmaW5pdGEgbGEgcmFnaW9uZXZvbGV6emEgZSBzcHV0YXZhbm8gc3VpIHJlY2lwcm9jaSBkZXNpZGVyaSBmYW50YXNtYSBlIG1hbGVkaWNldmFubyBpIGxvcm8gbmF0aSBtb3J0aSBlIHJvbXBldmFubyBsYSBsaWJlcnTDoCBkaSBjYXJ0YSwgcGVyY2jDqSBlcmEgc3RhdGEgc29sbyBsYSBsaWJlcnTDoCBkZWdsaSBzY2hpYXZpIGxpYmVyYXRpIGUgbm9uIGxhIGxpYmVydMOgIGRlbGxlIHBlcnNvbmUgY3Jlc2NpdXRlIGxpYmVyZS4uLiBRdWluZGkgY29zYSBmYWNldmEgdW5hIGRvbm5hIHF1YW5kbywgZG9wbyBpbCBmYWxsaW1lbnRvIGRlbGxvIFN0YXRvIGUgZGVsbGEgQ2hpZXNhIGUgZGVsbGEgY2FzYSBkZWkgZ2VuaXRvcmkgZSBkZWxsYSBsaWJlcnTDoCBkaSBzdGFtcGEsIHVuIHVvbW8gbWFzY2hpbyBsZSBwaWFjZXZhPyAoLi4uKSDigIsgKOKApikgSSBjaW5lc2kgYXZldmFubyBjb3N0cnVpdG8gdW5hIG11cmFnbGlhIGludG9ybm8gYWwgbG9ybyBpbXBlcm8gZSBpbCBwcm9mZXNzb3IgR2bDpGxsZXIgbGUgYXZldmEgcGFybGF0byBkZWwgc2lnbmlmaWNhdG8gcGnDuSBwcm9mb25kbyBkaSBxdWVzdGEgbXVyYWdsaWE7IGF2ZXZhIHRyYXNjb3JzbyBkaWVjaSBhbm5pIGluIE1vbmdvbGlhIGNvbWUgc3BlY2lhbGlzdGEgZGkgYm90YW5pY2EgZGVsbCdBc2lhIG9yaWVudGFsZS4gQWxsJ2ludGVybm8gZGkgcXVlbCBtdXJvIG5vbiBjJ2VyYSB1bm8gU3RhdG8sIG1hIHVuIGltcGVybywgdW4gaW1wZXJvIHVtYW5vLiBBbGwnaW50ZXJubyBkaSBxdWVsIG11cm8sIGxhIG1vcnRlIG5vbiB2ZW5pdmEgaW5nYW5uYXRhIGNvbiBsZSBmYXZvbGUgZGVsbCdhbGRpbMOgLCBtYSBlcmEgaW5jbHVzYSBuZWxsJ2VzaXN0ZW56YSBjb21lIGZyYXRlbGxvIG9zY3VybyBkaSBxdWVzdGEgdml0YSBsdW1pbm9zYSBlIHByZXNhIGluIGNhcmljbyBkYWxsYSBkZXZvemlvbmUgcGFnYW5hIGRlbGzigJlhbGRpcXXDoC4gQWxsJ2ludGVybm8gZGkgcXVlbCBtdXJvIG5vbiBjJ2VyYSB1bmEgbWV0YSB2ZXJzbyBsYSBxdWFsZSBsJ3VtYW5pdMOgIGRvdmVzc2UgbWFyY2lhcmUgY29uIGxhIGZyb250ZSBhZ2dyb3R0YXRhIGUgaWwgcHVnbm8gY2hpdXNvLCBub24gYydlcmEgbGEgbWV0YSB1bHRyYXRlcnJlbmEgZGVsIGNpZWxvIGNvbWUgYXZldmFubyBpbXBvcnRhdGEgaSBtaXNzaW9uYXJpLCBub24gYydlcmEgbGEgbWV0YSBtb25kYW5hIGRlbCBwcm9ncmVzc28gZSBkZWxsbyBzdmlsdXBwbyBpbXBvcnRhdGEgZGFpIHRlY25pY2kgZSBkYWkgY29tbWVyY2lhbnRpLCBkYWxsJ0V1cm9wYSBlIGRhbGwnQW1lcmljYSwgZGFpIHJ1c3NpIGUgZGFpIG1pbGl0YXJpIGUgZGEgQ29vayBhbmQgc29uOiBjJ2VyYSB1biB2YWdhcmUgZSB1biBnaXJhcmUgaW4gdG9uZG8sIHNlbnphIG1ldGEsIGUgaW4gbWV6em8gYSB0dXR0byBxdWVzdG8gdml2ZXZhLCBpbiBkaW5hc3RpZSBtb25hc3RpY2hlIGUgaW4gZGluYXN0aWUgZmFtaWxpYXJpLCBpbiBzb2xpdHVkaW5lIGUgaW4gaW50cmljYXRlIGFsbGVhbnplIHNlbnphIGRpcmV6aW9uZSwgc2Ugc3Rlc3NvLCBsJ3VvbW8uIExhZ2dpw7kgYydlcmFubyBsZSBwacO5IGJlbGxlIHBpYW50ZSBwZXJlbm5pIGRlbGxhIHRlcnJhLiBFIGFuY2hlIHNlIGVyYSBzb2xvIHVuIHJlZ25vIHVtYW5vIGdpYWxsbywgdW4gZXNlbXBpbyBsb250YW5vIGUgZmF0aXNjZW50ZSBkaSB1biB2ZXJvIHJlZ25vIHVtYW5vOiBlcmEgc3RhdG8gZSBwb3RldmEgZXNzZXJlIGRpIG51b3ZvLiAo4oCmKSBMZWdnaSBvcmEiLCJ1cmwiOiIuLi9sYS1wYWdhbmEvaW5kZXguaHRtbCJ9LHsicGFnZUlkIjoicGFnZS14bG51M21tZyIsInBhZ2VUaXRsZSI6IkRvbm5hIHNlbnphIHJlbW9yZSIsImFuY2hvciI6ImRvbm5hLXNlbnphLXJlbW9yZSIsInRleHQiOiJEb25uYSBzZW56YSByZW1vcmUg4oCUIERvbm5hIHNlbnphIHJlbW9yZU1heCBNb2hyIHwgVHJhZHV6aW9uZTogU2FyYSBGZXJybyBXLiBMZWdnaSBvcmEiLCJ1cmwiOiIuLi9kb25uYS1zZW56YS1yZW1vcmUvaW5kZXguaHRtbCJ9LHsicGFnZUlkIjoicGFnZS14bG51M21tZyIsInBhZ2VUaXRsZSI6IkRvbm5hIHNlbnphIHJlbW9yZSIsImFuY2hvciI6ImlsLWxpYnJvIiwidGV4dCI6IkRvbm5hIHNlbnphIHJlbW9yZSDigJQgSWwgbGlicm8g4oCUIElsIGxpYnJvIERvbm5hIHNlbnphIHJlbW9yZSBkaSBNYXggTW9ociB0cmFkb3R0byBkYSBTYXJhIEZlcnJvIFcuIiwidXJsIjoiLi4vZG9ubmEtc2VuemEtcmVtb3JlL2luZGV4Lmh0bWwifSx7InBhZ2VJZCI6InBhZ2UteGxudTNtbWciLCJwYWdlVGl0bGUiOiJEb25uYSBzZW56YSByZW1vcmUiLCJhbmNob3IiOiJzaW5vc3NpIiwidGV4dCI6IkRvbm5hIHNlbnphIHJlbW9yZSDigJQgU2lub3NzaSDigJQgU2lub3NzaSBDb24g4oCcRG9ubmEgc2VuemEgcmVtb3Jl4oCdLCBTYXJhIEZlcnJvIFcuIGZpcm1hIGxhIHRlcnphIHRyYWR1emlvbmUgaXRhbGlhbmEgZGkgdW4gcm9tYW56byBkaSBNYXggTW9ociwgZG9wbyDigJxWZW5lcmUgaW4gUGVzY2nigJ0gZSDigJxMYSBQYWdhbmHigJ0uIFwiSWwgZmF0YWxlIGNhbW1pbm8gZGkgdW5hIGRvbm5hIGTigJlvZ2dpLCBkYWxsYSB2aW5jb2xhdGV6emEgYWxsYSBmYW1pZ2xpYSB2ZXJzbyB1bmEgdml0YSBsaWJlcmEgZGEgb2duaSBsZWdhbWUuVHV0dGkgZ2xpIHVvbWluaSBkaSBNb2hyIHZpdm9ubyBjb24gdW7igJlvc2N1cml0w6AgcHJpbW9yZGlhbGUgYWxsZSBzcGFsbGUuIE5laSBsb3JvIHBlcmNvcnNpIHNlZ3Vvbm8gdW5hIHNwaW50YSBjaGUgdmllbmUgZGFsbOKAmWluY29uc2Npby4gw4ggbGEgcGF1cmEsIGxhIHNlbnNhemlvbmUgZGkgZXNzZXJlIHJlY2lzaSwgY2hlIG5hc2NlIGRhbGxhIG1hcmVhIGNhbGFudGUsIGRhbCB2dW90byBkZWwgbW9uZG8sIGEgc29zcGluZ2VybGkgaW4gcGVyZWdyaW5hemlvbmkgc2VuemEgdHJlZ3VhLiBGdWdnb25vIGRhbGxlIGZhbHNpdMOgIGRlbCBsb3JvIHRlbXBvIGUgY2VyY2FubyBsYSBwcm9wcmlhIHZpdGEsIHBlciBlc3Nlcm5lIGZlbGljaS5QZXIgcXVhbnRvIGxlIHZpY2VuZGUgZGkgcXVlc3RvIHJvbWFuem8gc2lhbm8gY29zw6wgbW9zc2UsIGF2dmluY2VudGksIGF0dHVhbGksIGxpbXBpZGUgY29tZSBsYSBsdWNlIGRlbCBnaW9ybm8gZSBsZWdnZXJlLCBhbHRyZXR0YW50byBzaW5nb2xhcmUsIG5vdHR1cm5vIGUgaW5hZmZlcnJhYmlsZSDDqCBpbCBzdW8gc290dG9zdW9sby5cIkxhIHN0b3JpYSBzZWd1ZSBMaW5hIEZlbm4sIHVuYSBkb25uYSBmdW9yaSBkYWxsZSBjb252ZW56aW9uaSwgYXR0cmF2ZXJzYXRhIGRhIHVuYSB0ZW5zaW9uZSBjb250aW51YSBmcmEgbWF0ZXJuaXTDoCwgYW1vcmUsIGxpYmVydMOgIGUgcmVzcG9uc2FiaWxpdMOgLiBEb3BvIHVuYSB2aXRhIGlycmVnb2xhcmUgZSB1biBwYXNzYXRvIHNlZ25hdG8gZGEgcGFzc2lvbmkgYXNzb2x1dGUgZSBzY2VsdGUgcmFkaWNhbGksIExpbmEgdml2ZSBhIEZldXosIHVuIG1hc28gaXNvbGF0byBzdWxsZSBBbHBpLCBpbnNpZW1lIGFsbGEgZmlnbGlhIEphbmUsIG5hdGEgZGEgdW5hIHJlbGF6aW9uZSBjb24gUGF1bCBGZW5uLCB1b21vIG1vcnRvIHByZW1hdHVyYW1lbnRlIGUgaWRlYWxpenphdG8gY29tZSBmaWd1cmEgZGkgdmVyaXTDoCBlIHByb2ZvbmRpdMOgLkxpbmEgY3Jlc2NlIEphbmUgbG9udGFubyBkYWwgbW9uZG8sIGluIHVuYSBzb3J0YSBkaSBpc29sYW1lbnRvIHZvbG9udGFyaW8gY2hlIHZ1b2xlIHByb3RlemlvbmUgbWEgY2hlIHByb2dyZXNzaXZhbWVudGUgc2kgcml2ZWxhIGFuY2hlIHBvc3Nlc3NvLiBMYSBncmF2aWRhbnphIHN1Y2Nlc3NpdmEgZmluaXNjZSB0cmFnaWNhbWVudGU6IGxhIGJhbWJpbmEgbmFzY2UgbW9ydG8sIGUgaWwgbWVkaWNvIGRvdHRvciBCb2xsbWFubiwgdW9tbyBmYWxsaXRvIG1hIGFuY29yYSBjYXBhY2UgZGkgY29tcGFzc2lvbmUsIGFzc2lzdGUgTGluYSBpbiB1bmEgbm90dGUgY2FyaWNhIGRpIGRvbG9yZSBlIGx1Y2lkaXTDoC4gUXVlc3RvIGV2ZW50byBzZWduYSB1biBwdW50byBkaSBzdm9sdGE6IExpbmEgY29tcHJlbmRlIGNoZSBub24gcHXDsiBjb250aW51YXJlIGEgdml2ZXJlIGZ1b3JpIGRhbCB0ZW1wbyBlIGRhbGxhIHNvY2lldMOgLkRlY2lkZSBjb3PDrCBkaSB2ZW5kZXJlIEZldXogZSB0cmFzZmVyaXJzaSBhIEJlcmxpbm8sIGRvdmUgdml2ZSBzb3R0byBpbCBub21lIGRpIEZyYXUgTGluYSBGZW5uLCB2ZWRvdmEgZGVsIHByb2Zlc3NvciBGZW5uLiBRdWkgSmFuZSBlbnRyYSBmaW5hbG1lbnRlIG5lbCBtb25kbzogbGEgc2N1b2xhLCBsYSBjaXR0w6AsIGxlIHJlbGF6aW9uaS4gTGluYSDDqCBjb21iYXR0dXRhIHRyYSBpbCBkZXNpZGVyaW8gZGkgcmVzdGFyZSBzb2xhIGUgbGEgY29uc2FwZXZvbGV6emEgY2hlIGxhIGZpZ2xpYSBkZXZlIGFwcGFydGVuZXJlIGFuY2hlIGFsIHBhZHJlIGJpb2xvZ2ljbywgSGVyciBHYWRlLCBwb3RlbnRlIHVvbW8gZOKAmWFmZmFyaSBjaGUg4oCcbnVvdGEgY29uIGxhIGNvcnJlbnRlIGRlbCBzdW8gdGVtcG/igJ0uIEdhZGUgw6ggdW5hIGZpZ3VyYSBhbWJpZ3VhOiBlZmZpY2llbnRlLCBkb21pbmFudGUsIG1hIHNlZ3JldGFtZW50ZSBhdHRyYXR0YSBkYSB1bmEgZm9ybWEgZGkgbGliZXJ0w6AgY2hlIG5vbiBvc2Egdml2ZXJlIHNlIG5vbiBuZWkgc3VvaSB2YWdhYm9uZGFnZ2kgc2VyYWxpIGRhIOKAnHVvbW8gc2VuemEgdGFzY2hl4oCdLklsIHJvbWFuem8gc2kgY2hpdWRlIGNvbWUgdW5hIHBhcmFib2xhOiBsYSBkb25uYSBjaGUgaGEgYXR0cmF2ZXJzYXRvIGNpdHTDoCwgdW9taW5pLCBtYXRlcm5pdMOgIGUgc29saXR1ZGluaSB0cm92YSBsYSB2ZXJpdMOgIG5vbiBuZWwgc3VjY2Vzc28gbsOpIG5lbGxhIHJpbnVuY2lhLCBtYSBuZWxs4oCZYXR0byBmaW5hbGUgZGkgY29tcGFzc2lvbmUgYXNzb2x1dGEuSWwgY2FudG8gZGkgRmVsaXgsIGxhIGx1bmEsIGUgaWwgc2lsZW56aW8gZGVsbGUgbW9udGFnbmUgcmVzdGFubyBjb21lIGVjbyBkaSB1bmEgYmVsbGV6emEgdHJhZ2ljYSBlIG5lY2Vzc2FyaWEuIExlZ2dpIG9yYSIsInVybCI6Ii4uL2Rvbm5hLXNlbnphLXJlbW9yZS9pbmRleC5odG1sIn1d";
+  var ROUTES_B64="eyJob21lIjoiLi4vaW5kZXguaHRtbCIsInBhZ2UtNjJoNzZ4bGIiOiIuLi92ZW5lcmUtaW4tcGVzY2kvaW5kZXguaHRtbCIsInBhZ2UtNHFxMzkyeXgiOiIuLi9sYS1wYWdhbmEvaW5kZXguaHRtbCIsInBhZ2UteGxudTNtbWciOiIuLi9kb25uYS1zZW56YS1yZW1vcmUvaW5kZXguaHRtbCJ9";
+  var SEARCH_NO_RESULTS="Cerca un'altra parola";
+  var SEARCH_PAGE_LABEL="Pagine";
+  var widget=document.getElementById('site-search-widget');
+  var toggle=document.getElementById('site-search-toggle');
+  var panel=document.getElementById('site-search-panel');
+  var input=document.getElementById('site-search-input');
+  var results=document.getElementById('site-search-results');
+  if(!widget||!toggle||!panel||!input||!results) return;
+
+  function decode(b64){
+    try{return JSON.parse(decodeURIComponent(escape(atob(b64||''))))}catch(e){return []}
+  }
+  var INDEX=decode(INDEX_B64);
+  var ROUTES=decode(ROUTES_B64) || {};
+
+  function mobileMenu(){
+    return document.getElementById('mobile-menu');
+  }
+  function hamburger(){
+    return document.getElementById('mobile-menu-toggle');
+  }
+
+  function mountNavbarSearch(){
+    if(!NAVBAR_MODE) return;
+
+    document.body.classList.add('sc-search-navbar-mode');
+
+    var mobile=window.matchMedia('(max-width:1024px)').matches;
+    var nav=
+      document.getElementById('dynamic-navbar-container') ||
+      document.querySelector('#preview-dynamic-nav .sc-dynamic-navbar') ||
+      document.querySelector('nav.sc-dynamic-navbar') ||
+      document.querySelector('nav.uk-navbar-container');
+    var mm=mobileMenu();
+
+    if(mobile){
+      if(widget.parentNode!==document.body) document.body.appendChild(widget);
+      widget.style.position='static';
+      panel.classList.add('sc-search-mobile-panel');
+
+      /* Search belongs after navigation links. openPanel() re-appends it after
+         any Mobile Menu rebuild, so it always survives regenerated menu content. */
+      if(mm && panel.parentNode!==mm) mm.appendChild(panel);
+    }else{
+      panel.classList.remove('sc-search-mobile-panel');
+      if(nav && widget.parentNode!==nav) nav.appendChild(widget);
+      if(panel.parentNode!==widget) widget.appendChild(panel);
+      widget.style.marginLeft='auto';
+      widget.style.marginRight='12px';
+      widget.style.flex='0 0 auto';
+    }
+
+    try{ if(window.UIkit) UIkit.update(document.body); }catch(e){}
+  }
+
+  function openPanel(){
+    if(NAVBAR_MODE && window.matchMedia('(max-width:1024px)').matches){
+      var mm=mobileMenu();
+      var hb=hamburger();
+
+      /* The mobile-menu builder clears/recreates its links. Rebuild first,
+         then append Search after those links so it cannot be discarded. */
+      try{
+        if(typeof window.__rebuildMobileMenu==='function') window.__rebuildMobileMenu();
+      }catch(e){}
+
+      mm=mobileMenu();
+      if(mm && panel.parentNode!==mm) mm.appendChild(panel);
+
+      if(mm) mm.classList.add('show');
+      if(hb) hb.classList.add('open');
+
+      panel.classList.add('sc-search-mobile-panel');
+      panel.style.display='block';
+      setTimeout(function(){input.focus();},30);
+      return;
+    }
+
+    panel.style.display='block';
+    setTimeout(function(){input.focus();},20);
+  }
+
+function closePanel(){
+  panel.style.display='none';
+
+  var mobileMenu=document.getElementById('mobile-menu');
+  var mobileMenuToggle=document.getElementById('mobile-menu-toggle');
+
+  if(mobileMenu){
+    mobileMenu.classList.remove('show');
+    mobileMenu.setAttribute('aria-hidden','true');
+  }
+
+  if(mobileMenuToggle){
+    mobileMenuToggle.classList.remove('open');
+    mobileMenuToggle.setAttribute('aria-expanded','false');
+  }
+}
+
+  toggle.addEventListener('click',function(e){
+    /* Search lives outside #mobile-menu, so the Mobile Menu's document-level
+       outside-click handler would otherwise close the menu immediately. */
+    if(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(typeof e.stopImmediatePropagation==='function') e.stopImmediatePropagation();
+    }
+
+    var open=panel.style.display!=='none';
+    if(open) closePanel(); else openPanel();
+  });
+
+  function go(hit){
+    closePanel();
+
+    if(MODE==='preview'){
+      if(typeof window.__previewSwitchPage==='function'){
+        window.__previewSwitchPage(hit.pageId,hit.anchor||'');
+        return;
+      }
+      var previewLink=document.querySelector('[data-preview-page-id="'+hit.pageId+'"]');
+      if(previewLink){
+        previewLink.click();
+        if(hit.anchor){
+          setTimeout(function(){
+            var t=document.getElementById(hit.anchor);
+            if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+          },80);
+        }
+        return;
+      }
+    }
+
+    var here=document.getElementById(hit.anchor||'');
+    if(hit.pageId===CURRENT_PAGE_ID && here){
+      here.scrollIntoView({behavior:'smooth',block:'start'});
+      return;
+    }
+
+    var route=(ROUTES && ROUTES[hit.pageId]) ? ROUTES[hit.pageId] : hit.url;
+    if(route){
+      var target=route + (hit.anchor ? '#'+encodeURIComponent(hit.anchor) : '');
+      window.location.assign(target);
+    }
+  }
+
+  function doSearch(){
+    var q=input.value.trim().toLowerCase();
+    results.innerHTML='';
+    if(!q) return;
+
+    var hits=INDEX.filter(function(hit){
+      return String(hit.text||'').toLowerCase().includes(q);
+    }).slice(0,30);
+
+    hits.forEach(function(hit){
+      var b=document.createElement('button');
+      b.type='button';
+      b.style.cssText='display:block;width:100%;text-align:left;border:0;background:transparent;color:#111 !important;padding:10px 8px;cursor:pointer;border-radius:10px;';
+
+      var title=document.createElement('strong');
+      title.textContent=hit.pageTitle||SEARCH_PAGE_LABEL;
+      title.style.cssText='display:block;font-size:12px;margin-bottom:2px;color:#111 !important;';
+
+      var excerpt=document.createElement('span');
+      excerpt.textContent=String(hit.text||'').length>110
+        ? String(hit.text||'').slice(0,110)+'…'
+        : String(hit.text||'');
+      excerpt.style.cssText='display:block;font-size:12px;opacity:.72;line-height:1.35;color:#111 !important;';
+
+      b.appendChild(title);
+      b.appendChild(excerpt);
+      b.addEventListener('click',function(){
+  closePanel();
+  go(hit);
+});
+      results.appendChild(b);
+    });
+
+    if(!hits.length){
+      var d=document.createElement('div');
+      d.textContent=SEARCH_NO_RESULTS;
+      d.style.cssText='padding:10px 8px;opacity:.6;';
+      results.appendChild(d);
+    }
+  }
+
+  input.addEventListener('input',doSearch);
+
+  if(NAVBAR_MODE){
+    mountNavbarSearch();
+    window.addEventListener('resize',mountNavbarSearch);
+
+    /* Hamburger closes the mobile search panel together with the menu. */
+    var hb=hamburger();
+    if(hb){
+      hb.addEventListener('click',function(){
+        setTimeout(function(){
+          var mm=mobileMenu();
+          if(mm && !mm.classList.contains('show')) closePanel();
+        },0);
+      });
+    }
+  }
+})();
+</script>
+
+<style>
+#site-share-widget{position:fixed;left:22px;bottom:22px;z-index:920;font-family:inherit}
+#site-share-toggle{width:52px;height:52px;border:0;border-radius:50%;background:#fff;color:#111;box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer;display:grid;place-items:center}
+#site-share-panel{display:none;position:absolute;left:0;bottom:62px;width:min(280px,82vw);max-height:min(70vh,620px);overflow:auto;padding:10px;background:#fff;color:#111;border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,.25)}
+#site-share-panel.sc-open{display:block}
+/* Preview / Export: keep the Share icon list scrollable without showing a scrollbar. */
+body.sc-user-site #site-share-panel{scrollbar-width:none;-ms-overflow-style:none}
+body.sc-user-site #site-share-panel::-webkit-scrollbar{width:0;height:0;display:none}
+.sc-share-action{width:100%;display:flex;align-items:center;gap:10px;border:0;background:transparent;color:inherit;padding:10px 12px;border-radius:12px;cursor:pointer;text-align:left;font:inherit}.sc-share-action:hover{background:rgba(0,0,0,.06)}.sc-share-action svg{width:20px;height:20px}
+@media(max-width:900px){#site-share-toggle{width:40px;height:40px}#site-share-toggle svg{width:20px;height:20px}#site-share-panel{bottom:50px}}
+</style>
+<div id="site-share-widget" data-excluded-pages="[]" data-share-permalink-map="{&quot;home&quot;:&quot;&quot;,&quot;page-62h76xlb&quot;:&quot;&quot;,&quot;page-4qq392yx&quot;:&quot;&quot;,&quot;page-xlnu3mmg&quot;:&quot;&quot;}" data-share-page-id="page-xlnu3mmg"><button id="site-share-toggle" type="button" aria-label="Share"><span uk-icon="social"></span></button><div id="site-share-panel" role="dialog" aria-label="Share this page"><button type="button" class="sc-share-action" data-share-id="copy-link" data-share-action="copy-link" data-share-template="" data-share-success="Link copiato"><span uk-icon="copy"></span><span>Copia link</span></button><button type="button" class="sc-share-action" data-share-id="email" data-share-action="email" data-share-template="" data-share-success=""><span uk-icon="mail"></span><span>Email</span></button><button type="button" class="sc-share-action" data-share-id="facebook" data-share-action="url" data-share-template="https://www.facebook.com/sharer/sharer.php?u={url}" data-share-success=""><span uk-icon="facebook"></span><span>Facebook</span></button><button type="button" class="sc-share-action" data-share-id="x" data-share-action="url" data-share-template="https://twitter.com/intent/tweet?url={url}&amp;text={title}" data-share-success=""><span uk-icon="x"></span><span>X / Twitter</span></button><button type="button" class="sc-share-action" data-share-id="linkedin" data-share-action="url" data-share-template="https://www.linkedin.com/sharing/share-offsite/?url={url}" data-share-success=""><span uk-icon="linkedin"></span><span>LinkedIn</span></button><button type="button" class="sc-share-action" data-share-id="tiktok" data-share-action="copy-open" data-share-template="https://www.tiktok.com/" data-share-success=""><span uk-icon="tiktok"></span><span>TikTok</span></button><button type="button" class="sc-share-action" data-share-id="instagram" data-share-action="copy-open" data-share-template="https://www.instagram.com/" data-share-success=""><span uk-icon="instagram"></span><span>Instagram</span></button><button type="button" class="sc-share-action" data-share-id="whatsapp" data-share-action="url" data-share-template="https://wa.me/?text={title}%20{url}" data-share-success=""><span uk-icon="whatsapp"></span><span>WhatsApp</span></button><button type="button" class="sc-share-action" data-share-id="telegram" data-share-action="url" data-share-template="https://t.me/share/url?url={url}&amp;text={title}" data-share-success=""><span uk-icon="telegram"></span><span>Telegram</span></button><button type="button" class="sc-share-action" data-share-id="reddit" data-share-action="url" data-share-template="https://www.reddit.com/submit?url={url}&amp;title={title}" data-share-success=""><span uk-icon="reddit"></span><span>Reddit</span></button><button type="button" class="sc-share-action" data-share-id="threads" data-share-action="url" data-share-template="https://www.threads.net/intent/post?text={title}%20{url}" data-share-success=""><span uk-icon="threads"></span><span>Threads</span></button><button type="button" class="sc-share-action" data-share-id="bluesky" data-share-action="url" data-share-template="https://bsky.app/intent/compose?text={title}%20{url}" data-share-success=""><span uk-icon="bluesky"></span><span>Bluesky</span></button><button type="button" class="sc-share-action" data-share-id="mastodon" data-share-action="url" data-share-template="https://mastodon.social/share?text={title}%20{url}" data-share-success=""><span uk-icon="mastodon"></span><span>Mastodon</span></button><button type="button" class="sc-share-action" data-share-id="pinterest" data-share-action="url" data-share-template="https://pinterest.com/pin/create/button/?url={url}&amp;description={title}" data-share-success=""><span uk-icon="pinterest"></span><span>Pinterest</span></button><button type="button" class="sc-share-action" data-share-id="tumblr" data-share-action="url" data-share-template="https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&amp;title={title}" data-share-success=""><span uk-icon="tumblr"></span><span>Tumblr</span></button></div></div>
+<script>(function(){
+ var w=document.getElementById('site-share-widget'),t=document.getElementById('site-share-toggle'),p=document.getElementById('site-share-panel');if(!w||!t||!p)return;
+ var excluded=[];try{excluded=JSON.parse(w.getAttribute('data-excluded-pages')||'[]')}catch(e){}
+ var permalinkMap={};try{permalinkMap=JSON.parse(w.getAttribute('data-share-permalink-map')||'{}')}catch(e){}
+ var fixedPageId=String(w.getAttribute('data-share-page-id')||'');
+ function activePageId(){return String(window.__previewCurrentPageId||fixedPageId||'')}
+ function syncAllowed(){var id=activePageId();if(id)w.style.display=excluded.indexOf(id)>-1?'none':''}syncAllowed();if("export"==='preview')setInterval(syncAllowed,250);
+ t.addEventListener('click',function(e){e.stopPropagation();p.classList.toggle('sc-open')});document.addEventListener('click',function(e){if(!w.contains(e.target))p.classList.remove('sc-open')});
+ function currentLink(){return location.href}
+ function cleanCurrentLink(){return location.href.split('#')[0]+(location.hash&&location.hash.indexOf('#preview-page:')!==0?location.hash:'')}
+ function configuredPermalink(){var u=String(permalinkMap[activePageId()]||'').trim();return u||cleanCurrentLink()}
+ function openUrl(u){window.open(u,'_blank','noopener,noreferrer')}
+ function fallback(v){var a=document.createElement('textarea');a.value=v;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}
+ function copy(v,done){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(done).catch(function(){fallback(v);done()});else{fallback(v);done()}}
+ function templ(t,u,title){var raw=String(t||'').trim(),U=encodeURIComponent(u),T=encodeURIComponent(title),X=encodeURIComponent((title?title+' ':'')+u);if(!raw)return '';if(/{(?:url|title|text)}/i.test(raw))return raw.split('{url}').join(U).split('{title}').join(T).split('{text}').join(X);return raw+U}
+ p.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var b=e.target.closest('[data-share-id]');if(!b)return;var action=b.getAttribute('data-share-action'),template=b.getAttribute('data-share-template')||'',url=cleanCurrentLink(),title=document.title||'';
+   if(action==='copy-permalink'){e.stopPropagation();var label=b.querySelector('span:not([uk-icon])'),oldLabel=label?label.textContent:'',success=b.getAttribute('data-share-success')||'Permalink copied';copy(configuredPermalink(),function(){if(label)label.textContent=success;setTimeout(function(){if(label)label.textContent=oldLabel;try{UIkit.update(b)}catch(e){}},1400)})}
+    else if(action==='copy-link'){e.stopPropagation();var label2=b.querySelector('span:not([uk-icon])'),oldLabel2=label2?label2.textContent:'',success2=b.getAttribute('data-share-success')||'Link copied';copy(currentLink(),function(){if(label2)label2.textContent=success2;setTimeout(function(){if(label2)label2.textContent=oldLabel2;try{UIkit.update(b)}catch(e){}},1400)})}
+   else if(action==='email'){location.href='mailto:?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(title+'\n\n'+url)}
+   else if(action==='copy-open'){copy(url,function(){openUrl(template)})}
+   else if(action==='url'&&template){openUrl(templ(template,url,title))}
+ });
+})();</script>
+
+
+<script src="../assets/js/uikit.min.js"></script>
+<script src="../assets/js/uikit-icons.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (!mobileMenuToggle || !mobileMenu) return;
+
+  // If the lightweight Mobile Menu (Preview/Export) script already initialized,
+  // avoid binding a second controller (prevents open-then-immediate-close).
+  if (typeof window.__rebuildMobileMenu === 'function') return;
+
+  // Detect navbar container dynamically
+  let dynamicNavContainer = document.getElementById('dynamic-navbar-container');
+  if (!dynamicNavContainer) {
+    // fallback for Preview / Export
+    dynamicNavContainer = document.querySelector('nav.uk-navbar-container');
+  }
+  if (!dynamicNavContainer) return; // no navbar found
+
+  let menuBuilt = false;
+
+  // Helpers
+  const isSmallScreen = () => window.innerWidth <= 1024;
+  const isMenuOpen = () => mobileMenu.classList.contains('show');
+
+  const isNavbarEnabled = () => {
+    // Editor: checkbox enabled
+    const enableNavbarCheckbox = document.getElementById('enable-navbar');
+    return enableNavbarCheckbox ? enableNavbarCheckbox.checked : true; // Preview: always enabled
+  };
+
+  // Populate mobile menu
+  function populateMobileMenu(force = false) {
+    if (!force && (menuBuilt || isMenuOpen())) return;
+
+    const nav = dynamicNavContainer.querySelector('ul.navbar-scroll');
+    if (!nav || !mobileMenu) return;
+
+    // Update colors
+    const navbarBg = getComputedStyle(nav.parentElement || nav).backgroundColor;
+    const navbarText = getComputedStyle(nav).color;
+    document.documentElement.style.setProperty('--navbar-bg-color', navbarBg);
+    document.documentElement.style.setProperty('--navbar-text-color', navbarText);
+    document.documentElement.style.setProperty('--navbar-link-color', navbarText);
+
+    const fragment = document.createDocumentFragment();
+    mobileMenu.innerHTML = '';
+
+    nav.querySelectorAll('a').forEach(link => {
+      const clone = link.cloneNode(true);
+      clone.removeAttribute('id');
+
+      clone.addEventListener('click', e => {
+        e.stopPropagation();
+        closeMobileMenu();
+      });
+
+      fragment.appendChild(clone);
+    });
+
+    mobileMenu.appendChild(fragment);
+    menuBuilt = true;
+  }
+
+  // Open / Close Menu
+  function openMobileMenu() {
+    populateMobileMenu(true);
+    mobileMenu.classList.add('show');
+    mobileMenuToggle.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('show');
+    mobileMenuToggle.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    setTimeout(() => {
+      menuBuilt = false; // rebuild next time
+    }, 350); // match CSS transition
+  }
+
+  // Update visibility
+  function updateMobileMenuVisibility() {
+    if (isNavbarEnabled() && isSmallScreen()) {
+      mobileMenuToggle.style.display = 'flex';
+    } else {
+      mobileMenuToggle.style.display = 'none';
+      closeMobileMenu();
+    }
+  }
+
+  // MutationObserver to detect dynamic changes in navbar
+  if (dynamicNavContainer) {
+    const observer = new MutationObserver(() => {
+      if (isMenuOpen()) return;
+      menuBuilt = false;
+      populateMobileMenu(true);
+    });
+    observer.observe(dynamicNavContainer, { childList: true, subtree: false });
+  }
+
+  // Events
+  mobileMenuToggle.addEventListener('click', () => {
+    isMenuOpen() ? closeMobileMenu() : openMobileMenu();
+  });
+  window.addEventListener('resize', updateMobileMenuVisibility);
+
+  const enableNavbarCheckbox = document.getElementById('enable-navbar');
+  enableNavbarCheckbox?.addEventListener('change', () => {
+    menuBuilt = false;
+    populateMobileMenu(true);
+    updateMobileMenuVisibility();
+  });
+
+  // Initial setup
+  populateMobileMenu(true);
+  updateMobileMenuVisibility();
+});
+</script>
+<script>
+/* CORE universal local-service notice
+   Works in Preview/blob:, exported file:// pages, dynamic Lightboxes,
+   Slideshow, Add Video, and same-origin/srcdoc Embed documents. */
+(function(){
+  function isLocalContext(win){
+    try {
+      var p=String((win||window).location.protocol||'');
+      return !(p === 'http:' || p === 'https:');
+    } catch(e) {
+      return true;
+    }
+  }
+
+  function isYouTubeSrc(src){
+    var s=String(src||'').toLowerCase();
+    return s.indexOf('youtube.com/embed/') !== -1 ||
+           s.indexOf('youtube-nocookie.com/embed/') !== -1 ||
+           s.indexOf('youtube.com/watch?') !== -1 ||
+           s.indexOf('youtu.be/') !== -1;
+  }
+
+  function warningText(){
+    return '<span style="display:block;white-space:normal;">YouTube does not allow local playback.<br>Upload the website to a server to play this video.</span>';
+  }
+
+  function ensurePositioned(el, win){
+    try {
+      if ((win||window).getComputedStyle(el).position === 'static') el.style.position='relative';
+    } catch(e) {
+      if (!el.style.position) el.style.position='relative';
+    }
+  }
+
+  function decorateYouTubeFrame(frame, doc, win){
+    if (!frame || frame.dataset.scLocalYoutubeDone === '1') return;
+    var src=String(frame.getAttribute('src')||'');
+    if (!isYouTubeSrc(src)) return;
+
+    frame.dataset.scLocalYoutubeDone='1';
+
+    var isFull = frame.classList.contains('sc-youtube-fullscreen-player');
+    var isSlider = frame.classList.contains('sc-slider-youtube-player');
+    var inLightbox = !!frame.closest('.uk-lightbox');
+
+    var host = frame.parentElement;
+    if (!host) return;
+    ensurePositioned(host, win);
+
+    // Preserve the errored player so users understand this is a local-playback limitation.
+    if (isFull || isSlider) {
+      frame.style.filter='blur(14px)';
+      frame.style.opacity='.55';
+    } else if (inLightbox) {
+      frame.style.opacity='.42';
+    } else {
+      frame.style.opacity='.48';
+    }
+
+    var notice=doc.createElement('div');
+    notice.className='sc-runtime-youtube-warning';
+    notice.innerHTML=warningText();
+    notice.style.boxSizing='border-box';
+    notice.style.textAlign='center';
+    notice.style.color='#fff';
+    notice.style.fontWeight='800';
+    notice.style.lineHeight='1.25';
+    notice.style.letterSpacing='.01em';
+    notice.style.pointerEvents='none';
+
+    if (isFull || isSlider) {
+      // Fullscreen Add Video + Slideshow: keep the player visible but blurred,
+      // and place the warning at the top so headings/subheadings/buttons remain visible.
+      notice.style.cssText += ';position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center;padding:100px 28px 28px;background:transparent;font-size:clamp(16px,2vw,28px);z-index:2147483000;';
+    } else if (inLightbox) {
+      notice.style.cssText += ';position:absolute;top:18px;left:50%;transform:translateX(-50%);padding:12px 18px;background:rgba(255,145,0,.92);border-radius:12px;font-size:clamp(13px,1.25vw,18px);max-width:min(760px,calc(100% - 32px));width:max-content;z-index:2147483000;';
+    } else {
+      // Regular Add Video / custom Embed.
+      notice.style.cssText += ';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:28px;background:rgba(255,145,0,.92);font-size:clamp(16px,2vw,28px);z-index:2147483000;';
+    }
+
+    host.appendChild(notice);
+  }
+
+  function scanDocument(doc, win){
+    if (!doc || !isLocalContext(win)) return;
+
+    try {
+      doc.querySelectorAll('.sc-formspree-local-warning').forEach(function(notice){
+        notice.style.display='flex';
+      });
+    } catch(e) {}
+
+    try {
+      doc.querySelectorAll('iframe').forEach(function(frame){
+        var src=String(frame.getAttribute('src')||'');
+
+        // Direct YouTube iframe in Add Video / Slider / Lightbox / custom markup.
+        if (isYouTubeSrc(src)) decorateYouTubeFrame(frame,doc,win);
+
+        // Same-origin/srcdoc Embed: scan its inner document too.
+        try {
+          var innerDoc=frame.contentDocument;
+          var innerWin=frame.contentWindow;
+          if (innerDoc && innerDoc.documentElement) scanDocument(innerDoc,innerWin);
+        } catch(e) {}
+      });
+    } catch(e) {}
+  }
+
+  function scanAll(){
+    scanDocument(document,window);
+  }
+
+  document.addEventListener('submit',function(e){
+    if(!isLocalContext(window)) return;
+    var form=e.target;
+    if(form && form.matches && form.matches('.sc-generated-form[action*="formspree.io"]')){
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  },true);
+
+  document.addEventListener('DOMContentLoaded',function(){
+    scanAll();
+    setTimeout(scanAll,100);
+    setTimeout(scanAll,500);
+  });
+
+  window.addEventListener('load',function(){
+    scanAll();
+    setTimeout(scanAll,300);
+    setTimeout(scanAll,1200);
+  });
+
+  // UIkit Lightbox and asynchronously generated Embed/Slider iframe content.
+  document.addEventListener('click',function(){
+    setTimeout(scanAll,50);
+    setTimeout(scanAll,250);
+    setTimeout(scanAll,700);
+  },true);
+
+  try {
+    new MutationObserver(function(){
+      scanAll();
+    }).observe(document.documentElement,{childList:true,subtree:true});
+  } catch(e) {}
+
+  // Covers iframe navigations / late srcdoc loading without aggressive polling.
+  setInterval(scanAll,1500);
+})();
+</script>
+
+<script>
+(function(){
+  function shuffle(el){
+    if(!el)return;
+    var a=Array.prototype.slice.call(el.children||[]);
+    for(var i=a.length-1;i>0;i--){
+      var j=Math.floor(Math.random()*(i+1));
+      var t=a[i];a[i]=a[j];a[j]=t;
+    }
+    a.forEach(function(child){el.appendChild(child);});
+  }
+  function run(){
+    document.querySelectorAll('.sc-random-gallery').forEach(function(section){
+      var grid=section.querySelector('[uk-lightbox][uk-grid],[uk-grid][uk-lightbox]');
+      shuffle(grid);
+    });
+    document.querySelectorAll('.sc-random-grid').forEach(function(section){
+      var grids=Array.prototype.slice.call(section.querySelectorAll('[uk-grid]'));
+      var grid=grids.find(function(g){return g.children&&g.children.length>1;});
+      shuffle(grid);
+    });
+    document.querySelectorAll('.sc-random-slider').forEach(function(section){
+      shuffle(section.querySelector('.uk-slider-items'));
+    });
+    try{if(window.UIkit)UIkit.update(document);}catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',run);
+})();
+</script>
+<script>
+(function(){
+  function protect(root){
+    if(!root||!root.querySelectorAll)return;
+    function mark(el){
+      if(!el||el.nodeType!==1)return;
+      el.setAttribute('translate','no');
+      if(el.classList)el.classList.add('notranslate');
+    }
+    try{
+      if(root.matches&&root.matches('[uk-icon],[data-uk-icon],.uk-icon,.uk-icon-button'))mark(root);
+      root.querySelectorAll('[uk-icon],[data-uk-icon],.uk-icon,.uk-icon-button').forEach(mark);
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    protect(document);
+    try{
+      new MutationObserver(function(ms){
+        ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n&&n.nodeType===1)protect(n);});});
+      }).observe(document.documentElement,{childList:true,subtree:true});
+    }catch(e){}
+  });
+})();
+</script>
+
+<script>
+(function(){
+  function bind(el){
+    if(!el || el.__boundScrollEnh) return;
+    el.__boundScrollEnh = true;
+
+    // Wheel -> horizontal scroll (mouse wheel support)
+    el.addEventListener('wheel', function(e){
+      // Only convert vertical wheel when horizontal is the intent
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        el.scrollLeft += e.deltaY;
+        e.preventDefault();
+      }
+    }, {passive:false});
+
+    // Drag to scroll (mouse/touchpad)
+    var isDown=false, startX=0, startLeft=0, activePointerId=null;
+    el.addEventListener('pointerdown', function(e){
+      // Only for primary button / touch
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+      // IMPORTANT: don't hijack clicks on interactive elements inside the scroller
+      // (eg. DropNav parent buttons). Let those receive normal pointer/click events.
+      if (e.target && (e.target.closest('a') || e.target.closest('button') || e.target.closest('input') || e.target.closest('select') || e.target.closest('textarea'))) return;
+
+      isDown = true;
+      activePointerId = e.pointerId;
+      startX = e.clientX;
+      startLeft = el.scrollLeft;
+      try { el.setPointerCapture(e.pointerId); } catch(_) {}
+      el.classList.add('dragging');
+    });
+    el.addEventListener('pointermove', function(e){
+      if(!isDown || (activePointerId !== null && e.pointerId !== activePointerId)) return;
+      var dx = e.clientX - startX;
+      // Invert so dragging left moves content right
+      el.scrollLeft = startLeft - dx;
+    });
+    function end(e){
+      if(activePointerId !== null && e.pointerId !== activePointerId) return;
+      isDown=false;
+      activePointerId=null;
+      el.classList.remove('dragging');
+      try { el.releasePointerCapture && e.pointerId!=null && el.releasePointerCapture(e.pointerId); } catch(_) {}
+    }
+    el.addEventListener('pointerup', end);
+    el.addEventListener('pointercancel', end);
+    el.addEventListener('pointerleave', end);
+
+    // Avoid text selection while dragging
+    el.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  }
+
+  function syncHeadingActive(){
+    var nav=document.querySelector('.navbar-scroll[data-sc-preview-nav="1"]');
+    if(!nav) return;
+
+    var headingLinks=Array.from(nav.querySelectorAll('.sc-page-heading-link > a[href^="#"]'));
+    if(!headingLinks.length) return;
+
+    var offset=110;
+    var active=null;
+    var best=-Infinity;
+
+    headingLinks.forEach(function(a){
+      var id=(a.getAttribute('href')||'').slice(1);
+      if(!id) return;
+      var target=document.getElementById(id);
+      if(!target) return;
+
+      var top=target.getBoundingClientRect().top-offset;
+      if(top<=0 && top>best){
+        best=top;
+        active=a;
+      }
+    });
+
+    // Only heading links participate in scroll state.
+    // Page links are NEVER promoted as the "next" scroll target.
+    headingLinks.forEach(function(a){
+      a.classList.toggle('uk-active',a===active);
+    });
+  }
+
+  function init(){
+    document.querySelectorAll('.dn-scroll, .navbar-scroll').forEach(bind);
+    syncHeadingActive();
+    window.addEventListener('scroll',syncHeadingActive,{passive:true});
+    window.addEventListener('resize',syncHeadingActive);
+    window.__scSyncHeadingActive=syncHeadingActive;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

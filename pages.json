@@ -1,11 +1,29 @@
 {
   "version": 1,
-  "currentPageId": "home",
+  "currentPageId": "page-xlnu3mmg",
   "pages": [
     {
       "id": "home",
       "title": "Home",
       "slug": "home",
+      "parentId": null
+    },
+    {
+      "id": "page-62h76xlb",
+      "title": "Venere in Pesci",
+      "slug": "venere-in-pesci",
+      "parentId": null
+    },
+    {
+      "id": "page-4qq392yx",
+      "title": "La Pagana",
+      "slug": "la-pagana",
+      "parentId": null
+    },
+    {
+      "id": "page-xlnu3mmg",
+      "title": "Donna senza remore",
+      "slug": "donna-senza-remore",
       "parentId": null
     }
   ]
